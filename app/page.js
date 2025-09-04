@@ -118,24 +118,24 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Enhanced Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative">
+      {/* Enhanced Hero Section - Mobile Optimized */}
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-4 relative">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-amber-200/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-200/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-10 left-4 md:left-10 w-48 md:w-72 h-48 md:h-72 bg-amber-200/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-4 md:right-10 w-64 md:w-96 h-64 md:h-96 bg-orange-200/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
         <div className="container mx-auto relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8 animate-in slide-in-from-left-8 duration-1000">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="space-y-6 md:space-y-8 animate-in slide-in-from-left-8 duration-1000">
               {/* Badge */}
-              <div className="inline-flex items-center px-4 py-2 bg-amber-100/80 backdrop-blur-sm rounded-full text-sm font-medium text-amber-700 border border-amber-200/50">
-                <Star className="w-4 h-4 mr-2 text-amber-500" />
+              <div className="inline-flex items-center px-3 md:px-4 py-2 bg-amber-100/80 backdrop-blur-sm rounded-full text-xs md:text-sm font-medium text-amber-700 border border-amber-200/50">
+                <Star className="w-3 md:w-4 h-3 md:h-4 mr-2 text-amber-500" />
                 Zertifizierte Psychotherapeutin
               </div>
 
-              <h1 className="text-5xl lg:text-6xl font-bold text-slate-800 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight">
                 Wow – endlich mit{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 animate-gradient">
                   Freude
@@ -143,42 +143,43 @@ export default function HomePage() {
                 Du sein!
               </h1>
               
-              <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
+              <p className="text-base md:text-xl text-slate-600 leading-relaxed max-w-2xl">
                 Wie Veränderung langfristig gelingt – smart, örtlich und zeitlich flexibel. 
                 Psychologische Psychotherapie mit Fokus auf{' '}
                 <span className="font-semibold text-amber-600">kognitive Verhaltenstherapie</span>{' '}
                 für mentale und emotionale Transformation.
               </p>
 
-              {/* Enhanced CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/booking">
-                  <Button size="lg" className="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white shadow-xl shadow-amber-500/25 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-105 group">
-                    Erstgespräch vereinbaren
+              {/* Enhanced CTAs - Mobile First */}
+              <div className="flex flex-col gap-3 md:gap-4 w-full">
+                <Link href="/booking" className="w-full">
+                  <Button size="lg" className="w-full h-12 md:h-auto bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white shadow-xl shadow-amber-500/25 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/30 active:scale-95 touch-manipulation group text-base md:text-lg font-semibold">
+                    <Calendar className="mr-2 w-5 h-5" />
+                    Jetzt Termin buchen
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Link href="/about">
-                  <Button size="lg" variant="outline" className="border-2 border-amber-300 text-amber-700 hover:bg-amber-50 hover:border-amber-400 transition-all duration-300 hover:scale-105 group">
+                <Link href="/about" className="w-full">
+                  <Button size="lg" variant="outline" className="w-full h-12 md:h-auto border-2 border-amber-300 text-amber-700 hover:bg-amber-50 hover:border-amber-400 transition-all duration-300 active:scale-95 touch-manipulation group text-base md:text-lg font-medium">
                     Mehr über mich
                     <Heart className="ml-2 w-5 h-5 group-hover:text-red-500 transition-colors" />
                   </Button>
                 </Link>
               </div>
 
-              {/* Trust Indicators */}
-              <div className="flex items-center space-x-6 pt-4">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-sm text-slate-600">BDP zertifiziert</span>
+              {/* Trust Indicators - Mobile Optimized */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 pt-4">
+                <div className="flex items-center space-x-2 text-center sm:text-left justify-center sm:justify-start">
+                  <CheckCircle className="w-4 md:w-5 h-4 md:h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-xs md:text-sm text-slate-600 font-medium">BDP zertifiziert</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-sm text-slate-600">15+ Jahre Erfahrung</span>
+                <div className="flex items-center space-x-2 text-center sm:text-left justify-center sm:justify-start">
+                  <CheckCircle className="w-4 md:w-5 h-4 md:h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-xs md:text-sm text-slate-600 font-medium">15+ Jahre Erfahrung</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-sm text-slate-600">GDPR konform</span>
+                <div className="flex items-center space-x-2 text-center sm:text-left justify-center sm:justify-start">
+                  <CheckCircle className="w-4 md:w-5 h-4 md:h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-xs md:text-sm text-slate-600 font-medium">GDPR konform</span>
                 </div>
               </div>
             </div>
