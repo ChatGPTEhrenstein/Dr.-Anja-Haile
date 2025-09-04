@@ -181,8 +181,8 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1585639408964-b8938d59264e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHx3ZWxsbmVzc3xlbnwwfHx8Ymx1ZXwxNzU2OTg5NDQwfDA&ixlib=rb-4.1.0&q=85"
-                  alt="Emotionale Transformation"
+                  src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-070_4Eck-scaled.jpg"
+                  alt="Dr. Anja Haile - Emotionale Transformation und Therapie"
                   className="rounded-xl shadow-lg w-full h-[400px] object-cover"
                 />
               </div>
@@ -220,6 +220,15 @@ export default function ServicesPage() {
           <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
             Wie läuft die Therapie ab?
           </h2>
+          
+          {/* Process Image */}
+          <div className="mb-12 text-center">
+            <img 
+              src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-178-scaled.jpg"
+              alt="Dr. Anja Haile - Professionelle Therapieatmosphäre"
+              className="rounded-2xl shadow-lg w-full max-w-2xl mx-auto h-[300px] object-cover"
+            />
+          </div>
           
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">

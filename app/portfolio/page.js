@@ -133,44 +133,54 @@ export default function PortfolioPage() {
               Meine Arbeitsweise
             </h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Brain className="w-8 h-8 text-blue-600" />
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Brain className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-blue-900 mb-3">
+                    Evidenzbasiert
+                  </h3>
+                  <p className="text-blue-700">
+                    Alle Methoden basieren auf wissenschaftlich fundierten Ansätzen 
+                    der kognitiven Verhaltenstherapie.
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-3">
-                  Evidenzbasiert
-                </h3>
-                <p className="text-blue-700">
-                  Alle Methoden basieren auf wissenschaftlich fundierten Ansätzen 
-                  der kognitiven Verhaltenstherapie.
-                </p>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Heart className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-blue-900 mb-3">
+                    Individuell
+                  </h3>
+                  <p className="text-blue-700">
+                    Jeder Therapieplan wird individuell auf die Bedürfnisse 
+                    und Ziele des Klienten abgestimmt.
+                  </p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-blue-900 mb-3">
+                    Nachhaltig
+                  </h3>
+                  <p className="text-blue-700">
+                    Fokus auf langfristige Veränderungen und die Entwicklung 
+                    eigener Bewältigungsstrategien.
+                  </p>
+                </div>
               </div>
               
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-blue-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-3">
-                  Individuell
-                </h3>
-                <p className="text-blue-700">
-                  Jeder Therapieplan wird individuell auf die Bedürfnisse 
-                  und Ziele des Klienten abgestimmt.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-blue-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-3">
-                  Nachhaltig
-                </h3>
-                <p className="text-blue-700">
-                  Fokus auf langfristige Veränderungen und die Entwicklung 
-                  eigener Bewältigungsstrategien.
-                </p>
+              <div>
+                <img 
+                  src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-483-1-scaled.jpg"
+                  alt="Dr. Anja Haile - Professionelle Therapiearbeitsweise"
+                  className="rounded-xl shadow-lg w-full h-[500px] object-cover"
+                />
               </div>
             </div>
           </div>
