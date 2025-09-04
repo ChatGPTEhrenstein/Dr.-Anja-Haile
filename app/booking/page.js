@@ -1,22 +1,30 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ArrowLeft, Shield, Clock, CheckCircle } from 'lucide-react'
-import { useState } from 'react'
 
 export default function BookingPage() {
-  const [consentGiven, setConsentGiven] = useState(false)
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-blue-900">
-              Dr. Anja Haile
+            <Link href="/" className="flex items-center space-x-3">
+              <Image 
+                src="/images/bdp-logo.svg" 
+                alt="BDP - Berufsverband deutscher Psychologen" 
+                width={50} 
+                height={50}
+                className="w-12 h-12"
+              />
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-blue-900">Dr. Anja Haile</span>
+                <span className="text-xs text-blue-600">Psychologische Psychotherapeutin</span>
+              </div>
             </Link>
             <div className="hidden md:flex space-x-8">
               <Link href="/" className="text-blue-800 hover:text-blue-600 transition-colors">Home</Link>
@@ -79,82 +87,30 @@ export default function BookingPage() {
             </Card>
           </div>
 
-          {/* GDPR Consent Section */}
-          {!consentGiven && (
-            <Card className="mb-8 border-amber-200 bg-amber-50">
-              <CardHeader>
-                <CardTitle className="flex items-center text-amber-800">
-                  <Shield className="w-5 h-5 mr-2" />
-                  Datenschutzhinweis
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <p className="text-amber-700">
-                    Für die Terminbuchung verwenden wir den externen Dienst GoHighLevel. 
-                    Durch das Laden des Buchungskalenders werden Ihre Daten an GoHighLevel übertragen.
-                  </p>
-                  <p className="text-amber-700">
-                    Weitere Informationen zum Datenschutz finden Sie in unserer{' '}
-                    <Link href="/datenschutz" className="underline text-amber-800 hover:text-amber-600">
-                      Datenschutzerklärung
-                    </Link>.
-                  </p>
-                  <div className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      id="consent"
-                      className="w-4 h-4 text-blue-600"
-                      onChange={(e) => setConsentGiven(e.target.checked)}
-                    />
-                    <label htmlFor="consent" className="text-amber-700">
-                      Ich stimme der Übertragung meiner Daten an GoHighLevel zu und habe die 
-                      Datenschutzerklärung gelesen.
-                    </label>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          )}
-
           {/* Calendar Section */}
-          {consentGiven ? (
-            <Card className="border-blue-200">
-              <CardHeader>
-                <CardTitle className="text-blue-900 text-center">
-                  Wählen Sie Ihren Wunschtermin
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="w-full">
-                  <iframe 
-                    src="https://api.leadconnectorhq.com/widget/bookings/anjahaile"
-                    style={{
-                      width: '100%',
-                      height: '900px',
-                      border: 'none',
-                      borderRadius: '8px'
-                    }}
-                    frameBorder="0"
-                    scrolling="auto"
-                    title="Terminbuchung"
-                  />
-                </div>
-              </CardContent>
-            </Card>
-          ) : (
-            <Card className="border-gray-200 bg-gray-50">
-              <CardContent className="p-12 text-center">
-                <Shield className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-xl text-gray-600 mb-2">
-                  Buchungskalender
-                </h3>
-                <p className="text-gray-500">
-                  Bitte stimmen Sie der Datenübertragung zu, um den Buchungskalender zu laden.
-                </p>
-              </CardContent>
-            </Card>
-          )}
+          <Card className="border-blue-200">
+            <CardHeader>
+              <CardTitle className="text-blue-900 text-center">
+                Wählen Sie Ihren Wunschtermin
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="w-full">
+                <iframe 
+                  src="https://api.leadconnectorhq.com/widget/bookings/anjahaile"
+                  style={{
+                    width: '100%',
+                    height: '900px',
+                    border: 'none',
+                    borderRadius: '8px'
+                  }}
+                  frameBorder="0"
+                  scrolling="auto"
+                  title="Terminbuchung"
+                />
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Alternative Contact */}
           <div className="mt-12 text-center">
@@ -175,7 +131,16 @@ export default function BookingPage() {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Dr. Anja Haile</h3>
+              <div className="flex items-center space-x-3 mb-4">
+                <Image 
+                  src="/images/bdp-logo.svg" 
+                  alt="BDP Logo" 
+                  width={40} 
+                  height={40}
+                  className="w-10 h-10"
+                />
+                <h3 className="text-xl font-bold">Dr. Anja Haile</h3>
+              </div>
               <p className="text-blue-200">
                 Psychologische Psychotherapeutin<br />
                 München, Deutschland
