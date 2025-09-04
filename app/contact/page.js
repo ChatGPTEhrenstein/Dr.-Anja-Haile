@@ -19,6 +19,25 @@ export default function ContactPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const navigationLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'Über mich' },
+    { href: '/services', label: 'Leistungen' },
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/testimonials', label: 'Testimonials' },
+    { href: '/contact', label: 'Kontakt', active: true }
+  ]
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -57,43 +76,105 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 relative overflow-x-hidden">
+      {/* Enhanced Navigation */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-xl border-b border-blue-100/50 shadow-lg shadow-blue-500/5' 
+          : 'bg-white/80 backdrop-blur-md border-b border-blue-100/30'
+      }`}>
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-blue-900">
-              Dr. Anja Haile
+            {/* Logo */}
+            <Link href="/" className="flex items-center space-x-3 group transition-transform hover:scale-105">
+              <div className="text-2xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                Dr. Anja Haile
+              </div>
             </Link>
-            <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-blue-800 hover:text-blue-600 transition-colors">Home</Link>
-              <Link href="/about" className="text-blue-800 hover:text-blue-600 transition-colors">Über mich</Link>
-              <Link href="/services" className="text-blue-800 hover:text-blue-600 transition-colors">Leistungen</Link>
-              <Link href="/portfolio" className="text-blue-800 hover:text-blue-600 transition-colors">Portfolio</Link>
-              <Link href="/testimonials" className="text-blue-800 hover:text-blue-600 transition-colors">Testimonials</Link>
-              <Link href="/contact" className="text-blue-600 font-semibold">Kontakt</Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex space-x-1">
+              {navigationLinks.map((link) => (
+                <Link 
+                  key={link.href}
+                  href={link.href} 
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    link.active 
+                      ? 'bg-blue-100 text-blue-700 shadow-sm' 
+                      : 'text-slate-600 hover:text-blue-600 hover:bg-blue-50/80'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
-            <Link href="/booking">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                Termin buchen
+
+            {/* CTA Button & Mobile Menu */}
+            <div className="flex items-center space-x-3">
+              <Link href="/booking">
+                <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  Termin buchen
+                </Button>
+              </Link>
+              
+              {/* Mobile Menu Button */}
+              <Button
+                variant="ghost"
+                size="sm"
+                className="lg:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <Menu className="w-5 h-5" />
               </Button>
-            </Link>
+            </div>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden mt-4 p-4 bg-white/95 backdrop-blur-xl rounded-2xl border border-blue-100/50 shadow-xl animate-in slide-in-from-top-2 duration-300">
+              <div className="flex flex-col space-y-2">
+                {navigationLinks.map((link) => (
+                  <Link 
+                    key={link.href}
+                    href={link.href}
+                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                      link.active 
+                        ? 'bg-blue-100 text-blue-700' 
+                        : 'text-slate-600 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
-      <div className="container mx-auto px-4 py-8">
-        <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Zurück zur Startseite
-        </Link>
+      {/* Enhanced Content */}
+      <div className="container mx-auto px-4 py-8 pt-32">
+        {/* Enhanced Breadcrumb */}
+        <div className="mb-8">
+          <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 group transition-all duration-200">
+            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+            Zurück zur Startseite
+          </Link>
+        </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-blue-900 mb-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Enhanced Header */}
+          <div className="text-center mb-16 animate-in slide-in-from-bottom-4 duration-1000">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full text-sm font-medium text-blue-700 mb-6">
+              <Mail className="w-4 h-4 mr-2" />
+              Jederzeit erreichbar
+            </div>
+            <h1 className="text-4xl lg:text-6xl font-bold text-slate-800 mb-6">
               Kontakt
             </h1>
-            <p className="text-lg text-blue-700 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Haben Sie Fragen oder möchten Sie einen Termin vereinbaren? 
               Ich freue mich auf Ihre Nachricht und melde mich schnellstmöglich bei Ihnen.
             </p>
