@@ -11,7 +11,7 @@ import sys
 from datetime import datetime
 
 # Get the base URL from environment or use default
-BASE_URL = os.getenv('NEXT_PUBLIC_BASE_URL', 'https://photo-collection-28.preview.emergentagent.com')
+BASE_URL = os.getenv('NEXT_PUBLIC_BASE_URL', 'https://psych-site-images.preview.emergentagent.com')
 API_BASE = f"{BASE_URL}/api"
 
 class BackendTester:
