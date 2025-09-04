@@ -54,8 +54,8 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1496180470114-6ef490f3ff22?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWx8ZW58MHx8fGJsdWV8MTc1Njk4OTQzNHww&ixlib=rb-4.1.0&q=85"
-                alt="Dr. Anja Haile"
+                src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-483-1-scaled.jpg"
+                alt="Dr. Anja Haile - Psychologische Psychotherapeutin"
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
             </div>
@@ -161,8 +161,8 @@ export default function AboutPage() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1495653797063-114787b77b23?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwzfHx0aGVyYXB5fGVufDB8fHxibHVlfDE3NTY5ODk0Mjl8MA&ixlib=rb-4.1.0&q=85"
-                  alt="Unterstützung und Begleitung"
+                  src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-050-4eck-scaled.jpg"
+                  alt="Dr. Anja Haile - Professionelle Beratung und Unterstützung"
                   className="rounded-xl shadow-lg w-full h-[400px] object-cover"
                 />
               </div>
