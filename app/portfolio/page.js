@@ -32,9 +32,9 @@ export default function PortfolioPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50">
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
+      <nav className="bg-white/80 backdrop-blur-md border-b border-amber-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center space-x-3">
@@ -46,20 +46,20 @@ export default function PortfolioPage() {
                 className="w-12 h-12"
               />
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-blue-900">Dr. Anja Haile</span>
-                <span className="text-xs text-blue-600">Psychologische Psychotherapeutin</span>
+                <span className="text-xl font-bold text-amber-900">Dr. Anja Haile</span>
+                <span className="text-xs text-amber-700">Psychologische Psychotherapeutin</span>
               </div>
             </Link>
             <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-blue-800 hover:text-blue-600 transition-colors">Home</Link>
-              <Link href="/about" className="text-blue-800 hover:text-blue-600 transition-colors">Über mich</Link>
-              <Link href="/services" className="text-blue-800 hover:text-blue-600 transition-colors">Leistungen</Link>
-              <Link href="/portfolio" className="text-blue-600 font-semibold">Portfolio</Link>
-              <Link href="/testimonials" className="text-blue-800 hover:text-blue-600 transition-colors">Testimonials</Link>
-              <Link href="/contact" className="text-blue-800 hover:text-blue-600 transition-colors">Kontakt</Link>
+              <Link href="/" className="text-amber-800 hover:text-amber-600 transition-colors">Home</Link>
+              <Link href="/about" className="text-amber-800 hover:text-amber-600 transition-colors">Über mich</Link>
+              <Link href="/services" className="text-amber-800 hover:text-amber-600 transition-colors">Leistungen</Link>
+              <Link href="/portfolio" className="text-amber-600 font-semibold">Portfolio</Link>
+              <Link href="/testimonials" className="text-amber-800 hover:text-amber-600 transition-colors">Testimonials</Link>
+              <Link href="/contact" className="text-amber-800 hover:text-amber-600 transition-colors">Kontakt</Link>
             </div>
             <Link href="/booking">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button className="bg-amber-600 hover:bg-amber-700 text-white">
                 Termin buchen
               </Button>
             </Link>
@@ -68,17 +68,17 @@ export default function PortfolioPage() {
       </nav>
 
       <div className="container mx-auto px-4 py-8">
-        <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8">
+        <Link href="/" className="inline-flex items-center text-amber-600 hover:text-amber-800 mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Zurück zur Startseite
         </Link>
 
         {/* Hero Section */}
         <section className="py-12 text-center">
-          <h1 className="text-4xl font-bold text-blue-900 mb-4">
+          <h1 className="text-4xl font-bold text-amber-900 mb-4">
             Portfolio & Referenzen
           </h1>
-          <p className="text-lg text-blue-700 max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-amber-700 max-w-3xl mx-auto mb-8">
             Einblicke in meine therapeutische Arbeit und erfolgreiche Projekte. 
             Erfahren Sie mehr über bewährte Ansätze und positive Ergebnisse in der psychologischen Betreuung.
           </p>
@@ -88,24 +88,24 @@ export default function PortfolioPage() {
         <section className="py-16">
           <div className="grid gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="border-blue-200 hover:shadow-lg transition-shadow">
+              <Card key={index} className="border-amber-200 hover:shadow-lg transition-shadow">
                 <div className="grid lg:grid-cols-2 gap-8">
                   <div className="p-6 lg:p-8">
                     <div className="flex items-center mb-4">
-                      <project.icon className="w-8 h-8 text-blue-600 mr-3" />
-                      <h3 className="text-2xl font-bold text-blue-900">
+                      <project.icon className="w-8 h-8 text-amber-600 mr-3" />
+                      <h3 className="text-2xl font-bold text-amber-900">
                         {project.title}
                       </h3>
                     </div>
                     
-                    <p className="text-blue-700 mb-6 leading-relaxed">
+                    <p className="text-amber-700 mb-6 leading-relaxed">
                       {project.description}
                     </p>
                     
                     <div className="space-y-3">
-                      <h4 className="font-semibold text-blue-900">Ergebnisse:</h4>
+                      <h4 className="font-semibold text-amber-900">Ergebnisse:</h4>
                       {project.results.map((result, idx) => (
-                        <div key={idx} className="flex items-center text-blue-700">
+                        <div key={idx} className="flex items-center text-amber-700">
                           <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
                           <span>{result}</span>
                         </div>
@@ -129,46 +129,46 @@ export default function PortfolioPage() {
         {/* Methodology Section */}
         <section className="py-16 bg-white rounded-2xl">
           <div className="container mx-auto px-8">
-            <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+            <h2 className="text-3xl font-bold text-amber-900 text-center mb-12">
               Meine Arbeitsweise
             </h2>
             
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Brain className="w-8 h-8 text-blue-600" />
+                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Brain className="w-8 h-8 text-amber-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-blue-900 mb-3">
+                  <h3 className="text-lg font-semibold text-amber-900 mb-3">
                     Evidenzbasiert
                   </h3>
-                  <p className="text-blue-700">
+                  <p className="text-amber-700">
                     Alle Methoden basieren auf wissenschaftlich fundierten Ansätzen 
                     der kognitiven Verhaltenstherapie.
                   </p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Heart className="w-8 h-8 text-blue-600" />
+                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Heart className="w-8 h-8 text-amber-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-blue-900 mb-3">
+                  <h3 className="text-lg font-semibold text-amber-900 mb-3">
                     Individuell
                   </h3>
-                  <p className="text-blue-700">
+                  <p className="text-amber-700">
                     Jeder Therapieplan wird individuell auf die Bedürfnisse 
                     und Ziele des Klienten abgestimmt.
                   </p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-blue-600" />
+                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-amber-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-blue-900 mb-3">
+                  <h3 className="text-lg font-semibold text-amber-900 mb-3">
                     Nachhaltig
                   </h3>
-                  <p className="text-blue-700">
+                  <p className="text-amber-700">
                     Fokus auf langfristige Veränderungen und die Entwicklung 
                     eigener Bewältigungsstrategien.
                   </p>
@@ -188,52 +188,52 @@ export default function PortfolioPage() {
 
         {/* Success Metrics */}
         <section className="py-16">
-          <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-amber-900 text-center mb-12">
             Erfolgsstatistiken
           </h2>
           
           <div className="grid md:grid-cols-4 gap-8">
-            <Card className="border-blue-200 text-center">
+            <Card className="border-amber-200 text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                <p className="text-blue-700">Behandelte Patienten</p>
+                <div className="text-3xl font-bold text-amber-600 mb-2">500+</div>
+                <p className="text-amber-700">Behandelte Patienten</p>
               </CardContent>
             </Card>
             
-            <Card className="border-blue-200 text-center">
+            <Card className="border-amber-200 text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-blue-600 mb-2">85%</div>
-                <p className="text-blue-700">Erfolgsrate</p>
+                <div className="text-3xl font-bold text-amber-600 mb-2">85%</div>
+                <p className="text-amber-700">Erfolgsrate</p>
               </CardContent>
             </Card>
             
-            <Card className="border-blue-200 text-center">
+            <Card className="border-amber-200 text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-blue-600 mb-2">6+</div>
-                <p className="text-blue-700">Jahre Erfahrung</p>
+                <div className="text-3xl font-bold text-amber-600 mb-2">6+</div>
+                <p className="text-amber-700">Jahre Erfahrung</p>
               </CardContent>
             </Card>
             
-            <Card className="border-blue-200 text-center">
+            <Card className="border-amber-200 text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
-                <p className="text-blue-700">Weiterempfehlungen</p>
+                <div className="text-3xl font-bold text-amber-600 mb-2">98%</div>
+                <p className="text-amber-700">Weiterempfehlungen</p>
               </CardContent>
             </Card>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 text-center bg-blue-600 rounded-2xl text-white">
+        <section className="py-16 text-center bg-amber-600 rounded-2xl text-white">
           <h2 className="text-3xl font-bold mb-4">
             Interessiert an meiner Arbeitsweise?
           </h2>
-          <p className="text-lg mb-8 text-blue-100 max-w-2xl mx-auto">
+          <p className="text-lg mb-8 text-amber-100 max-w-2xl mx-auto">
             Lernen Sie mich und meine Methoden in einem unverbindlichen Erstgespräch kennen. 
             Gemeinsam finden wir den passenden Weg für Ihre Situation.
           </p>
           <Link href="/booking">
-            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-blue-50">
+            <Button size="lg" variant="secondary" className="bg-white text-amber-600 hover:bg-amber-50">
               Erstgespräch vereinbaren
             </Button>
           </Link>
@@ -241,7 +241,7 @@ export default function PortfolioPage() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-blue-900 text-white py-12 px-4 mt-16">
+      <footer className="bg-amber-900 text-white py-12 px-4 mt-16">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -255,7 +255,7 @@ export default function PortfolioPage() {
                 />
                 <h3 className="text-xl font-bold">Dr. Anja Haile</h3>
               </div>
-              <p className="text-blue-200">
+              <p className="text-amber-200">
                 Psychologische Psychotherapeutin<br />
                 München, Deutschland
               </p>
@@ -263,28 +263,28 @@ export default function PortfolioPage() {
             <div>
               <h4 className="font-semibold mb-4">Navigation</h4>
               <div className="space-y-2">
-                <Link href="/about" className="block text-blue-200 hover:text-white transition-colors">Über mich</Link>
-                <Link href="/services" className="block text-blue-200 hover:text-white transition-colors">Leistungen</Link>
-                <Link href="/portfolio" className="block text-blue-200 hover:text-white transition-colors">Portfolio</Link>
-                <Link href="/testimonials" className="block text-blue-200 hover:text-white transition-colors">Testimonials</Link>
+                <Link href="/about" className="block text-amber-200 hover:text-white transition-colors">Über mich</Link>
+                <Link href="/services" className="block text-amber-200 hover:text-white transition-colors">Leistungen</Link>
+                <Link href="/portfolio" className="block text-amber-200 hover:text-white transition-colors">Portfolio</Link>
+                <Link href="/testimonials" className="block text-amber-200 hover:text-white transition-colors">Testimonials</Link>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Kontakt</h4>
               <div className="space-y-2">
-                <Link href="/contact" className="block text-blue-200 hover:text-white transition-colors">Kontakt</Link>
-                <Link href="/booking" className="block text-blue-200 hover:text-white transition-colors">Termin buchen</Link>
+                <Link href="/contact" className="block text-amber-200 hover:text-white transition-colors">Kontakt</Link>
+                <Link href="/booking" className="block text-amber-200 hover:text-white transition-colors">Termin buchen</Link>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Rechtliches</h4>
               <div className="space-y-2">
-                <Link href="/impressum" className="block text-blue-200 hover:text-white transition-colors">Impressum</Link>
-                <Link href="/datenschutz" className="block text-blue-200 hover:text-white transition-colors">Datenschutz</Link>
+                <Link href="/impressum" className="block text-amber-200 hover:text-white transition-colors">Impressum</Link>
+                <Link href="/datenschutz" className="block text-amber-200 hover:text-white transition-colors">Datenschutz</Link>
               </div>
             </div>
           </div>
-          <div className="border-t border-blue-800 mt-8 pt-8 text-center text-blue-200">
+          <div className="border-t border-amber-800 mt-8 pt-8 text-center text-amber-200">
             <p>&copy; 2025 Dr. Anja Haile. Alle Rechte vorbehalten.</p>
           </div>
         </div>
