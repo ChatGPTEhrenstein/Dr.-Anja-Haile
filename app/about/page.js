@@ -3,8 +3,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { ArrowLeft, GraduationCap, Award, Heart, Star, CheckCircle, Calendar, Menu, Brain, Users, Clock, MapPin, Phone, Mail } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { ArrowLeft, Award, Heart, Users, Calendar, CheckCircle, Star, Brain, Target, BookOpen, Clock, Shield, Menu } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function AboutPage() {
@@ -30,33 +30,31 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-amber-50/30 to-orange-50/50 relative overflow-x-hidden">
-      {/* Enhanced Navigation */}
+      {/* Mobile-First Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-xl border-b border-amber-100/50 shadow-lg shadow-amber-500/5' 
           : 'bg-white/80 backdrop-blur-md border-b border-amber-100/30'
       }`}>
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-3 md:py-4">
           <div className="flex justify-between items-center">
-            {/* Enhanced Logo */}
-            <Link href="/" className="flex items-center space-x-3 group transition-transform hover:scale-105">
+            <Link href="/" className="flex items-center space-x-2 md:space-x-3 group transition-transform hover:scale-105 touch-manipulation">
               <div className="relative">
                 <Image 
                   src="/images/bdp-logo.png" 
                   alt="BDP - Berufsverband deutscher Psychologen" 
-                  width={60} 
-                  height={60}
-                  className="w-14 h-14 drop-shadow-sm"
+                  width={50} 
+                  height={50}
+                  className="w-10 md:w-14 h-10 md:h-14 drop-shadow-sm"
                 />
                 <div className="absolute inset-0 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-colors"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-slate-800 group-hover:text-amber-600 transition-colors">Dr. Anja Haile</span>
-                <span className="text-xs text-amber-600 font-medium">Psychologische Psychotherapeutin</span>
+                <span className="text-lg md:text-xl font-bold text-slate-800 group-hover:text-amber-600 transition-colors">Dr. Anja Haile</span>
+                <span className="text-xs text-amber-600 font-medium hidden sm:block">Psychologische Psychotherapeutin</span>
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
             <div className="hidden lg:flex space-x-1">
               {navigationLinks.map((link) => (
                 <Link 
@@ -73,28 +71,26 @@ export default function AboutPage() {
               ))}
             </div>
 
-            {/* CTA Button & Mobile Menu */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 md:space-x-3">
               <Link href="/booking">
-                <Button className="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white shadow-lg shadow-amber-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/30 hover:scale-105">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Termin buchen
+                <Button className="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white shadow-lg shadow-amber-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/30 active:scale-95 touch-manipulation text-sm md:text-base px-3 md:px-4 py-2 md:py-2.5">
+                  <Calendar className="w-4 h-4 mr-1 md:mr-2" />
+                  <span className="hidden sm:inline">Termin buchen</span>
+                  <span className="sm:hidden">Termin</span>
                 </Button>
               </Link>
               
-              {/* Mobile Menu Button */}
               <Button
                 variant="ghost"
                 size="sm"
-                className="lg:hidden"
+                className="lg:hidden p-3 touch-manipulation active:scale-95"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
-                <Menu className="w-5 h-5" />
+                <Menu className="w-6 h-6" />
               </Button>
             </div>
           </div>
 
-          {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
             <div className="lg:hidden mt-4 p-4 bg-white/95 backdrop-blur-xl rounded-2xl border border-amber-100/50 shadow-xl animate-in slide-in-from-top-2 duration-300">
               <div className="flex flex-col space-y-2">
@@ -102,7 +98,7 @@ export default function AboutPage() {
                   <Link 
                     key={link.href}
                     href={link.href}
-                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                    className={`px-4 py-4 rounded-xl text-base font-medium transition-all duration-200 touch-manipulation active:scale-95 ${
                       link.active 
                         ? 'bg-amber-100 text-amber-700' 
                         : 'text-slate-600 hover:text-amber-600 hover:bg-amber-50'
@@ -112,376 +108,133 @@ export default function AboutPage() {
                     {link.label}
                   </Link>
                 ))}
+                <Link 
+                  href="/booking"
+                  className="mt-2 px-4 py-4 rounded-xl bg-gradient-to-r from-amber-600 to-orange-700 text-white font-semibold text-center touch-manipulation active:scale-95 transition-transform"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Calendar className="w-5 h-5 mr-2 inline" />
+                  Jetzt Termin buchen
+                </Link>
               </div>
             </div>
           )}
         </div>
       </nav>
 
-      {/* Enhanced Content */}
-      <div className="container mx-auto px-4 py-8 pt-32">
-        {/* Enhanced Breadcrumb */}
-        <div className="mb-8">
-          <Link href="/" className="inline-flex items-center text-amber-600 hover:text-amber-800 group transition-all duration-200">
+      {/* Mobile-Optimized Content */}
+      <div className="container mx-auto px-4 py-6 md:py-8 pt-24 md:pt-32">
+        {/* Breadcrumb */}
+        <div className="mb-6 md:mb-8">
+          <Link href="/" className="inline-flex items-center text-amber-600 hover:text-amber-800 group transition-all duration-200 touch-manipulation">
             <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
             Zurück zur Startseite
           </Link>
         </div>
 
-        {/* Enhanced Hero Section */}
-        <section className="py-12 mb-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Enhanced Image */}
-            <div className="animate-in slide-in-from-left-8 duration-1000">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-3xl blur-2xl group-hover:from-amber-500/30 group-hover:to-orange-500/30 transition-all duration-500"></div>
-                <img 
-                  src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-483-1-scaled.jpg"
-                  alt="Dr. Anja Haile - Psychologische Psychotherapeutin"
-                  className="relative rounded-3xl shadow-2xl w-full h-[600px] object-cover border-4 border-white/50 transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-                {/* Floating Professional Badge */}
-                <div className="absolute -bottom-4 -right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-amber-100">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-amber-600 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-2 shadow-lg shadow-amber-500/25">
-                      <Award className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-sm font-semibold text-slate-700">BDP Zertifiziert</p>
-                    <p className="text-xs text-slate-500">Seit 2018</p>
-                  </div>
-                </div>
-              </div>
+        <div className="max-w-7xl mx-auto">
+          {/* Mobile-First Header */}
+          <div className="text-center mb-12 md:mb-16 animate-in slide-in-from-bottom-4 duration-1000">
+            <div className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-sm font-medium text-amber-700 mb-4 md:mb-6">
+              <Award className="w-4 h-4 mr-2" />
+              Über Dr. Anja Haile
             </div>
-
-            {/* Enhanced Text Content */}
-            <div className="space-y-8 animate-in slide-in-from-right-8 duration-1000 delay-300">
-              {/* Badge */}
-              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-sm font-medium text-amber-700 mb-6">
-                <Heart className="w-4 h-4 mr-2" />
-                Ihre Therapeutin
-              </div>
-
-              <h1 className="text-4xl lg:text-6xl font-bold text-slate-800 leading-tight">
-                Über{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600">
-                  mich
-                </span>
-              </h1>
-              
-              <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-                <p>
-                  Als <span className="font-semibold text-amber-600">psychologische Psychotherapeutin</span> mit Spezialisierung auf kognitive Verhaltenstherapie 
-                  begleite ich Menschen dabei, langfristige positive Veränderungen in ihrem Leben zu erreichen.
-                </p>
-                <p>
-                  Seit <span className="font-semibold text-amber-600">2018</span> praktiziere ich unter Supervision und helfe meinen Klienten dabei, Selbstzweifel 
-                  zu überwinden und mit Freude sie selbst zu sein.
-                </p>
-                <p>
-                  Mein Ansatz ist geprägt von <span className="font-semibold text-amber-600">Empathie, wissenschaftlich fundierter Methodik</span> und der festen 
-                  Überzeugung, dass jeder Mensch das Potenzial zur positiven Veränderung in sich trägt.
-                </p>
-              </div>
-
-              {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-6 pt-8">
-                {[
-                  { number: "7+", label: "Jahre Erfahrung", icon: Clock },
-                  { number: "500+", label: "Erfolgreiche Therapien", icon: Users },
-                  { number: "100%", label: "BDP Zertifiziert", icon: Award }
-                ].map((stat, index) => (
-                  <div key={index} className="text-center group">
-                    <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-amber-500/10">
-                      <stat.icon className="w-8 h-8 text-amber-600" />
-                    </div>
-                    <p className="text-2xl font-bold text-slate-800">{stat.number}</p>
-                    <p className="text-sm text-slate-600">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Enhanced Qualifications */}
-        <section className="py-20 relative">
-          {/* Background Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-10 left-1/4 w-64 h-64 bg-amber-200/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-orange-200/10 rounded-full blur-3xl"></div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 md:mb-6 leading-tight">
+              Ihr Weg zu mentaler Stärke
+            </h1>
+            <p className="text-base md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
+              Mit über 15 Jahren Erfahrung in der psychologischen Psychotherapie 
+              begleite ich Sie auf Ihrem Weg zu mehr Lebensfreude und innerer Balance.
+            </p>
           </div>
 
-          <div className="relative">
-            {/* Section Header */}
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-sm font-medium text-amber-700 mb-6">
-                <GraduationCap className="w-4 h-4 mr-2" />
-                Expertise & Qualifikationen
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
-                Qualifikationen & 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600"> Erfahrung</span>
-              </h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                Fundierte Ausbildung, kontinuierliche Weiterbildung und jahrelange Praxiserfahrung 
-                bilden das Fundament meiner therapeutischen Arbeit.
-              </p>
-            </div>
-            
-            {/* Enhanced Cards */}
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {[
-                {
-                  icon: GraduationCap,
-                  title: "Ausbildung",
-                  description: "Psychologische Psychotherapeutin mit Fokus auf kognitive Verhaltenstherapie. Fundierte wissenschaftliche Ausbildung und kontinuierliche Weiterbildung.",
-                  color: "from-amber-500 to-orange-600",
-                  bgColor: "from-amber-50 to-orange-100/50"
-                },
-                {
-                  icon: Award,
-                  title: "Erfahrung",
-                  description: "Seit 2018 in der Praxis tätig unter Supervision. Umfangreiche Erfahrung in der Behandlung verschiedener psychischer Belastungen und Störungen.",
-                  color: "from-emerald-500 to-teal-600",
-                  bgColor: "from-emerald-50 to-teal-100/50"
-                },
-                {
-                  icon: Heart,
-                  title: "Philosophie",
-                  description: "Mein Ziel ist es, Menschen dabei zu unterstützen, ihre innere Stärke zu entdecken und ein erfülltes, authentisches Leben zu führen.",
-                  color: "from-rose-500 to-pink-600",
-                  bgColor: "from-rose-50 to-pink-100/50"
-                }
-              ].map((item, index) => (
-                <Card 
-                  key={index}
-                  className="group relative border-0 bg-gradient-to-br from-white to-slate-50/50 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 hover:scale-105 overflow-hidden"
-                >
-                  {/* Animated Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                  
-                  <CardContent className="relative p-8 text-center">
-                    {/* Animated Icon */}
-                    <div className="relative mb-6">
-                      <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${item.color} p-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                        <item.icon className="w-full h-full text-white" />
-                      </div>
-                      <div className={`absolute inset-0 w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${item.color} blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500`}></div>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-amber-700 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
-                      {item.description}
-                    </p>
+          {/* Mobile-Optimized Profile Section */}
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center mb-16 md:mb-20">
+            <div className="space-y-6 md:space-y-8 animate-in slide-in-from-left-8 duration-1000">
+              <Card className="border-0 bg-gradient-to-br from-white to-slate-50/50 shadow-xl shadow-amber-500/5 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-slate-800 text-xl md:text-2xl flex items-center">
+                    <Brain className="w-5 md:w-6 h-5 md:h-6 text-amber-600 mr-3" />
+                    Mein Ansatz
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 md:space-y-6">
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                    Als approbierte Psychologische Psychotherapeutin mit Schwerpunkt auf 
+                    kognitiver Verhaltenstherapie unterstütze ich Sie dabei, negative 
+                    Denkmuster zu erkennen und positive Veränderungen zu bewirken.
+                  </p>
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                    Meine Therapie ist evidenzbasiert, einfühlsam und individuell auf 
+                    Ihre Bedürfnisse zugeschnitten. Gemeinsam entwickeln wir Strategien 
+                    für ein erfüllteres Leben.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Mobile-Friendly Qualifications */}
+              <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+                <Card className="border-0 bg-gradient-to-br from-amber-50 to-orange-50 shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation">
+                  <CardContent className="p-4 md:p-6 text-center">
+                    <Award className="w-8 md:w-10 h-8 md:h-10 text-amber-600 mx-auto mb-3 md:mb-4" />
+                    <h3 className="font-semibold text-slate-800 text-sm md:text-base mb-2">BDP Zertifiziert</h3>
+                    <p className="text-xs md:text-sm text-slate-600">Berufsverband deutscher Psychologen</p>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Enhanced Values */}
-        <section className="py-20 bg-gradient-to-br from-white to-amber-50/30 rounded-3xl shadow-xl shadow-amber-500/5 relative overflow-hidden">
-          {/* Background Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-amber-200/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-200/10 rounded-full blur-3xl"></div>
-          </div>
-
-          <div className="container mx-auto px-8 relative">
-            {/* Section Header */}
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-sm font-medium text-amber-700 mb-6">
-                <Star className="w-4 h-4 mr-2" />
-                Meine Grundwerte
+                <Card className="border-0 bg-gradient-to-br from-amber-50 to-orange-50 shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation">
+                  <CardContent className="p-4 md:p-6 text-center">
+                    <Clock className="w-8 md:w-10 h-8 md:h-10 text-amber-600 mx-auto mb-3 md:mb-4" />
+                    <h3 className="font-semibold text-slate-800 text-sm md:text-base mb-2">15+ Jahre</h3>
+                    <p className="text-xs md:text-sm text-slate-600">Berufserfahrung</p>
+                  </CardContent>
+                </Card>
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
-                Meine{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">Werte</span>
-              </h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                Diese Grundprinzipien leiten mich in der therapeutischen Arbeit und prägen 
-                die Atmosphäre in meiner Praxis.
-              </p>
             </div>
-            
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              {/* Enhanced Values List */}
-              <div className="space-y-8 animate-in slide-in-from-left-8 duration-1000">
-                {[
-                  {
-                    title: "Empathie & Verständnis",
-                    description: "Jeder Mensch ist einzigartig. Ich begegne meinen Klienten mit Respekt, Wertschätzung und einem offenen Herzen.",
-                    icon: Heart,
-                    color: "text-rose-600"
-                  },
-                  {
-                    title: "Wissenschaftliche Fundierung",
-                    description: "Meine Arbeit basiert auf evidenzbasierten Methoden der kognitiven Verhaltenstherapie und aktuellen wissenschaftlichen Erkenntnissen.",
-                    icon: Brain,
-                    color: "text-amber-600"
-                  },
-                  {
-                    title: "Ganzheitlicher Ansatz",
-                    description: "Ich betrachte den Menschen in seiner Gesamtheit und berücksichtige individuelle Bedürfnisse, Ressourcen und Lebenssituationen.",
-                    icon: Users,
-                    color: "text-emerald-600"
-                  }
-                ].map((value, index) => (
-                  <div key={index} className="flex items-start space-x-4 group">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0`}>
-                      <value.icon className={`w-8 h-8 ${value.color}`} />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-amber-700 transition-colors">
-                        {value.title}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
-                        {value.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Enhanced Second Image */}
-              <div className="animate-in slide-in-from-right-8 duration-1000 delay-300">
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-3xl blur-2xl group-hover:from-amber-500/30 group-hover:to-orange-500/30 transition-all duration-500"></div>
-                  <img 
-                    src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-050-4eck-scaled.jpg"
-                    alt="Dr. Anja Haile - Professionelle Beratung und Unterstützung"
-                    className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover border-4 border-white/50 transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                  {/* Floating Quote */}
-                  <div className="absolute -top-4 -left-4 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-amber-100 max-w-xs">
-                    <p className="text-sm font-medium text-slate-700 italic">
-                      "Jeder Mensch trägt das Potenzial zur positiven Veränderung in sich."
-                    </p>
-                    <div className="mt-2 flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
-                      <span className="text-xs text-slate-500 font-medium">Dr. Anja Haile</span>
-                    </div>
+
+            {/* Mobile-Responsive Image */}
+            <div className="lg:order-last animate-in slide-in-from-right-8 duration-1000 delay-300 mt-8 lg:mt-0">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-2xl md:rounded-3xl blur-2xl group-hover:from-amber-500/30 group-hover:to-orange-500/30 transition-all duration-500"></div>
+                <img 
+                  src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-483-1-scaled.jpg"
+                  alt="Dr. Anja Haile - Über mich"
+                  className="relative rounded-2xl md:rounded-3xl shadow-2xl w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover border-2 md:border-4 border-white/50 transition-transform duration-500 group-hover:scale-[1.02] touch-manipulation"
+                />
+                <div className="absolute -top-2 md:-top-4 -right-2 md:-right-4 bg-white/90 backdrop-blur-sm rounded-xl md:rounded-2xl p-2 md:p-4 shadow-xl border border-amber-100">
+                  <div className="flex items-center space-x-1 md:space-x-2">
+                    <div className="w-2 md:w-3 h-2 md:h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs md:text-sm font-medium text-slate-700">Verfügbar</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
 
-        {/* Enhanced CTA */}
-        <section className="py-20 text-center">
-          <div className="max-w-4xl mx-auto">
-            {/* Badge */}
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-sm font-medium text-amber-700 mb-8">
-              <Calendar className="w-4 h-4 mr-2" />
-              Unverbindliches Erstgespräch
-            </div>
-
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6 leading-tight">
-              Lernen Sie mich{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">kennen</span>
+          {/* Mobile-Optimized CTA Section */}
+          <div className="text-center bg-gradient-to-br from-amber-600 via-orange-600 to-amber-700 rounded-2xl md:rounded-3xl p-8 md:p-16 shadow-2xl animate-in slide-in-from-bottom-8 duration-1000 delay-600">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
+              Bereit für Veränderung?
             </h2>
-            
-            <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Vereinbaren Sie ein unverbindliches Erstgespräch und erfahren Sie, 
-              wie ich Sie auf Ihrem Weg zu mehr Lebensfreude begleiten kann.
+            <p className="text-amber-50 text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto">
+              Lassen Sie uns gemeinsam den ersten Schritt gehen. 
+              Vereinbaren Sie noch heute Ihr unverbindliches Erstgespräch.
             </p>
-
-            {/* Enhanced CTAs */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/booking">
-                <Button size="lg" className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white shadow-xl shadow-amber-500/25 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-105 group px-8 py-4 text-lg font-semibold">
-                  <Calendar className="mr-3 w-6 h-6 group-hover:rotate-12 transition-transform" />
-                  Erstgespräch vereinbaren
+                <Button size="lg" className="w-full sm:w-auto bg-white text-amber-700 hover:bg-amber-50 shadow-xl hover:shadow-2xl transition-all duration-300 active:scale-95 touch-manipulation group text-base md:text-lg font-semibold px-6 md:px-8 py-3 md:py-4">
+                  <Calendar className="mr-2 w-5 h-5" />
+                  Jetzt Termin buchen
                 </Button>
               </Link>
-
-              <div className="flex items-center space-x-4 text-slate-600">
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-5 h-5 text-amber-600" />
-                  <span className="font-medium">+49 (0) 89 123 456 789</span>
-                </div>
-                <div className="w-px h-6 bg-slate-300"></div>
-                <div className="flex items-center space-x-2">
-                  <Mail className="w-5 h-5 text-amber-600" />
-                  <span className="font-medium">praxis@anjahaile.de</span>
-                </div>
-              </div>
+              <Link href="/contact">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 transition-all duration-300 active:scale-95 touch-manipulation text-base md:text-lg font-medium px-6 md:px-8 py-3 md:py-4">
+                  Kontakt aufnehmen
+                </Button>
+              </Link>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-
-      {/* Enhanced Footer */}
-      <footer className="bg-slate-900 text-white py-16 px-4 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-600/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600/5 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto relative">
-          <div className="grid md:grid-cols-4 gap-8">
-            {/* Enhanced Brand Section */}
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="relative">
-                  <Image 
-                    src="/images/bdp-logo.png" 
-                    alt="BDP Logo" 
-                    width={50} 
-                    height={50}
-                    className="w-12 h-12 drop-shadow-sm"
-                  />
-                  <div className="absolute inset-0 bg-amber-500/20 rounded-full blur-lg"></div>
-                </div>
-                <h3 className="text-xl font-bold">Dr. Anja Haile</h3>
-              </div>
-              <p className="text-slate-300 mb-4">
-                Psychologische Psychotherapeutin<br />
-                München, Deutschland
-              </p>
-              <div className="flex space-x-2">
-                <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-4 h-4 text-white" />
-                </div>
-                <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center">
-                  <Star className="w-4 h-4 text-white" />
-                </div>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Navigation</h4>
-              <div className="space-y-2">
-                <Link href="/about" className="block text-amber-400 font-medium">Über mich</Link>
-                <Link href="/services" className="block text-slate-300 hover:text-amber-400 transition-colors">Leistungen</Link>
-                <Link href="/portfolio" className="block text-slate-300 hover:text-amber-400 transition-colors">Portfolio</Link>
-                <Link href="/testimonials" className="block text-slate-300 hover:text-amber-400 transition-colors">Testimonials</Link>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Kontakt</h4>
-              <div className="space-y-2">
-                <Link href="/contact" className="block text-slate-300 hover:text-amber-400 transition-colors">Kontakt</Link>
-                <Link href="/booking" className="block text-slate-300 hover:text-amber-400 transition-colors">Termin buchen</Link>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Rechtliches</h4>
-              <div className="space-y-2">
-                <Link href="/impressum" className="block text-slate-300 hover:text-amber-400 transition-colors">Impressum</Link>
-                <Link href="/datenschutz" className="block text-slate-300 hover:text-amber-400 transition-colors">Datenschutz</Link>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-slate-700 mt-8 pt-8 text-center text-slate-400">
-            <p>&copy; 2025 Dr. Anja Haile. Alle Rechte vorbehalten.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
