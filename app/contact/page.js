@@ -180,71 +180,106 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <Card className="border-blue-200">
-                <CardHeader>
-                  <CardTitle className="text-blue-900">Kontaktinformationen</CardTitle>
+          {/* Enhanced Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Enhanced Contact Information */}
+            <div className="space-y-8 animate-in slide-in-from-left-8 duration-1000">
+              <Card className="border-0 bg-gradient-to-br from-white to-slate-50/50 shadow-xl shadow-blue-500/5 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-slate-800 text-2xl flex items-center">
+                    <Mail className="w-6 h-6 text-blue-600 mr-3" />
+                    Kontaktinformationen
+                  </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <Mail className="w-6 h-6 text-blue-600 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-blue-900">E-Mail</h3>
-                      <p className="text-blue-700">praxis@anjahaile.de</p>
-                      <p className="text-sm text-blue-600">Für Terminanfragen und Informationen</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <Phone className="w-6 h-6 text-blue-600 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-blue-900">Telefon</h3>
-                      <p className="text-blue-700">+49 (0) 89 123 456 789</p>
-                      <p className="text-sm text-blue-600">Mo-Fr 9:00-17:00 Uhr</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <MapPin className="w-6 h-6 text-blue-600 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-blue-900">Praxis</h3>
-                      <p className="text-blue-700">
-                        Maximilianstraße 1<br />
-                        80539 München<br />
-                        Deutschland
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <Clock className="w-6 h-6 text-blue-600 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-blue-900">Sprechzeiten</h3>
-                      <div className="text-blue-700 space-y-1">
-                        <p>Montag - Donnerstag: 9:00 - 18:00 Uhr</p>
-                        <p>Freitag: 9:00 - 16:00 Uhr</p>
-                        <p className="text-sm text-blue-600">Termine nach Vereinbarung</p>
+                <CardContent className="space-y-8">
+                  {[
+                    {
+                      icon: Mail,
+                      title: "E-Mail",
+                      content: "praxis@anjahaile.de",
+                      subtitle: "Für Terminanfragen und Informationen",
+                      color: "text-blue-600"
+                    },
+                    {
+                      icon: Phone,
+                      title: "Telefon",
+                      content: "+49 (0) 89 123 456 789",
+                      subtitle: "Mo-Fr 9:00-17:00 Uhr",
+                      color: "text-emerald-600"
+                    },
+                    {
+                      icon: MapPin,
+                      title: "Praxis",
+                      content: "Maximilianstraße 1\n80539 München\nDeutschland",
+                      subtitle: "Zentral gelegen, gut erreichbar",
+                      color: "text-rose-600"
+                    },
+                    {
+                      icon: Clock,
+                      title: "Sprechzeiten",
+                      content: "Montag - Donnerstag: 9:00 - 18:00 Uhr\nFreitag: 9:00 - 16:00 Uhr",
+                      subtitle: "Termine nach Vereinbarung",
+                      color: "text-purple-600"
+                    }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start space-x-4 group">
+                      <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${item.color.replace('text-', 'shadow-')} shadow-lg`}>
+                        <item.icon className={`w-6 h-6 ${item.color}`} />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-slate-800 text-lg mb-1 group-hover:text-blue-700 transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-slate-700 font-medium mb-1 whitespace-pre-line">
+                          {item.content}
+                        </p>
+                        <p className="text-sm text-slate-500">
+                          {item.subtitle}
+                        </p>
                       </div>
                     </div>
+                  ))}
+                </CardContent>
+              </Card>
+
+              {/* Enhanced Quick Booking Card */}
+              <Card className="border-0 bg-gradient-to-br from-blue-50 to-indigo-50 shadow-xl shadow-blue-500/10 hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-500 group">
+                <CardContent className="p-8">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/25">
+                      <Calendar className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="font-bold text-slate-800 text-xl mb-3 group-hover:text-blue-700 transition-colors">
+                      Schnelle Terminbuchung
+                    </h3>
+                    <p className="text-slate-600 mb-6 leading-relaxed">
+                      Nutzen Sie unser Online-Buchungssystem für eine schnelle und einfache Terminvereinbarung.
+                    </p>
+                    <Link href="/booking">
+                      <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 group w-full">
+                        <Calendar className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
+                        Online Termin buchen
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-blue-200 bg-blue-50">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-blue-900 mb-2">Schnelle Terminbuchung</h3>
-                  <p className="text-blue-700 mb-4">
-                    Nutzen Sie unser Online-Buchungssystem für eine schnelle und einfache Terminvereinbarung.
-                  </p>
-                  <Link href="/booking">
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                      Online Termin buchen
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { icon: CheckCircle, label: "BDP Zertifiziert", color: "text-emerald-600" },
+                  { icon: Star, label: "15+ Jahre", color: "text-yellow-600" },
+                  { icon: CheckCircle, label: "GDPR Konform", color: "text-blue-600" }
+                ].map((item, index) => (
+                  <div key={index} className="text-center group">
+                    <div className={`w-12 h-12 mx-auto mb-2 rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <item.icon className={`w-6 h-6 ${item.color}`} />
+                    </div>
+                    <p className="text-xs font-medium text-slate-600">{item.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Contact Form */}
