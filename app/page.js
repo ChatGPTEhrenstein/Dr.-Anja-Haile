@@ -4,7 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { ArrowRight, Heart, Brain, Users, Calendar } from 'lucide-react'
+import { ArrowRight, Heart, Brain, Users, Calendar, Menu, Star, CheckCircle, Phone, Mail, MapPin } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export default function HomePage() {
   return (
