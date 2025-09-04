@@ -9,40 +9,39 @@ import { ArrowLeft, Star, Quote } from 'lucide-react'
 export default function TestimonialsPage() {
   const testimonials = [
     {
-      name: "Maria K.",
+      name: "Jacob",
+      role: "Kursteilnehmer",
+      text: "Mir hat Ihr Kurs nicht nur wegen der spannenden Inhalte sehr gut gefallen, sondern auch wegen des angenehmen Klimas, das geherrscht hat. Man hatte das Gefühl Sie kommunizieren wirklich auf Augenhöhe. Zum Beispiel, wie Sie Lösungen für Ihre eigenen Herausforderungen gefunden haben und wie Sie heute darüber denken, konnten sie uns als Zuhörer wirklich abholen. Geholfen hat auch, dass Sie eine ansteckende Begeisterung für die Themen ausstrahlten. Auch der Raum für Selbstreflektion im Rahmen der Diskussionen und Meditationen war für mich sehr lehrreich. Mich hat Ihr Kurs sehr weitergebracht und meine Sozialkompetenz vor allem auch für den ärztlichen Alltag verbessert. Vielen Dank!",
+      rating: 5,
+      category: "Kurs"
+    },
+    {
+      name: "Lena",
+      role: "Kursteilnehmerin", 
+      text: "Ich muss Dir nochmal danken für die super tolle Gestaltung des Kurses. Ich konnte so sehr profitieren von Deinen Erzählungen, Visualisierungen und Meditationen. Wenn man mich früher danach gefragt hätte, hätte ich es vermutlich belächelt, aber mittlerweile ist das zu einem festen Bestandteil von meinem Alltag geworden. Auch, dass jeder für sein eigenes Leben zuständig ist war hart zu lernen aber hilft einem so unendlich weiter. Ich konnte durch Deine Denkanstöße und Ideen Dinge erfahren, die mir so vorher überhaupt nicht klar waren. also Danke, mich haben diese sechs Kurstage echt weitergebracht und bereichert, und meiner Meinung nach müsste jeder Psychologie Kurs so gestaltet sein, weil man dabei auch wirklich was fürs Leben lernt. Mach unbedingt weiter so!!!",
+      rating: 5,
+      category: "Kurs"
+    },
+    {
+      name: "Franziska",
       role: "Patientin",
-      text: "Dr. Haile hat mir geholfen, meine Ängste zu überwinden und wieder Freude am Leben zu finden. Ihre einfühlsame und professionelle Art hat den Unterschied gemacht.",
-      rating: 5
+      text: "Das Verhältnis zwischen mir und Frau Dr. Haile war stets professionell und vertrauensvoll. Auch mit für mich eher schwierigen Themen konnte ich mich bei Frau Dr. Haile öffnen. Besonders förderlich waren für mich die Einbindung von Meditation und Visualisierungen. Wer diesen Methoden nicht ganz abgeneigt ist, ist bei Frau Dr. Anja Haile genau richtig. Ich möchte mich herzlich für die Zeit und die Unterstützung bedanken.",
+      rating: 5,
+      category: "Therapie"
     },
     {
-      name: "Thomas S.",
-      role: "Patient",
-      text: "Nach Jahren der Depression habe ich endlich einen Weg gefunden, positiv in die Zukunft zu blicken. Die kognitive Verhaltenstherapie bei Dr. Haile war sehr effektiv.",
-      rating: 5
+      name: "G.",
+      role: "Kursteilnehmer",
+      text: "Liebe Anja, vielen Dank für Deine Zeit. Der Kurs hat viel Spaß gemacht und meine Einstellung zu Psychologie von Grund auf geändert. Ich würde mich freuen mit Dir in Kontakt zu bleiben auch wissenschaftlich.",
+      rating: 5,
+      category: "Kurs"
     },
     {
-      name: "Sarah M.",
-      role: "Patientin",
-      text: "Der Workshop zum Selbstvertrauen war ein Wendepunkt für mich. Ich habe praktische Werkzeuge erhalten, die ich täglich anwende.",
-      rating: 5
-    },
-    {
-      name: "Michael B.",
-      role: "Patient",
-      text: "Die Betreuung war außergewöhnlich professionell. Dr. Haile versteht es, komplexe psychologische Konzepte verständlich zu erklären.",
-      rating: 5
-    },
-    {
-      name: "Anna L.",
-      role: "Patientin",
-      text: "Ich kann Dr. Haile nur weiterempfehlen. Sie schafft eine vertrauensvolle Atmosphäre, in der Heilung möglich wird.",
-      rating: 5
-    },
-    {
-      name: "Robert H.",
-      role: "Patient",
-      text: "Die Gruppentherapie hat mir gezeigt, dass ich nicht allein bin. Der Austausch mit anderen unter Dr. Hailes Anleitung war sehr bereichernd.",
-      rating: 5
+      name: "Sven",
+      role: "Kursteilnehmer",
+      text: "Hey Anja, vielen Dank für den sehr interessanten Kurs, war echt gut!",
+      rating: 5,
+      category: "Kurs"
     }
   ]
 
