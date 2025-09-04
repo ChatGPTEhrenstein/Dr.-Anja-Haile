@@ -15,11 +15,11 @@ export default function HomePage() {
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center space-x-3">
               <Image 
-                src="/images/bdp-logo.svg" 
+                src="/images/bdp-logo.png" 
                 alt="BDP - Berufsverband deutscher Psychologen" 
-                width={50} 
-                height={50}
-                className="w-12 h-12"
+                width={60} 
+                height={60}
+                className="w-14 h-14"
               />
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-blue-900">Dr. Anja Haile</span>
@@ -72,7 +72,7 @@ export default function HomePage() {
             </div>
             <div className="lg:order-last">
               <img 
-                src="https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx0aGVyYXB5fGVufDB8fHxibHVlfDE3NTY5ODk0Mjl8MA&ixlib=rb-4.1.0&q=85"
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAH0AfQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9U6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooNKDSg0oNABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQaUGlBpQaACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKDSg0oNKDQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUGlBpQaUGgAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKDSg0oNKDQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUGlBpQaUGgAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKDSg0oNKDQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQauLSV2dOi1FS9F+v8AgW5ZVBJbdkrmx3K/URYZT5xKvnHkX1iKoL3VPHwS9n5+P5t+y/nU7n5+xNDJsLnHwxXL2N6kSTznCZd+9dS5mz8+vP8Aw5yKVDDKATH/APB9xhVK0lOK5TN1Cy8vg/8AjCHlx3LJp/vt8/OjxWqpgJJmBySZwSTSzPi9Lp2M9TUmnTvwt7u5UhSRRSTBVsn+SvdE7Gv/ANe8xUa9/wDO5BwVb7X7d2SqzNF5YhW/vGe2vOSfqg5lJlz4OTgjz6z8+r0LYfvYLgR+tW7mRvd/8hZY4mXLXEifHlN+58+lSZPrTgdI8jjRsZa5Lm7n7/WyGCfVJd5JPQsQjPEKqxZKv2L9xN2itrY6MsO/8BZJOhPP+hFBvJBJPH8m/wC5l6FfRH/8z7D8AeP9FhKyb7bXv9vUvRVsKkKtP1o/L9Ohi8Vd0qhPcUckqRgAe5HT7/fRi/3y8YVrxZQK8vZ3H9fz6lWKJZ1vQV9T68eP/I+vgfUdOz7/wC5NRR6CrCvbUdHN5LxmLF6SvK6u+6tTZ5Zq6qSTmzlQKSv4hbCDdBODhWCjPUnrXTleJEZycLCdQCPWJZIH6nF/wDrvfuYdV3tn6sJJqDrNpKPRLZ32RnSuvw9P+Zd2vf/ADe7MtIa2a7vg4+9LRu4Oyu1sUnT6Vcp0R5nTqhQO32QC9tPPl/x6/TJ0n9U5P8AwXc0M0elW9UyL0bYnHD9fHFWAH9xKq2iP//Z"
                 alt="Therapie und Beratung"
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
@@ -168,11 +168,11 @@ export default function HomePage() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <Image 
-                  src="/images/bdp-logo.svg" 
+                  src="/images/bdp-logo.png" 
                   alt="BDP Logo" 
-                  width={40} 
-                  height={40}
-                  className="w-10 h-10"
+                  width={50} 
+                  height={50}
+                  className="w-12 h-12"
                 />
                 <h3 className="text-xl font-bold">Dr. Anja Haile</h3>
               </div>
