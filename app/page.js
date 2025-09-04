@@ -205,115 +205,163 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Preview */}
-      <section className="py-16 px-4 bg-white">
+      {/* Enhanced Services Preview */}
+      <section className="py-20 px-4 relative">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-blue-900 mb-4">
+          {/* Section Header */}
+          <div className="text-center mb-16 animate-in slide-in-from-bottom-4 duration-1000">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full text-sm font-medium text-blue-700 mb-6">
+              <Brain className="w-4 h-4 mr-2" />
               Therapy & Research
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
+              Spezialisierte 
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"> Therapie</span>
             </h2>
-            <p className="text-lg text-blue-700 max-w-2xl mx-auto">
-              Spezialisierte Unterstützung für mentale und emotionale Veränderungen. 
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Evidenzbasierte Unterstützung für mentale und emotionale Veränderungen. 
               Überwinden Sie Selbstzweifel und führen Sie ein erfüllteres Leben.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-blue-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 text-center">
-                <Brain className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-blue-900 mb-3">
-                  Kognitive Verhaltenstherapie
-                </h3>
-                <p className="text-blue-700">
-                  Evidenzbasierte Methoden zur nachhaltigen Veränderung von Denkmustern und Verhaltensweisen.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-blue-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 text-center">
-                <Heart className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-blue-900 mb-3">
-                  Emotionale Transformation
-                </h3>
-                <p className="text-blue-700">
-                  Begleitung bei der Entwicklung emotionaler Stabilität und Selbstakzeptanz.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-blue-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 text-center">
-                <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-blue-900 mb-3">
-                  Individuelle Beratung
-                </h3>
-                <p className="text-blue-700">
-                  Maßgeschneiderte Therapieansätze für Ihre persönlichen Bedürfnisse und Ziele.
-                </p>
-              </CardContent>
-            </Card>
+          {/* Enhanced Service Cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                icon: Brain,
+                title: "Kognitive Verhaltenstherapie",
+                description: "Evidenzbasierte Methoden zur nachhaltigen Veränderung von Denkmustern und Verhaltensweisen.",
+                color: "from-blue-500 to-blue-600",
+                bgColor: "from-blue-50 to-blue-100/50"
+              },
+              {
+                icon: Heart,
+                title: "Emotionale Transformation",
+                description: "Begleitung bei der Entwicklung emotionaler Stabilität und Selbstakzeptanz.",
+                color: "from-rose-500 to-pink-600",
+                bgColor: "from-rose-50 to-pink-100/50"
+              },
+              {
+                icon: Users,
+                title: "Individuelle Beratung",
+                description: "Maßgeschneiderte Therapieansätze für Ihre persönlichen Bedürfnisse und Ziele.",
+                color: "from-emerald-500 to-teal-600",
+                bgColor: "from-emerald-50 to-teal-100/50"
+              }
+            ].map((service, index) => (
+              <Card 
+                key={index}
+                className="group relative border-0 bg-gradient-to-br from-white to-slate-50/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:scale-105 overflow-hidden"
+              >
+                {/* Animated Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                
+                <CardContent className="relative p-8 text-center">
+                  {/* Animated Icon */}
+                  <div className="relative mb-6">
+                    <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${service.color} p-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <service.icon className="w-full h-full text-white" />
+                    </div>
+                    <div className={`absolute inset-0 w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${service.color} blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500`}></div>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-blue-700 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
+                    {service.description}
+                  </p>
+                  
+                  {/* Hover Arrow */}
+                  <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <ArrowRight className="w-5 h-5 text-blue-600 mx-auto" />
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
-          <div className="text-center mt-12">
+          {/* Enhanced CTA */}
+          <div className="text-center">
             <Link href="/services">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-xl shadow-blue-500/25 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 hover:scale-105 group">
                 Alle Leistungen ansehen
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Atmosphäre & Eindrücke Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-blue-50 via-white to-blue-50">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-blue-900 mb-4">
-              Atmosphäre & Eindrücke
+      {/* Enhanced Atmosphäre & Eindrücke Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-50/50 to-blue-50/30 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-1/4 w-64 h-64 bg-blue-200/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-indigo-200/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto relative">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
+              Atmosphäre & 
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"> Eindrücke</span>
             </h2>
-            <p className="text-lg text-blue-700 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Lernen Sie mich und meine professionelle, warme Arbeitsatmosphäre kennen. 
               Ein Raum für Vertrauen, Wachstum und positive Veränderung.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative">
-              <img 
-                src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-050-4eck-scaled.jpg"
-                alt="Dr. Anja Haile - Professionelle Therapie Atmosphäre"
-                className="rounded-2xl shadow-lg w-full h-[300px] object-cover transition-transform hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-2xl"></div>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-070_4Eck-scaled.jpg"
-                alt="Dr. Anja Haile - Einfühlsame Beratung"
-                className="rounded-2xl shadow-lg w-full h-[300px] object-cover transition-transform hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-2xl"></div>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-178-scaled.jpg"
-                alt="Dr. Anja Haile - Vertrauensvolle Gespräche"
-                className="rounded-2xl shadow-lg w-full h-[300px] object-cover transition-transform hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-2xl"></div>
-            </div>
+          {/* Enhanced Image Gallery */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                src: "https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-050-4eck-scaled.jpg",
+                alt: "Dr. Anja Haile - Professionelle Therapie Atmosphäre",
+                title: "Professionelle Atmosphäre"
+              },
+              {
+                src: "https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-070_4Eck-scaled.jpg",
+                alt: "Dr. Anja Haile - Einfühlsame Beratung",
+                title: "Einfühlsame Beratung"
+              },
+              {
+                src: "https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-178-scaled.jpg",
+                alt: "Dr. Anja Haile - Vertrauensvolle Gespräche",
+                title: "Vertrauensvolle Gespräche"
+              }
+            ].map((image, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-3xl">
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-100/20 to-indigo-100/20">
+                  <img 
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-[400px] object-cover transition-all duration-700 group-hover:scale-110"
+                  />
+                  
+                  {/* Enhanced Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <h3 className="text-white text-xl font-semibold mb-2">{image.title}</h3>
+                      <div className="w-12 h-1 bg-blue-400 rounded-full"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                </div>
+              </div>
+            ))}
           </div>
 
-          <div className="text-center mt-12">
+          {/* Enhanced CTA */}
+          <div className="text-center">
             <Link href="/about">
-              <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+              <Button size="lg" variant="outline" className="border-2 border-blue-300 text-blue-700 hover:bg-blue-50 hover:border-blue-400 transition-all duration-300 hover:scale-105 group bg-white/80 backdrop-blur-sm">
                 Mehr über meine Arbeitsweise
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
