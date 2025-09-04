@@ -8,75 +8,198 @@ import { ArrowRight, Heart, Brain, Users, Calendar, Menu, Star, CheckCircle, Pho
 import { useState, useEffect } from 'react'
 
 export default function HomePage() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const navigationLinks = [
+    { href: '/', label: 'Home', active: true },
+    { href: '/about', label: 'Über mich' },
+    { href: '/services', label: 'Leistungen' },
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/testimonials', label: 'Testimonials' },
+    { href: '/contact', label: 'Kontakt' }
+  ]
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 relative overflow-x-hidden">
+      {/* Enhanced Navigation */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-xl border-b border-blue-100/50 shadow-lg shadow-blue-500/5' 
+          : 'bg-white/80 backdrop-blur-md border-b border-blue-100/30'
+      }`}>
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="flex items-center space-x-3">
-              <Image 
-                src="/images/bdp-logo.png" 
-                alt="BDP - Berufsverband deutscher Psychologen" 
-                width={60} 
-                height={60}
-                className="w-14 h-14"
-              />
+            {/* Enhanced Logo */}
+            <Link href="/" className="flex items-center space-x-3 group transition-transform hover:scale-105">
+              <div className="relative">
+                <Image 
+                  src="/images/bdp-logo.png" 
+                  alt="BDP - Berufsverband deutscher Psychologen" 
+                  width={60} 
+                  height={60}
+                  className="w-14 h-14 drop-shadow-sm"
+                />
+                <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-colors"></div>
+              </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-blue-900">Dr. Anja Haile</span>
-                <span className="text-xs text-blue-600">Psychologische Psychotherapeutin</span>
+                <span className="text-xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">Dr. Anja Haile</span>
+                <span className="text-xs text-blue-600 font-medium">Psychologische Psychotherapeutin</span>
               </div>
             </Link>
-            <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-blue-800 hover:text-blue-600 transition-colors">Home</Link>
-              <Link href="/about" className="text-blue-800 hover:text-blue-600 transition-colors">Über mich</Link>
-              <Link href="/services" className="text-blue-800 hover:text-blue-600 transition-colors">Leistungen</Link>
-              <Link href="/portfolio" className="text-blue-800 hover:text-blue-600 transition-colors">Portfolio</Link>
-              <Link href="/testimonials" className="text-blue-800 hover:text-blue-600 transition-colors">Testimonials</Link>
-              <Link href="/contact" className="text-blue-800 hover:text-blue-600 transition-colors">Kontakt</Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex space-x-1">
+              {navigationLinks.map((link) => (
+                <Link 
+                  key={link.href}
+                  href={link.href} 
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    link.active 
+                      ? 'bg-blue-100 text-blue-700 shadow-sm' 
+                      : 'text-slate-600 hover:text-blue-600 hover:bg-blue-50/80'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
-            <Link href="/booking">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                Termin buchen
+
+            {/* CTA Button & Mobile Menu */}
+            <div className="flex items-center space-x-3">
+              <Link href="/booking">
+                <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  Termin buchen
+                </Button>
+              </Link>
+              
+              {/* Mobile Menu Button */}
+              <Button
+                variant="ghost"
+                size="sm"
+                className="lg:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <Menu className="w-5 h-5" />
               </Button>
-            </Link>
+            </div>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden mt-4 p-4 bg-white/95 backdrop-blur-xl rounded-2xl border border-blue-100/50 shadow-xl animate-in slide-in-from-top-2 duration-300">
+              <div className="flex flex-col space-y-2">
+                {navigationLinks.map((link) => (
+                  <Link 
+                    key={link.href}
+                    href={link.href}
+                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                      link.active 
+                        ? 'bg-blue-100 text-blue-700' 
+                        : 'text-slate-600 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h1 className="text-5xl font-bold text-blue-900 leading-tight">
-                Wow – endlich mit <span className="text-blue-600">Freude</span> Du sein!
+      {/* Enhanced Hero Section */}
+      <section className="pt-32 pb-20 px-4 relative">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-200/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
+        <div className="container mx-auto relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8 animate-in slide-in-from-left-8 duration-1000">
+              {/* Badge */}
+              <div className="inline-flex items-center px-4 py-2 bg-blue-100/80 backdrop-blur-sm rounded-full text-sm font-medium text-blue-700 border border-blue-200/50">
+                <Star className="w-4 h-4 mr-2 text-blue-500" />
+                Zertifizierte Psychotherapeutin
+              </div>
+
+              <h1 className="text-5xl lg:text-6xl font-bold text-slate-800 leading-tight">
+                Wow – endlich mit{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 animate-gradient">
+                  Freude
+                </span>{' '}
+                Du sein!
               </h1>
-              <p className="text-xl text-blue-700 leading-relaxed">
+              
+              <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
                 Wie Veränderung langfristig gelingt – smart, örtlich und zeitlich flexibel. 
-                Psychologische Psychotherapie mit Fokus auf kognitive Verhaltenstherapie 
+                Psychologische Psychotherapie mit Fokus auf{' '}
+                <span className="font-semibold text-blue-600">kognitive Verhaltenstherapie</span>{' '}
                 für mentale und emotionale Transformation.
               </p>
+
+              {/* Enhanced CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/booking">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                  <Button size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-xl shadow-blue-500/25 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 hover:scale-105 group">
                     Erstgespräch vereinbaren
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
                 <Link href="/about">
-                  <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                  <Button size="lg" variant="outline" className="border-2 border-blue-300 text-blue-700 hover:bg-blue-50 hover:border-blue-400 transition-all duration-300 hover:scale-105 group">
                     Mehr über mich
+                    <Heart className="ml-2 w-5 h-5 group-hover:text-red-500 transition-colors" />
                   </Button>
                 </Link>
               </div>
+
+              {/* Trust Indicators */}
+              <div className="flex items-center space-x-6 pt-4">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span className="text-sm text-slate-600">BDP zertifiziert</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span className="text-sm text-slate-600">15+ Jahre Erfahrung</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span className="text-sm text-slate-600">GDPR konform</span>
+                </div>
+              </div>
             </div>
-            <div className="lg:order-last">
-              <img 
-                src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-483-1-scaled.jpg"
-                alt="Dr. Anja Haile - Therapie und Beratung"
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
-              />
+
+            {/* Enhanced Hero Image */}
+            <div className="lg:order-last animate-in slide-in-from-right-8 duration-1000 delay-300">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-3xl blur-2xl group-hover:from-blue-500/30 group-hover:to-indigo-500/30 transition-all duration-500"></div>
+                <img 
+                  src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-483-1-scaled.jpg"
+                  alt="Dr. Anja Haile - Therapie und Beratung"
+                  className="relative rounded-3xl shadow-2xl w-full h-[600px] object-cover border-4 border-white/50 transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                {/* Floating Elements */}
+                <div className="absolute -top-4 -right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-blue-100">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-medium text-slate-700">Verfügbar</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
