@@ -5,7 +5,7 @@
 
 **Status**: ✅ COMPLETED - Full website with all functionality working
 
-**Live URL**: https://ux-analyzer.preview.emergentagent.com
+**Live URL**: https://progress-notes-1.preview.emergentagent.com
 
 ---
 
@@ -113,7 +113,7 @@
 ```
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=your_database_name
-NEXT_PUBLIC_BASE_URL=https://ux-analyzer.preview.emergentagent.com
+NEXT_PUBLIC_BASE_URL=https://progress-notes-1.preview.emergentagent.com
 CORS_ORIGINS=*
 GEMINI_API_KEY=AIzaSyAXLG0p_7F6EMb3OZXNYzyzWzYz8d9dsrs
 ```
