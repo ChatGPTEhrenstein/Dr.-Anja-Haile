@@ -51,9 +51,9 @@ export default function TestimonialsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50">
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
+      <nav className="bg-white/80 backdrop-blur-md border-b border-amber-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center space-x-3">
@@ -65,20 +65,20 @@ export default function TestimonialsPage() {
                 className="w-12 h-12"
               />
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-blue-900">Dr. Anja Haile</span>
-                <span className="text-xs text-blue-600">Psychologische Psychotherapeutin</span>
+                <span className="text-xl font-bold text-amber-900">Dr. Anja Haile</span>
+                <span className="text-xs text-amber-700">Psychologische Psychotherapeutin</span>
               </div>
             </Link>
             <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-blue-800 hover:text-blue-600 transition-colors">Home</Link>
-              <Link href="/about" className="text-blue-800 hover:text-blue-600 transition-colors">Über mich</Link>
-              <Link href="/services" className="text-blue-800 hover:text-blue-600 transition-colors">Leistungen</Link>
-              <Link href="/portfolio" className="text-blue-800 hover:text-blue-600 transition-colors">Portfolio</Link>
-              <Link href="/testimonials" className="text-blue-600 font-semibold">Testimonials</Link>
-              <Link href="/contact" className="text-blue-800 hover:text-blue-600 transition-colors">Kontakt</Link>
+              <Link href="/" className="text-amber-800 hover:text-amber-600 transition-colors">Home</Link>
+              <Link href="/about" className="text-amber-800 hover:text-amber-600 transition-colors">Über mich</Link>
+              <Link href="/services" className="text-amber-800 hover:text-amber-600 transition-colors">Leistungen</Link>
+              <Link href="/portfolio" className="text-amber-800 hover:text-amber-600 transition-colors">Portfolio</Link>
+              <Link href="/testimonials" className="text-amber-600 font-semibold">Testimonials</Link>
+              <Link href="/contact" className="text-amber-800 hover:text-amber-600 transition-colors">Kontakt</Link>
             </div>
             <Link href="/booking">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button className="bg-amber-600 hover:bg-amber-700 text-white">
                 Termin buchen
               </Button>
             </Link>
@@ -87,17 +87,17 @@ export default function TestimonialsPage() {
       </nav>
 
       <div className="container mx-auto px-4 py-8">
-        <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8">
+        <Link href="/" className="inline-flex items-center text-amber-600 hover:text-amber-800 mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Zurück zur Startseite
         </Link>
 
         {/* Hero Section */}
         <section className="py-12 text-center">
-          <h1 className="text-4xl font-bold text-blue-900 mb-4">
+          <h1 className="text-4xl font-bold text-amber-900 mb-4">
             Authentische Stimmen
           </h1>
-          <p className="text-lg text-blue-700 max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-amber-700 max-w-3xl mx-auto mb-8">
             Erfahren Sie aus erster Hand, wie Kursteilnehmer und Patienten ihre Erfahrungen mit 
             Dr. Anja Haile erlebt haben. Diese authentischen Rückmeldungen zeigen die positiven 
             Veränderungen durch professionelle psychologische Betreuung und innovative Kursgestaltung.
@@ -108,12 +108,12 @@ export default function TestimonialsPage() {
         <section className="py-16">
           <div className="grid lg:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-blue-200 hover:shadow-lg transition-shadow">
+              <Card key={index} className="border-amber-200 hover:shadow-lg transition-shadow">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
-                    <testimonial.icon className="w-8 h-8 text-blue-600 mr-3" />
+                    <testimonial.icon className="w-8 h-8 text-amber-600 mr-3" />
                     <div className="flex items-center space-x-2">
-                      <Quote className="w-5 h-5 text-blue-600" />
+                      <Quote className="w-5 h-5 text-amber-600" />
                       <div className="flex">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
@@ -121,19 +121,19 @@ export default function TestimonialsPage() {
                       </div>
                     </div>
                     <span className={`ml-auto px-3 py-1 text-xs font-semibold rounded-full ${
-                      testimonial.category === 'Kurs' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
+                      testimonial.category === 'Kurs' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'
                     }`}>
                       {testimonial.category}
                     </span>
                   </div>
                   
-                  <p className="text-blue-700 mb-6 leading-relaxed italic text-sm">
+                  <p className="text-amber-700 mb-6 leading-relaxed italic text-sm">
                     "{testimonial.text}"
                   </p>
                   
-                  <div className="border-t border-blue-100 pt-4">
-                    <p className="font-semibold text-blue-900">{testimonial.name}</p>
-                    <p className="text-sm text-blue-600">{testimonial.role}</p>
+                  <div className="border-t border-amber-100 pt-4">
+                    <p className="font-semibold text-amber-900">{testimonial.name}</p>
+                    <p className="text-sm text-amber-600">{testimonial.role}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -144,7 +144,7 @@ export default function TestimonialsPage() {
         {/* Key Highlights */}
         <section className="py-16 bg-white rounded-2xl">
           <div className="container mx-auto px-8">
-            <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+            <h2 className="text-3xl font-bold text-amber-900 text-center mb-12">
               Was besonders geschätzt wird
             </h2>
             
@@ -158,34 +158,34 @@ export default function TestimonialsPage() {
               </div>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-blue-900 mb-2">Kommunikation auf Augenhöhe</h3>
-                  <p className="text-blue-700">
+                  <h3 className="text-xl font-semibold text-amber-900 mb-2">Kommunikation auf Augenhöhe</h3>
+                  <p className="text-amber-700">
                     "Man hatte das Gefühl Sie kommunizieren wirklich auf Augenhöhe... konnten sie uns als Zuhörer wirklich abholen."
-                    <span className="text-sm text-blue-500 italic"> - Jacob</span>
+                    <span className="text-sm text-amber-600 italic"> - Jacob</span>
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-semibold text-blue-900 mb-2">Meditation & Visualisierungen</h3>
-                  <p className="text-blue-700">
+                  <h3 className="text-xl font-semibold text-amber-900 mb-2">Meditation & Visualisierungen</h3>
+                  <p className="text-amber-700">
                     "Besonders förderlich waren für mich die Einbindung von Meditation und Visualisierungen."
-                    <span className="text-sm text-blue-500 italic"> - Franziska</span>
+                    <span className="text-sm text-amber-600 italic"> - Franziska</span>
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-semibold text-blue-900 mb-2">Praktischer Nutzen für den Alltag</h3>
-                  <p className="text-blue-700">
+                  <h3 className="text-xl font-semibold text-amber-900 mb-2">Praktischer Nutzen für den Alltag</h3>
+                  <p className="text-amber-700">
                     "Mittlerweile ist das zu einem festen Bestandteil von meinem Alltag geworden... man dabei auch wirklich was fürs Leben lernt."
-                    <span className="text-sm text-blue-500 italic"> - Lena</span>
+                    <span className="text-sm text-amber-600 italic"> - Lena</span>
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-semibold text-blue-900 mb-2">Ansteckende Begeisterung</h3>
-                  <p className="text-blue-700">
+                  <h3 className="text-xl font-semibold text-amber-900 mb-2">Ansteckende Begeisterung</h3>
+                  <p className="text-amber-700">
                     "Geholfen hat auch, dass Sie eine ansteckende Begeisterung für die Themen ausstrahlten."
-                    <span className="text-sm text-blue-500 italic"> - Jacob</span>
+                    <span className="text-sm text-amber-600 italic"> - Jacob</span>
                   </p>
                 </div>
               </div>
@@ -195,36 +195,36 @@ export default function TestimonialsPage() {
 
         {/* Statistics */}
         <section className="py-16">
-          <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-amber-900 text-center mb-12">
             Zufriedenheit & Erfolg
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-blue-200 text-center hover:shadow-lg transition-shadow">
+            <Card className="border-amber-200 text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-blue-600 mb-2">100%</div>
-                <p className="text-lg text-blue-900 font-semibold mb-2">Authentische Bewertungen</p>
-                <p className="text-blue-700 text-sm">
+                <div className="text-4xl font-bold text-amber-600 mb-2">100%</div>
+                <p className="text-lg text-amber-900 font-semibold mb-2">Authentische Bewertungen</p>
+                <p className="text-amber-700 text-sm">
                   Alle Testimonials sind echte, unveränderte Rückmeldungen von Kursteilnehmern und Patienten.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="border-blue-200 text-center hover:shadow-lg transition-shadow">
+            <Card className="border-amber-200 text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-blue-600 mb-2">5/5</div>
-                <p className="text-lg text-blue-900 font-semibold mb-2">Durchschnittsbewertung</p>
-                <p className="text-blue-700 text-sm">
+                <div className="text-4xl font-bold text-amber-600 mb-2">5/5</div>
+                <p className="text-lg text-amber-900 font-semibold mb-2">Durchschnittsbewertung</p>
+                <p className="text-amber-700 text-sm">
                   Konstant höchste Bewertungen in allen Bereichen: Kursgestaltung, Therapie und persönliche Betreuung.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="border-blue-200 text-center hover:shadow-lg transition-shadow">
+            <Card className="border-amber-200 text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-blue-600 mb-2">6+</div>
-                <p className="text-lg text-blue-900 font-semibold mb-2">Jahre Erfahrung</p>
-                <p className="text-blue-700 text-sm">
+                <div className="text-4xl font-bold text-amber-600 mb-2">6+</div>
+                <p className="text-lg text-amber-900 font-semibold mb-2">Jahre Erfahrung</p>
+                <p className="text-amber-700 text-sm">
                   Bewährte Methoden mit nachhaltigem Erfolg in Therapie, Kursen und persönlicher Entwicklung.
                 </p>
               </CardContent>
@@ -234,10 +234,10 @@ export default function TestimonialsPage() {
 
         {/* Privacy Note */}
         <section className="py-8">
-          <Card className="border-blue-200 bg-blue-50">
+          <Card className="border-amber-200 bg-amber-50">
             <CardContent className="p-6">
-              <h3 className="font-semibold text-blue-900 mb-2">Authentizität und Datenschutz</h3>
-              <p className="text-blue-700 text-sm">
+              <h3 className="font-semibold text-amber-900 mb-2">Authentizität und Datenschutz</h3>
+              <p className="text-amber-700 text-sm">
                 Alle Testimonials sind authentische, unveränderte Rückmeldungen und wurden mit ausdrücklicher 
                 Einwilligung der Verfasser veröffentlicht. Die Aussagen spiegeln echte Erfahrungen aus 
                 Dr. Hailes therapeutischer Praxis und Kursangeboten wider. Einige Namen wurden zur besseren 
@@ -248,16 +248,16 @@ export default function TestimonialsPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 text-center bg-blue-600 rounded-2xl text-white">
+        <section className="py-16 text-center bg-amber-600 rounded-2xl text-white">
           <h2 className="text-3xl font-bold mb-4">
             Werden auch Sie Teil unserer Erfolgsgeschichten
           </h2>
-          <p className="text-lg mb-8 text-blue-100 max-w-2xl mx-auto">
+          <p className="text-lg mb-8 text-amber-100 max-w-2xl mx-auto">
             Erleben Sie selbst die professionelle, einfühlsame Betreuung von Dr. Anja Haile. 
             Vereinbaren Sie ein unverbindliches Erstgespräch und starten Sie Ihren Weg zur positiven Veränderung.
           </p>
           <Link href="/booking">
-            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-blue-50">
+            <Button size="lg" variant="secondary" className="bg-white text-amber-600 hover:bg-amber-50">
               Jetzt Erstgespräch buchen
             </Button>
           </Link>
@@ -265,7 +265,7 @@ export default function TestimonialsPage() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-blue-900 text-white py-12 px-4 mt-16">
+      <footer className="bg-amber-900 text-white py-12 px-4 mt-16">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -279,7 +279,7 @@ export default function TestimonialsPage() {
                 />
                 <h3 className="text-xl font-bold">Dr. Anja Haile</h3>
               </div>
-              <p className="text-blue-200">
+              <p className="text-amber-200">
                 Psychologische Psychotherapeutin<br />
                 München, Deutschland
               </p>
@@ -287,28 +287,28 @@ export default function TestimonialsPage() {
             <div>
               <h4 className="font-semibold mb-4">Navigation</h4>
               <div className="space-y-2">
-                <Link href="/about" className="block text-blue-200 hover:text-white transition-colors">Über mich</Link>
-                <Link href="/services" className="block text-blue-200 hover:text-white transition-colors">Leistungen</Link>
-                <Link href="/portfolio" className="block text-blue-200 hover:text-white transition-colors">Portfolio</Link>
-                <Link href="/testimonials" className="block text-blue-200 hover:text-white transition-colors">Testimonials</Link>
+                <Link href="/about" className="block text-amber-200 hover:text-white transition-colors">Über mich</Link>
+                <Link href="/services" className="block text-amber-200 hover:text-white transition-colors">Leistungen</Link>
+                <Link href="/portfolio" className="block text-amber-200 hover:text-white transition-colors">Portfolio</Link>
+                <Link href="/testimonials" className="block text-amber-200 hover:text-white transition-colors">Testimonials</Link>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Kontakt</h4>
               <div className="space-y-2">
-                <Link href="/contact" className="block text-blue-200 hover:text-white transition-colors">Kontakt</Link>
-                <Link href="/booking" className="block text-blue-200 hover:text-white transition-colors">Termin buchen</Link>
+                <Link href="/contact" className="block text-amber-200 hover:text-white transition-colors">Kontakt</Link>
+                <Link href="/booking" className="block text-amber-200 hover:text-white transition-colors">Termin buchen</Link>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Rechtliches</h4>
               <div className="space-y-2">
-                <Link href="/impressum" className="block text-blue-200 hover:text-white transition-colors">Impressum</Link>
-                <Link href="/datenschutz" className="block text-blue-200 hover:text-white transition-colors">Datenschutz</Link>
+                <Link href="/impressum" className="block text-amber-200 hover:text-white transition-colors">Impressum</Link>
+                <Link href="/datenschutz" className="block text-amber-200 hover:text-white transition-colors">Datenschutz</Link>
               </div>
             </div>
           </div>
-          <div className="border-t border-blue-800 mt-8 pt-8 text-center text-blue-200">
+          <div className="border-t border-amber-800 mt-8 pt-8 text-center text-amber-200">
             <p>&copy; 2025 Dr. Anja Haile. Alle Rechte vorbehalten.</p>
           </div>
         </div>
