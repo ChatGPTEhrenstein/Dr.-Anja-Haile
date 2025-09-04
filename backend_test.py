@@ -11,7 +11,7 @@ import sys
 from datetime import datetime
 
 # Get the base URL from environment or use default
-BASE_URL = os.getenv('NEXT_PUBLIC_BASE_URL', 'https://ux-analyzer.preview.emergentagent.com')
+BASE_URL = os.getenv('NEXT_PUBLIC_BASE_URL', 'http://localhost:3000')
 API_BASE = f"{BASE_URL}/api"
 
 class BackendTester:
