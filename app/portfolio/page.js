@@ -13,21 +13,21 @@ export default function PortfolioPage() {
       description: "Erfolgreiche Durchführung einer 12-wöchigen Gruppentherapie für Patienten mit verschiedenen Angststörungen.",
       results: ["85% Verbesserung der Symptome", "Hohe Teilnehmerzufriedenheit", "Nachhaltige Erfolge"],
       icon: Users,
-      image: "https://images.unsplash.com/photo-1448387473223-5c37445527e7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwzfHx3ZWxsbmVzc3xlbnwwfHx8Ymx1ZXwxNzU2OTg5NDQwfDA&ixlib=rb-4.1.0&q=85"
+      image: "https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-070_4Eck-scaled.jpg"
     },
     {
       title: "Kognitive Verhaltenstherapie bei Depression",
       description: "Individuelle Therapie mit Fokus auf Gedankenumstrukturierung und Verhaltensaktivierung.",
       results: ["Deutliche Verbesserung der Lebensqualität", "Entwicklung von Coping-Strategien", "Rückfallprävention"],
       icon: Brain,
-      image: "https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx0aGVyYXB5fGVufDB8fHxibHVlfDE3NTY5ODk0Mjl8MA&ixlib=rb-4.1.0&q=85"
+      image: "https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-178-scaled.jpg"
     },
     {
       title: "Workshop: Selbstvertrauen stärken",
       description: "Interaktiver Workshop zur Stärkung des Selbstvertrauens und Überwindung von Selbstzweifeln.",
       results: ["Praktische Übungen für den Alltag", "Peer-Learning Effekte", "Langfristige Motivation"],
       icon: Heart,
-      image: "https://images.unsplash.com/photo-1585639408964-b8938d59264e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHx3ZWxsbmVzc3xlbnwwfHx8Ymx1ZXwxNzU2OTg5NDQwfDA&ixlib=rb-4.1.0&q=85"
+      image: "https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-050-4eck-scaled.jpg"
     }
   ]
 
