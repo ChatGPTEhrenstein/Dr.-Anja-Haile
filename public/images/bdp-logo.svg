@@ -1,10 +1,47 @@
-<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Circle background -->
-  <circle cx="50" cy="50" r="45" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle -->
+  <circle cx="60" cy="60" r="55" fill="none" stroke="#1e3a8a" stroke-width="3"/>
   
-  <!-- BDP text in center -->
-  <text x="50" y="58" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle">bdp</text>
+  <!-- Text around the circle - top -->
+  <path id="circle-top" d="M 60 60 m -45 0 a 45 45 0 0 1 90 0" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1e3a8a">
+    <textPath href="#circle-top" startOffset="50%" text-anchor="middle">
+      Beratung durch Psychologen
+    </textPath>
+  </text>
   
-  <!-- Registration number -->
-  <text x="50" y="85" font-family="Arial, sans-serif" font-size="8" fill="#1e3a8a" text-anchor="middle">Reg.-Nr.: 00301</text>
+  <!-- Text around the circle - bottom -->
+  <path id="circle-bottom" d="M 60 60 m -45 0 a 45 45 0 0 0 90 0" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1e3a8a">
+    <textPath href="#circle-bottom" startOffset="50%" text-anchor="middle">
+      BDP Therapien
+    </textPath>
+  </text>
+  
+  <!-- Center - bdp letters styled -->
+  <g transform="translate(60,60)">
+    <!-- Letter b -->
+    <g transform="translate(-18,0)">
+      <path d="M -6 -15 L -6 15 M -6 -15 Q 2 -15 2 -7.5 Q 2 0 -6 0 M -6 0 Q 2 0 2 7.5 Q 2 15 -6 15" 
+            fill="none" stroke="#1e3a8a" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Letter d -->
+    <g transform="translate(18,0)">
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#1e3a8a" stroke-width="2.5"/>
+      <line x1="10" y1="-15" x2="10" y2="15" stroke="#1e3a8a" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Letter p -->
+    <g transform="translate(0,0)">
+      <line x1="-5" y1="-15" x2="-5" y2="20" stroke="#1e3a8a" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M -5 -15 Q 3 -15 3 -7.5 Q 3 0 -5 0" 
+            fill="none" stroke="#1e3a8a" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+  </g>
+  
+  <!-- Registration number at bottom -->
+  <text x="60" y="108" font-family="Arial, sans-serif" font-size="9" fill="#1e3a8a" text-anchor="middle" font-weight="bold">
+    Reg.-Nr.: 00301
+  </text>
 </svg>
