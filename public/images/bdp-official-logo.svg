@@ -1,0 +1,47 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#1e3a8a" stroke-width="4"/>
+  
+  <!-- Top text curve -->
+  <path id="top-curve" d="M 100 100 m -75 0 a 75 75 0 0 1 150 0" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e3a8a">
+    <textPath href="#top-curve" startOffset="50%" text-anchor="middle">
+      Beratung durch Psychologen
+    </textPath>
+  </text>
+  
+  <!-- Bottom text curve -->
+  <path id="bottom-curve" d="M 100 100 m -75 0 a 75 75 0 0 0 150 0" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e3a8a">
+    <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
+      BDP Therapien
+    </textPath>
+  </text>
+  
+  <!-- Central bdp logo design -->
+  <g transform="translate(100,100)">
+    <!-- Letter b - left -->
+    <g transform="translate(-35,0)">
+      <path d="M -10 -25 L -10 25 M -10 -25 Q 0 -25 5 -18 Q 10 -12 10 -6 Q 10 0 5 0 Q 0 0 -10 0 M -10 0 Q 0 0 5 6 Q 10 12 10 18 Q 5 25 -10 25" 
+            fill="none" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    
+    <!-- Letter d - right -->
+    <g transform="translate(35,0)">
+      <circle cx="0" cy="0" r="20" fill="none" stroke="#1e3a8a" stroke-width="4"/>
+      <line x1="20" y1="-25" x2="20" y2="25" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Letter p - center -->
+    <g transform="translate(0,5)">
+      <line x1="-8" y1="-30" x2="-8" y2="30" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M -8 -20 Q 2 -20 8 -14 Q 12 -8 12 -2 Q 8 4 2 4 Q -8 4 -8 -2" 
+            fill="none" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  
+  <!-- Registration number -->
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="14" fill="#1e3a8a" text-anchor="middle" font-weight="bold">
+    Reg.-Nr.: 00301
+  </text>
+</svg>
