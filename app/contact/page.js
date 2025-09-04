@@ -282,103 +282,179 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <Card className="border-blue-200">
-              <CardHeader>
-                <CardTitle className="text-blue-900">Nachricht senden</CardTitle>
+            {/* Enhanced Contact Form */}
+            <Card className="border-0 bg-gradient-to-br from-white to-slate-50/50 shadow-xl shadow-blue-500/5 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 animate-in slide-in-from-right-8 duration-1000">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-slate-800 text-2xl flex items-center">
+                  <Send className="w-6 h-6 text-blue-600 mr-3" />
+                  Nachricht senden
+                </CardTitle>
+                <p className="text-slate-600 mt-2">
+                  Füllen Sie das Formular aus und ich melde mich schnellstmöglich bei Ihnen zurück.
+                </p>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  {/* Name and Email Row */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-3">
+                      <Label htmlFor="name" className="text-slate-700 font-medium flex items-center">
+                        Name *
+                        <span className="ml-1 text-red-500">●</span>
+                      </Label>
+                      <div className="relative group">
+                        <Input
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Ihr vollständiger Name"
+                          required
+                          className="border-2 border-slate-200 focus:border-blue-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
+                        />
+                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-blue-500/0 to-indigo-500/0 group-focus-within:from-blue-500/10 group-focus-within:to-indigo-500/10 transition-all duration-300 pointer-events-none"></div>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <Label htmlFor="email" className="text-slate-700 font-medium flex items-center">
+                        E-Mail *
+                        <span className="ml-1 text-red-500">●</span>
+                      </Label>
+                      <div className="relative group">
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="ihre.email@beispiel.de"
+                          required
+                          className="border-2 border-slate-200 focus:border-blue-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
+                        />
+                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-blue-500/0 to-indigo-500/0 group-focus-within:from-blue-500/10 group-focus-within:to-indigo-500/10 transition-all duration-300 pointer-events-none"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Phone and Subject Row */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-3">
+                      <Label htmlFor="phone" className="text-slate-700 font-medium">
+                        Telefon
+                      </Label>
+                      <div className="relative group">
+                        <Input
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="Ihre Telefonnummer"
+                          className="border-2 border-slate-200 focus:border-blue-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
+                        />
+                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-blue-500/0 to-indigo-500/0 group-focus-within:from-blue-500/10 group-focus-within:to-indigo-500/10 transition-all duration-300 pointer-events-none"></div>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <Label htmlFor="subject" className="text-slate-700 font-medium">
+                        Betreff
+                      </Label>
+                      <div className="relative group">
+                        <Input
+                          id="subject"
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          placeholder="Thema Ihrer Anfrage"
+                          className="border-2 border-slate-200 focus:border-blue-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
+                        />
+                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-blue-500/0 to-indigo-500/0 group-focus-within:from-blue-500/10 group-focus-within:to-indigo-500/10 transition-all duration-300 pointer-events-none"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Message Field */}
+                  <div className="space-y-3">
+                    <Label htmlFor="message" className="text-slate-700 font-medium flex items-center">
+                      Nachricht *
+                      <span className="ml-1 text-red-500">●</span>
+                    </Label>
+                    <div className="relative group">
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
                         onChange={handleChange}
-                        placeholder="Ihr vollständiger Name"
+                        placeholder="Beschreiben Sie Ihr Anliegen ausführlich..."
+                        rows={6}
                         required
+                        className="border-2 border-slate-200 focus:border-blue-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm resize-none"
                       />
+                      <div className="absolute inset-0 rounded-md bg-gradient-to-r from-blue-500/0 to-indigo-500/0 group-focus-within:from-blue-500/10 group-focus-within:to-indigo-500/10 transition-all duration-300 pointer-events-none"></div>
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">E-Mail *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="ihre.email@beispiel.de"
-                        required
-                      />
-                    </div>
+                    <p className="text-sm text-slate-500">
+                      Mindestens 10 Zeichen ({formData.message.length}/10)
+                    </p>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Telefon</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="Ihre Telefonnummer"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Betreff</Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        placeholder="Thema Ihrer Anfrage"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Nachricht *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Beschreiben Sie Ihr Anliegen..."
-                      rows={6}
-                      required
-                    />
-                  </div>
-
+                  {/* Enhanced Status Messages */}
                   {submitStatus && (
-                    <div className={`p-4 rounded-lg ${
+                    <div className={`p-6 rounded-xl border-l-4 ${
                       submitStatus.type === 'success' 
-                        ? 'bg-green-50 text-green-800 border border-green-200'
-                        : 'bg-red-50 text-red-800 border border-red-200'
-                    }`}>
-                      {submitStatus.message}
+                        ? 'bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-800 border-emerald-500 shadow-emerald-500/10'
+                        : 'bg-gradient-to-r from-red-50 to-rose-50 text-red-800 border-red-500 shadow-red-500/10'
+                    } shadow-lg animate-in slide-in-from-top-2 duration-500`}>
+                      <div className="flex items-start space-x-3">
+                        {submitStatus.type === 'success' ? (
+                          <CheckCircle className="w-6 h-6 text-emerald-600 mt-0.5 flex-shrink-0" />
+                        ) : (
+                          <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5 flex-shrink-0">
+                            <span className="text-red-600 text-sm font-bold">!</span>
+                          </div>
+                        )}
+                        <div>
+                          <p className="font-medium mb-1">
+                            {submitStatus.type === 'success' ? 'Nachricht erfolgreich gesendet!' : 'Fehler beim Senden'}
+                          </p>
+                          <p className="text-sm opacity-90">
+                            {submitStatus.message}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   )}
 
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <>Wird gesendet...</>
-                    ) : (
-                      <>
-                        <Send className="mr-2 w-4 h-4" />
-                        Nachricht senden
-                      </>
-                    )}
-                  </Button>
+                  {/* Enhanced Submit Button */}
+                  <div className="space-y-4">
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-xl shadow-blue-500/25 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 hover:scale-[1.02] group h-14 text-lg font-semibold"
+                      disabled={isSubmitting || formData.message.length < 10}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-3 w-5 h-5 animate-spin" />
+                          Wird gesendet...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="mr-3 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                          Nachricht senden
+                        </>
+                      )}
+                    </Button>
 
-                  <p className="text-sm text-blue-600">
-                    * Pflichtfelder. Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.
-                  </p>
+                    {/* Privacy Notice */}
+                    <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        <CheckCircle className="w-4 h-4 text-emerald-600 inline mr-2" />
+                        * Pflichtfelder. Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben. 
+                        Weitere Informationen finden Sie in unserer{' '}
+                        <Link href="/datenschutz" className="text-blue-600 hover:text-blue-800 underline">
+                          Datenschutzerklärung
+                        </Link>.
+                      </p>
+                    </div>
+                  </div>
                 </form>
               </CardContent>
             </Card>
@@ -386,42 +462,55 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white py-12 px-4 mt-16">
-        <div className="container mx-auto">
+      {/* Enhanced Footer */}
+      <footer className="bg-slate-900 text-white py-16 px-4 mt-20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto relative">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Dr. Anja Haile</h3>
-              <p className="text-blue-200">
+              <p className="text-slate-300 mb-4">
                 Psychologische Psychotherapeutin<br />
                 München, Deutschland
               </p>
+              <div className="flex space-x-2">
+                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-4 h-4 text-white" />
+                </div>
+                <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center">
+                  <Star className="w-4 h-4 text-white" />
+                </div>
+              </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Navigation</h4>
               <div className="space-y-2">
-                <Link href="/about" className="block text-blue-200 hover:text-white transition-colors">Über mich</Link>
-                <Link href="/services" className="block text-blue-200 hover:text-white transition-colors">Leistungen</Link>
-                <Link href="/portfolio" className="block text-blue-200 hover:text-white transition-colors">Portfolio</Link>
-                <Link href="/testimonials" className="block text-blue-200 hover:text-white transition-colors">Testimonials</Link>
+                <Link href="/about" className="block text-slate-300 hover:text-blue-400 transition-colors">Über mich</Link>
+                <Link href="/services" className="block text-slate-300 hover:text-blue-400 transition-colors">Leistungen</Link>
+                <Link href="/portfolio" className="block text-slate-300 hover:text-blue-400 transition-colors">Portfolio</Link>
+                <Link href="/testimonials" className="block text-slate-300 hover:text-blue-400 transition-colors">Testimonials</Link>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Kontakt</h4>
               <div className="space-y-2">
-                <Link href="/contact" className="block text-blue-200 hover:text-white transition-colors">Kontakt</Link>
-                <Link href="/booking" className="block text-blue-200 hover:text-white transition-colors">Termin buchen</Link>
+                <Link href="/contact" className="block text-blue-400 font-medium">Kontakt</Link>
+                <Link href="/booking" className="block text-slate-300 hover:text-blue-400 transition-colors">Termin buchen</Link>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Rechtliches</h4>
               <div className="space-y-2">
-                <Link href="/impressum" className="block text-blue-200 hover:text-white transition-colors">Impressum</Link>
-                <Link href="/datenschutz" className="block text-blue-200 hover:text-white transition-colors">Datenschutz</Link>
+                <Link href="/impressum" className="block text-slate-300 hover:text-blue-400 transition-colors">Impressum</Link>
+                <Link href="/datenschutz" className="block text-slate-300 hover:text-blue-400 transition-colors">Datenschutz</Link>
               </div>
             </div>
           </div>
-          <div className="border-t border-blue-800 mt-8 pt-8 text-center text-blue-200">
+          <div className="border-t border-slate-700 mt-8 pt-8 text-center text-slate-400">
             <p>&copy; 2025 Dr. Anja Haile. Alle Rechte vorbehalten.</p>
           </div>
         </div>
