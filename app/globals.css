@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile-First Optimizations */
+@layer base {
+  /* Touch-friendly interactions */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Smooth scrolling for all devices */
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* Better mobile typography */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Improved touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Remove tap highlight on mobile */
+  button, a, input, textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Better mobile focus states */
+  @media (hover: none) and (pointer: coarse) {
+    button:hover, a:hover {
+      transform: none;
+    }
+    
+    button:active, a:active {
+      transform: scale(0.95);
+      transition: transform 0.1s ease;
+    }
+  }
+}
+
 /* Custom animations for the golden theme */
 @keyframes gradient {
   0%, 100% {
@@ -44,6 +88,22 @@
 
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* Mobile-specific animations */
+@keyframes slideInMobile {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInMobile {
+  animation: slideInMobile 0.4s ease-out;
 }
 
 /* Smooth scrolling */
