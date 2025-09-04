@@ -76,18 +76,18 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 relative overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-amber-50/30 to-orange-50/50 relative overflow-x-hidden">
       {/* Enhanced Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-xl border-b border-blue-100/50 shadow-lg shadow-blue-500/5' 
-          : 'bg-white/80 backdrop-blur-md border-b border-blue-100/30'
+          ? 'bg-white/95 backdrop-blur-xl border-b border-amber-100/50 shadow-lg shadow-amber-500/5' 
+          : 'bg-white/80 backdrop-blur-md border-b border-amber-100/30'
       }`}>
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group transition-transform hover:scale-105">
-              <div className="text-2xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+              <div className="text-2xl font-bold text-slate-800 group-hover:text-amber-600 transition-colors">
                 Dr. Anja Haile
               </div>
             </Link>
@@ -100,8 +100,8 @@ export default function ContactPage() {
                   href={link.href} 
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     link.active 
-                      ? 'bg-blue-100 text-blue-700 shadow-sm' 
-                      : 'text-slate-600 hover:text-blue-600 hover:bg-blue-50/80'
+                      ? 'bg-amber-100 text-amber-700 shadow-sm' 
+                      : 'text-slate-600 hover:text-amber-600 hover:bg-amber-50/80'
                   }`}
                 >
                   {link.label}
@@ -112,7 +112,7 @@ export default function ContactPage() {
             {/* CTA Button & Mobile Menu */}
             <div className="flex items-center space-x-3">
               <Link href="/booking">
-                <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105">
+                <Button className="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white shadow-lg shadow-amber-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/30 hover:scale-105">
                   <Calendar className="w-4 h-4 mr-2" />
                   Termin buchen
                 </Button>
@@ -132,7 +132,7 @@ export default function ContactPage() {
 
           {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden mt-4 p-4 bg-white/95 backdrop-blur-xl rounded-2xl border border-blue-100/50 shadow-xl animate-in slide-in-from-top-2 duration-300">
+            <div className="lg:hidden mt-4 p-4 bg-white/95 backdrop-blur-xl rounded-2xl border border-amber-100/50 shadow-xl animate-in slide-in-from-top-2 duration-300">
               <div className="flex flex-col space-y-2">
                 {navigationLinks.map((link) => (
                   <Link 
@@ -140,8 +140,8 @@ export default function ContactPage() {
                     href={link.href}
                     className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                       link.active 
-                        ? 'bg-blue-100 text-blue-700' 
-                        : 'text-slate-600 hover:text-blue-600 hover:bg-blue-50'
+                        ? 'bg-amber-100 text-amber-700' 
+                        : 'text-slate-600 hover:text-amber-600 hover:bg-amber-50'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -158,7 +158,7 @@ export default function ContactPage() {
       <div className="container mx-auto px-4 py-8 pt-32">
         {/* Enhanced Breadcrumb */}
         <div className="mb-8">
-          <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 group transition-all duration-200">
+          <Link href="/" className="inline-flex items-center text-amber-600 hover:text-amber-800 group transition-all duration-200">
             <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
             Zurück zur Startseite
           </Link>
@@ -167,7 +167,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto">
           {/* Enhanced Header */}
           <div className="text-center mb-16 animate-in slide-in-from-bottom-4 duration-1000">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full text-sm font-medium text-blue-700 mb-6">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-sm font-medium text-amber-700 mb-6">
               <Mail className="w-4 h-4 mr-2" />
               Jederzeit erreichbar
             </div>
@@ -184,10 +184,10 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Enhanced Contact Information */}
             <div className="space-y-8 animate-in slide-in-from-left-8 duration-1000">
-              <Card className="border-0 bg-gradient-to-br from-white to-slate-50/50 shadow-xl shadow-blue-500/5 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500">
+              <Card className="border-0 bg-gradient-to-br from-white to-slate-50/50 shadow-xl shadow-amber-500/5 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500">
                 <CardHeader className="pb-4">
                   <CardTitle className="text-slate-800 text-2xl flex items-center">
-                    <Mail className="w-6 h-6 text-blue-600 mr-3" />
+                    <Mail className="w-6 h-6 text-amber-600 mr-3" />
                     Kontaktinformationen
                   </CardTitle>
                 </CardHeader>
@@ -198,7 +198,7 @@ export default function ContactPage() {
                       title: "E-Mail",
                       content: "praxis@anjahaile.de",
                       subtitle: "Für Terminanfragen und Informationen",
-                      color: "text-blue-600"
+                      color: "text-amber-600"
                     },
                     {
                       icon: Phone,
@@ -227,7 +227,7 @@ export default function ContactPage() {
                         <item.icon className={`w-6 h-6 ${item.color}`} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-bold text-slate-800 text-lg mb-1 group-hover:text-blue-700 transition-colors">
+                        <h3 className="font-bold text-slate-800 text-lg mb-1 group-hover:text-amber-700 transition-colors">
                           {item.title}
                         </h3>
                         <p className="text-slate-700 font-medium mb-1 whitespace-pre-line">
@@ -243,20 +243,20 @@ export default function ContactPage() {
               </Card>
 
               {/* Enhanced Quick Booking Card */}
-              <Card className="border-0 bg-gradient-to-br from-blue-50 to-indigo-50 shadow-xl shadow-blue-500/10 hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-500 group">
+              <Card className="border-0 bg-gradient-to-br from-amber-50 to-orange-50 shadow-xl shadow-amber-500/10 hover:shadow-2xl hover:shadow-amber-500/15 transition-all duration-500 group">
                 <CardContent className="p-8">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/25">
+                    <div className="w-16 h-16 bg-gradient-to-br from-amber-600 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-amber-500/25">
                       <Calendar className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="font-bold text-slate-800 text-xl mb-3 group-hover:text-blue-700 transition-colors">
+                    <h3 className="font-bold text-slate-800 text-xl mb-3 group-hover:text-amber-700 transition-colors">
                       Schnelle Terminbuchung
                     </h3>
                     <p className="text-slate-600 mb-6 leading-relaxed">
                       Nutzen Sie unser Online-Buchungssystem für eine schnelle und einfache Terminvereinbarung.
                     </p>
                     <Link href="/booking">
-                      <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 group w-full">
+                      <Button className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white shadow-lg shadow-amber-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/30 hover:scale-105 group w-full">
                         <Calendar className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
                         Online Termin buchen
                       </Button>
@@ -270,7 +270,7 @@ export default function ContactPage() {
                 {[
                   { icon: CheckCircle, label: "BDP Zertifiziert", color: "text-emerald-600" },
                   { icon: Star, label: "15+ Jahre", color: "text-yellow-600" },
-                  { icon: CheckCircle, label: "GDPR Konform", color: "text-blue-600" }
+                  { icon: CheckCircle, label: "GDPR Konform", color: "text-amber-600" }
                 ].map((item, index) => (
                   <div key={index} className="text-center group">
                     <div className={`w-12 h-12 mx-auto mb-2 rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
@@ -283,10 +283,10 @@ export default function ContactPage() {
             </div>
 
             {/* Enhanced Contact Form */}
-            <Card className="border-0 bg-gradient-to-br from-white to-slate-50/50 shadow-xl shadow-blue-500/5 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 animate-in slide-in-from-right-8 duration-1000">
+            <Card className="border-0 bg-gradient-to-br from-white to-slate-50/50 shadow-xl shadow-amber-500/5 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 animate-in slide-in-from-right-8 duration-1000">
               <CardHeader className="pb-6">
                 <CardTitle className="text-slate-800 text-2xl flex items-center">
-                  <Send className="w-6 h-6 text-blue-600 mr-3" />
+                  <Send className="w-6 h-6 text-amber-600 mr-3" />
                   Nachricht senden
                 </CardTitle>
                 <p className="text-slate-600 mt-2">
@@ -310,9 +310,9 @@ export default function ContactPage() {
                           onChange={handleChange}
                           placeholder="Ihr vollständiger Name"
                           required
-                          className="border-2 border-slate-200 focus:border-blue-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
+                          className="border-2 border-slate-200 focus:border-amber-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
                         />
-                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-blue-500/0 to-indigo-500/0 group-focus-within:from-blue-500/10 group-focus-within:to-indigo-500/10 transition-all duration-300 pointer-events-none"></div>
+                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-amber-500/0 to-orange-500/0 group-focus-within:from-amber-500/10 group-focus-within:to-orange-500/10 transition-all duration-300 pointer-events-none"></div>
                       </div>
                     </div>
                     <div className="space-y-3">
@@ -329,9 +329,9 @@ export default function ContactPage() {
                           onChange={handleChange}
                           placeholder="ihre.email@beispiel.de"
                           required
-                          className="border-2 border-slate-200 focus:border-blue-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
+                          className="border-2 border-slate-200 focus:border-amber-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
                         />
-                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-blue-500/0 to-indigo-500/0 group-focus-within:from-blue-500/10 group-focus-within:to-indigo-500/10 transition-all duration-300 pointer-events-none"></div>
+                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-amber-500/0 to-orange-500/0 group-focus-within:from-amber-500/10 group-focus-within:to-orange-500/10 transition-all duration-300 pointer-events-none"></div>
                       </div>
                     </div>
                   </div>
@@ -349,9 +349,9 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="Ihre Telefonnummer"
-                          className="border-2 border-slate-200 focus:border-blue-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
+                          className="border-2 border-slate-200 focus:border-amber-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
                         />
-                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-blue-500/0 to-indigo-500/0 group-focus-within:from-blue-500/10 group-focus-within:to-indigo-500/10 transition-all duration-300 pointer-events-none"></div>
+                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-amber-500/0 to-orange-500/0 group-focus-within:from-amber-500/10 group-focus-within:to-orange-500/10 transition-all duration-300 pointer-events-none"></div>
                       </div>
                     </div>
                     <div className="space-y-3">
@@ -365,9 +365,9 @@ export default function ContactPage() {
                           value={formData.subject}
                           onChange={handleChange}
                           placeholder="Thema Ihrer Anfrage"
-                          className="border-2 border-slate-200 focus:border-blue-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
+                          className="border-2 border-slate-200 focus:border-amber-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm h-12"
                         />
-                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-blue-500/0 to-indigo-500/0 group-focus-within:from-blue-500/10 group-focus-within:to-indigo-500/10 transition-all duration-300 pointer-events-none"></div>
+                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-amber-500/0 to-orange-500/0 group-focus-within:from-amber-500/10 group-focus-within:to-orange-500/10 transition-all duration-300 pointer-events-none"></div>
                       </div>
                     </div>
                   </div>
@@ -387,9 +387,9 @@ export default function ContactPage() {
                         placeholder="Beschreiben Sie Ihr Anliegen ausführlich..."
                         rows={6}
                         required
-                        className="border-2 border-slate-200 focus:border-blue-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm resize-none"
+                        className="border-2 border-slate-200 focus:border-amber-500 transition-all duration-300 group-hover:border-slate-300 bg-white/50 backdrop-blur-sm resize-none"
                       />
-                      <div className="absolute inset-0 rounded-md bg-gradient-to-r from-blue-500/0 to-indigo-500/0 group-focus-within:from-blue-500/10 group-focus-within:to-indigo-500/10 transition-all duration-300 pointer-events-none"></div>
+                      <div className="absolute inset-0 rounded-md bg-gradient-to-r from-amber-500/0 to-orange-500/0 group-focus-within:from-amber-500/10 group-focus-within:to-orange-500/10 transition-all duration-300 pointer-events-none"></div>
                     </div>
                     <p className="text-sm text-slate-500">
                       Mindestens 10 Zeichen ({formData.message.length}/10)
@@ -427,7 +427,7 @@ export default function ContactPage() {
                   <div className="space-y-4">
                     <Button 
                       type="submit" 
-                      className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-xl shadow-blue-500/25 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 hover:scale-[1.02] group h-14 text-lg font-semibold"
+                      className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white shadow-xl shadow-amber-500/25 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-[1.02] group h-14 text-lg font-semibold"
                       disabled={isSubmitting || formData.message.length < 10}
                     >
                       {isSubmitting ? (
@@ -449,7 +449,7 @@ export default function ContactPage() {
                         <CheckCircle className="w-4 h-4 text-emerald-600 inline mr-2" />
                         * Pflichtfelder. Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben. 
                         Weitere Informationen finden Sie in unserer{' '}
-                        <Link href="/datenschutz" className="text-blue-600 hover:text-blue-800 underline">
+                        <Link href="/datenschutz" className="text-amber-600 hover:text-amber-800 underline">
                           Datenschutzerklärung
                         </Link>.
                       </p>
@@ -465,8 +465,8 @@ export default function ContactPage() {
       {/* Enhanced Footer */}
       <footer className="bg-slate-900 text-white py-16 px-4 mt-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-600/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600/5 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto relative">
@@ -478,7 +478,7 @@ export default function ContactPage() {
                 München, Deutschland
               </p>
               <div className="flex space-x-2">
-                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center">
                   <CheckCircle className="w-4 h-4 text-white" />
                 </div>
                 <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center">
@@ -489,24 +489,24 @@ export default function ContactPage() {
             <div>
               <h4 className="font-semibold mb-4">Navigation</h4>
               <div className="space-y-2">
-                <Link href="/about" className="block text-slate-300 hover:text-blue-400 transition-colors">Über mich</Link>
-                <Link href="/services" className="block text-slate-300 hover:text-blue-400 transition-colors">Leistungen</Link>
-                <Link href="/portfolio" className="block text-slate-300 hover:text-blue-400 transition-colors">Portfolio</Link>
-                <Link href="/testimonials" className="block text-slate-300 hover:text-blue-400 transition-colors">Testimonials</Link>
+                <Link href="/about" className="block text-slate-300 hover:text-amber-400 transition-colors">Über mich</Link>
+                <Link href="/services" className="block text-slate-300 hover:text-amber-400 transition-colors">Leistungen</Link>
+                <Link href="/portfolio" className="block text-slate-300 hover:text-amber-400 transition-colors">Portfolio</Link>
+                <Link href="/testimonials" className="block text-slate-300 hover:text-amber-400 transition-colors">Testimonials</Link>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Kontakt</h4>
               <div className="space-y-2">
-                <Link href="/contact" className="block text-blue-400 font-medium">Kontakt</Link>
-                <Link href="/booking" className="block text-slate-300 hover:text-blue-400 transition-colors">Termin buchen</Link>
+                <Link href="/contact" className="block text-amber-400 font-medium">Kontakt</Link>
+                <Link href="/booking" className="block text-slate-300 hover:text-amber-400 transition-colors">Termin buchen</Link>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Rechtliches</h4>
               <div className="space-y-2">
-                <Link href="/impressum" className="block text-slate-300 hover:text-blue-400 transition-colors">Impressum</Link>
-                <Link href="/datenschutz" className="block text-slate-300 hover:text-blue-400 transition-colors">Datenschutz</Link>
+                <Link href="/impressum" className="block text-slate-300 hover:text-amber-400 transition-colors">Impressum</Link>
+                <Link href="/datenschutz" className="block text-slate-300 hover:text-amber-400 transition-colors">Datenschutz</Link>
               </div>
             </div>
           </div>
