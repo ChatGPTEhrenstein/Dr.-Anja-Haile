@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ArrowLeft, Brain, Heart, Users, Clock, Calendar, CheckCircle } from 'lucide-react'
@@ -12,8 +13,18 @@ export default function ServicesPage() {
       <nav className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-blue-900">
-              Dr. Anja Haile
+            <Link href="/" className="flex items-center space-x-3">
+              <Image 
+                src="/images/bdp-logo.svg" 
+                alt="BDP - Berufsverband deutscher Psychologen" 
+                width={50} 
+                height={50}
+                className="w-12 h-12"
+              />
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-blue-900">Dr. Anja Haile</span>
+                <span className="text-xs text-blue-600">Psychologische Psychotherapeutin</span>
+              </div>
             </Link>
             <div className="hidden md:flex space-x-8">
               <Link href="/" className="text-blue-800 hover:text-blue-600 transition-colors">Home</Link>
@@ -276,7 +287,16 @@ export default function ServicesPage() {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Dr. Anja Haile</h3>
+              <div className="flex items-center space-x-3 mb-4">
+                <Image 
+                  src="/images/bdp-logo.svg" 
+                  alt="BDP Logo" 
+                  width={40} 
+                  height={40}
+                  className="w-10 h-10"
+                />
+                <h3 className="text-xl font-bold">Dr. Anja Haile</h3>
+              </div>
               <p className="text-blue-200">
                 Psychologische Psychotherapeutin<br />
                 München, Deutschland
