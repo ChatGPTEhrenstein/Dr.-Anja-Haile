@@ -184,20 +184,20 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Enhanced Hero Image */}
-            <div className="lg:order-last animate-in slide-in-from-right-8 duration-1000 delay-300">
+            {/* Enhanced Hero Image - Mobile Optimized */}
+            <div className="lg:order-last animate-in slide-in-from-right-8 duration-1000 delay-300 mt-8 lg:mt-0">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-3xl blur-2xl group-hover:from-amber-500/30 group-hover:to-orange-500/30 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-2xl md:rounded-3xl blur-2xl group-hover:from-amber-500/30 group-hover:to-orange-500/30 transition-all duration-500"></div>
                 <img 
                   src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-483-1-scaled.jpg"
                   alt="Dr. Anja Haile - Therapie und Beratung"
-                  className="relative rounded-3xl shadow-2xl w-full h-[600px] object-cover border-4 border-white/50 transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="relative rounded-2xl md:rounded-3xl shadow-2xl w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover border-2 md:border-4 border-white/50 transition-transform duration-500 group-hover:scale-[1.02] touch-manipulation"
                 />
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-amber-100">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm font-medium text-slate-700">Verfügbar</span>
+                {/* Floating Elements - Mobile Responsive */}
+                <div className="absolute -top-2 md:-top-4 -right-2 md:-right-4 bg-white/90 backdrop-blur-sm rounded-xl md:rounded-2xl p-2 md:p-4 shadow-xl border border-amber-100">
+                  <div className="flex items-center space-x-1 md:space-x-2">
+                    <div className="w-2 md:w-3 h-2 md:h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs md:text-sm font-medium text-slate-700">Verfügbar</span>
                   </div>
                 </div>
               </div>
