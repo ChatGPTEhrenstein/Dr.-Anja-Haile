@@ -5,7 +5,7 @@
 
 **Status**: ✅ FULLY COMPLETED - Website with perfect modern design across all pages
 
-**Live URL**: https://dr-haile-website.preview.emergentagent.com
+**Live URL**: https://funktioniert-jetzt.preview.emergentagent.com
 
 ---
 
@@ -162,7 +162,7 @@
 ```
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=your_database_name
-NEXT_PUBLIC_BASE_URL=https://dr-haile-website.preview.emergentagent.com
+NEXT_PUBLIC_BASE_URL=https://funktioniert-jetzt.preview.emergentagent.com
 CORS_ORIGINS=*
 GEMINI_API_KEY=AIzaSyAXLG0p_7F6EMb3OZXNYzyzWzYz8d9dsrs
 ```
