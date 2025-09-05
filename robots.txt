@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Wichtige Seiten für Suchmaschinen hervorheben
+Sitemap: https://funktioniert-jetzt.preview.emergentagent.com/sitemap.xml
+
+# Spezielle Anweisungen für Suchmaschinen
+Crawl-delay: 1
+
+# Optimierung für lokale Suche München
+Allow: /about
+Allow: /services
+Allow: /contact
+Allow: /booking
+Allow: /testimonials
+Allow: /portfolio
+
+# Exclude admin or private areas (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
