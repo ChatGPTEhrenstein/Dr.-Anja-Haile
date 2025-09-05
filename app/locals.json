@@ -1,0 +1,61 @@
+{
+  "businessInfo": {
+    "name": "Dr. Anja Haile - Psychologische Psychotherapeutin",
+    "alternateName": "Praxis Dr. Anja Haile",
+    "address": {
+      "streetAddress": "Maximilianstraße 10",
+      "addressLocality": "München",
+      "addressRegion": "Bayern",
+      "postalCode": "80539",
+      "addressCountry": "Deutschland"
+    },
+    "coordinates": {
+      "latitude": 48.1351,
+      "longitude": 11.5820
+    },
+    "contact": {
+      "telephone": "+49 89 123 456 789",
+      "email": "praxis@anjahaile.de"
+    },
+    "socialMedia": {
+      "facebook": "",
+      "linkedin": "",
+      "xing": ""
+    },
+    "services": [
+      "Kognitive Verhaltenstherapie",
+      "Einzeltherapie",
+      "Paartherapie",
+      "Depressionsbehandlung",
+      "Angststörungen Therapie",
+      "Burnout Behandlung"
+    ],
+    "serviceAreas": [
+      "München",
+      "München Innenstadt",
+      "München Maxvorstadt",
+      "München Lehel",
+      "München Altstadt",
+      "München Schwabing"
+    ],
+    "languages": ["Deutsch"],
+    "qualifications": [
+      "Dr. phil.",
+      "Approbierte Psychologische Psychotherapeutin",
+      "BDP-Mitglied"
+    ],
+    "openingHours": "Mo-Fr 09:00-17:00",
+    "keywords": [
+      "Psychotherapie München",
+      "kognitive Verhaltenstherapie",
+      "Psychologe München",
+      "Therapie München",
+      "Depression behandeln München",
+      "Angststörung Therapie München",
+      "Burnout Hilfe München",
+      "BDP Psychotherapeut",
+      "Einzeltherapie München",
+      "Paartherapie München"
+    ]
+  }
+}
