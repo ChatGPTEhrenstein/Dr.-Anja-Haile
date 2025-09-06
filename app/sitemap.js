@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://funktioniert-jetzt.preview.emergentagent.com'
+  const baseUrl = 'https://web-to-ghl.preview.emergentagent.com'
   
   return [
     {
