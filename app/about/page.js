@@ -51,7 +51,7 @@ export default function AboutPage() {
             name: 'Dr. Anja Haile',
             jobTitle: 'Psychologische Psychotherapeutin',
             description: 'BDP-zertifizierte Psychologische Psychotherapeutin mit über 15 Jahren Erfahrung in kognitiver Verhaltenstherapie.',
-            url: 'https://web-to-ghl.preview.emergentagent.com/about',
+            url: 'https://integration-debug.preview.emergentagent.com/about',
             worksFor: {
               '@type': 'MedicalBusiness',
               name: 'Praxis Dr. Anja Haile',

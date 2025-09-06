@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Wichtige Seiten für Suchmaschinen hervorheben
-Sitemap: https://web-to-ghl.preview.emergentagent.com/sitemap.xml
+Sitemap: https://integration-debug.preview.emergentagent.com/sitemap.xml
 
 # Spezielle Anweisungen für Suchmaschinen
 Crawl-delay: 1
