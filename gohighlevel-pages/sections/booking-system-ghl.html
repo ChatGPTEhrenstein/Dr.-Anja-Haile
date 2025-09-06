@@ -1,0 +1,710 @@
+<!-- GoHighLevel Booking System Section - Dr. Anja Haile -->
+<!-- DSGVO-konform, GHL-Calendar Integration, Mobile-First -->
+
+<section style="
+  padding: 5rem 1rem;
+  background: #fefdf8;
+  position: relative;
+" id="booking">
+
+  <div class="container" style="max-width: 64rem; margin: 0 auto;">
+    
+    <!-- Section Header -->
+    <div style="
+      text-align: center;
+      margin-bottom: 3rem;
+      animation: fadeInUp 1s ease-out;
+    ">
+      <div style="
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(251, 146, 60, 0.2) 100%);
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #d97706;
+        margin-bottom: 1.5rem;
+      ">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Online Terminbuchung
+      </div>
+      
+      <h2 style="
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      ">Termin buchen</h2>
+      
+      <p style="
+        font-size: 1.25rem;
+        color: #64748b;
+        line-height: 1.6;
+        max-width: 48rem;
+        margin: 0 auto;
+      ">
+        Vereinbaren Sie einen Termin für ein unverbindliches Erstgespräch oder eine 
+        Beratungssitzung. Ich freue mich darauf, Sie kennenzulernen.
+      </p>
+    </div>
+
+    <!-- Benefits Grid -->
+    <div style="
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    " class="benefits-grid">
+      
+      <!-- Flexible Termine -->
+      <div style="
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(226, 170, 90, 0.1);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        text-align: center;
+        transition: all 0.3s ease;
+      " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 15px -3px rgba(226, 170, 90, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px -1px rgba(226, 170, 90, 0.1)'">
+        <div style="
+          width: 3rem;
+          height: 3rem;
+          background: linear-gradient(135deg, #e2aa5a 0%, #ea580c 100%);
+          border-radius: 0.75rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1rem;
+        ">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12,6 12,12 16,14"></polyline>
+          </svg>
+        </div>
+        <h3 style="
+          font-weight: 600;
+          color: #1e293b;
+          margin-bottom: 0.5rem;
+        ">Flexible Termine</h3>
+        <p style="
+          font-size: 0.875rem;
+          color: #64748b;
+        ">Örtlich und zeitlich flexibel</p>
+      </div>
+      
+      <!-- Erstgespräch -->
+      <div style="
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(226, 170, 90, 0.1);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        text-align: center;
+        transition: all 0.3s ease;
+      " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 15px -3px rgba(226, 170, 90, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px -1px rgba(226, 170, 90, 0.1)'">
+        <div style="
+          width: 3rem;
+          height: 3rem;
+          background: linear-gradient(135deg, #e2aa5a 0%, #ea580c 100%);
+          border-radius: 0.75rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1rem;
+        ">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M9 12l2 2 4-4"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+        </div>
+        <h3 style="
+          font-weight: 600;
+          color: #1e293b;
+          margin-bottom: 0.5rem;
+        ">Erstgespräch</h3>
+        <p style="
+          font-size: 0.875rem;
+          color: #64748b;
+        ">Unverbindliches Kennenlernen</p>
+      </div>
+      
+      <!-- GDPR Konform -->
+      <div style="
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(226, 170, 90, 0.1);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        text-align: center;
+        transition: all 0.3s ease;
+      " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 15px -3px rgba(226, 170, 90, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px -1px rgba(226, 170, 90, 0.1)'">
+        <div style="
+          width: 3rem;
+          height: 3rem;
+          background: linear-gradient(135deg, #e2aa5a 0%, #ea580c 100%);
+          border-radius: 0.75rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1rem;
+        ">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h3 style="
+          font-weight: 600;
+          color: #1e293b;
+          margin-bottom: 0.5rem;
+        ">GDPR konform</h3>
+        <p style="
+          font-size: 0.875rem;
+          color: #64748b;
+        ">Datenschutz garantiert</p>
+      </div>
+    </div>
+
+    <!-- GDPR Consent Section -->
+    <div style="
+      background: linear-gradient(135deg, white 0%, #fafafa 100%);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 10px 15px -3px rgba(226, 170, 90, 0.1);
+      border: 1px solid rgba(226, 170, 90, 0.1);
+      margin-bottom: 2rem;
+      display: block;
+    " id="gdpr-consent-section">
+      
+      <h3 style="
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1e293b;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      ">Datenschutz & Einverständnis</h3>
+      
+      <div style="
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      ">
+        <h4 style="
+          font-weight: 600;
+          color: #d97706;
+          margin-bottom: 0.75rem;
+          display: flex;
+          align-items: center;
+          font-size: 0.875rem;
+        ">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          GDPR-konforme Datenverarbeitung
+        </h4>
+        
+        <p style="
+          color: #92400e;
+          font-size: 0.875rem;
+          line-height: 1.5;
+          margin-bottom: 1rem;
+        ">
+          Zur Terminbuchung verwenden wir GoHighLevel, einen externen Kalender-Service. 
+          Ihre Daten werden ausschließlich für die Terminvereinbarung verwendet und 
+          gemäß GDPR-Richtlinien verarbeitet.
+        </p>
+        
+        <ul style="
+          color: #92400e;
+          font-size: 0.875rem;
+          line-height: 1.4;
+          margin: 0;
+          padding-left: 1rem;
+        ">
+          <li>Ihre Daten werden verschlüsselt übertragen</li>
+          <li>Keine Weitergabe an Dritte</li>
+          <li>Jederzeit widerrufbar</li>
+        </ul>
+      </div>
+      
+      <div style="
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      ">
+        <input
+          type="checkbox"
+          id="gdpr-consent-booking"
+          style="
+            margin-top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            accent-color: #e2aa5a;
+            cursor: pointer;
+          "
+          onchange="toggleBookingCalendar()"
+        />
+        <label for="gdpr-consent-booking" style="
+          font-size: 0.875rem;
+          color: #64748b;
+          line-height: 1.5;
+          cursor: pointer;
+        ">
+          Ich stimme der Verarbeitung meiner Daten zur Terminbuchung zu und habe die 
+          <a href="#datenschutz" style="color: #e2aa5a; text-decoration: underline;">Datenschutzerklärung</a> 
+          gelesen und verstanden.
+        </label>
+      </div>
+      
+      <button 
+        id="load-calendar-btn"
+        onclick="loadBookingCalendar()"
+        disabled
+        style="
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem 2rem;
+          background: #e5e7eb;
+          color: #9ca3af;
+          border: none;
+          border-radius: 0.75rem;
+          font-weight: 600;
+          font-size: 1rem;
+          cursor: not-allowed;
+          transition: all 0.3s ease;
+        "
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Kalender laden & Termin buchen
+      </button>
+    </div>
+
+    <!-- Calendar Container -->
+    <div style="
+      background: linear-gradient(135deg, white 0%, #fafafa 100%);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 10px 15px -3px rgba(226, 170, 90, 0.1);
+      border: 1px solid rgba(226, 170, 90, 0.1);
+      margin-bottom: 2rem;
+      display: none;
+    " id="calendar-container">
+      
+      <h3 style="
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1e293b;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      ">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e2aa5a" stroke-width="2" style="margin-right: 0.75rem;">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Verfügbare Termine
+      </h3>
+      
+      <div style="
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      ">
+        <p style="
+          color: #92400e;
+          font-size: 0.875rem;
+          margin: 0;
+        ">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem; display: inline; vertical-align: middle;">
+            <path d="M9 12l2 2 4-4"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+          Datenschutz-Einverständnis erteilt. Kalender wird geladen...
+        </p>
+      </div>
+      
+      <!-- 
+      ===============================================
+      HIER FÜGEN SIE IHR GOHIGHLEVEL KALENDER EIN
+      ===============================================
+      
+      Beispiel GoHighLevel Calendar Embed:
+      
+      <div class="ghl-calendar-container">
+        <iframe 
+          src="https://api.leadconnectorhq.com/widget/bookings/CALENDAR_ID" 
+          width="100%" 
+          height="600" 
+          frameborder="0"
+          title="Termin buchen - Dr. Anja Haile"
+          loading="lazy">
+        </iframe>
+      </div>
+      
+      ODER verwenden Sie das native GHL Calendar Widget
+      
+      ===============================================
+      -->
+      
+      <!-- Temporärer Platzhalter -->
+      <div style="
+        background: white;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed rgba(226, 170, 90, 0.3);
+      " id="calendar-placeholder">
+        <div style="text-align: center; color: #64748b;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin: 0 auto 1rem; display: block;">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <p style="font-weight: 500; margin-bottom: 0.5rem;">GoHighLevel Kalender</p>
+          <p style="font-size: 0.875rem;">Hier wird Ihr GHL-Terminkalender eingebettet</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alternative Contact Section -->
+    <div style="
+      background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(226, 170, 90, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.2);
+    ">
+      <h3 style="
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #1e293b;
+        text-align: center;
+        margin-bottom: 1rem;
+      ">Lieber persönlich kontaktieren?</h3>
+      
+      <p style="
+        color: #64748b;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 0.875rem;
+      ">
+        Wenn Sie Fragen haben oder einen Termin telefonisch vereinbaren möchten:
+      </p>
+      
+      <div style="
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      " class="alt-contact-buttons">
+        <a href="tel:+4989123456789" style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.75rem 1.5rem;
+          background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+          color: white;
+          text-decoration: none;
+          border-radius: 0.75rem;
+          font-weight: 600;
+          transition: all 0.2s ease;
+          touch-action: manipulation;
+        " onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform='translateY(0)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          Jetzt anrufen
+        </a>
+        
+        <a href="#contact" style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.75rem 1.5rem;
+          background: transparent;
+          color: #e2aa5a;
+          text-decoration: none;
+          border-radius: 0.75rem;
+          font-weight: 600;
+          border: 2px solid #e2aa5a;
+          transition: all 0.2s ease;
+          touch-action: manipulation;
+        " onmouseover="this.style.background='#e2aa5a'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#e2aa5a'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          E-Mail senden
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Responsive Styles & JavaScript -->
+<style>
+@media (min-width: 640px) {
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .alt-contact-buttons {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Calendar Integration Styles */
+.ghl-calendar-container iframe {
+  border-radius: 0.75rem;
+  border: none;
+  background: white;
+}
+
+.ghl-calendar-container {
+  width: 100%;
+  min-height: 500px;
+}
+
+/* Loading Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button States */
+.btn-enabled {
+  background: linear-gradient(135deg, #e2aa5a 0%, #ea580c 100%) !important;
+  color: white !important;
+  cursor: pointer !important;
+}
+
+.btn-enabled:hover {
+  background: linear-gradient(135deg, #d97706 0%, #c2410c 100%) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(226, 170, 90, 0.25);
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .benefits-grid > div:hover {
+    transform: none !important;
+  }
+  
+  .benefits-grid > div:active {
+    transform: scale(0.98) !important;
+    transition: transform 0.1s ease;
+  }
+}
+</style>
+
+<script>
+// GDPR Consent & Calendar Loading
+function toggleBookingCalendar() {
+  const checkbox = document.getElementById('gdpr-consent-booking');
+  const button = document.getElementById('load-calendar-btn');
+  
+  if (checkbox.checked) {
+    button.disabled = false;
+    button.classList.add('btn-enabled');
+    button.style.cursor = 'pointer';
+  } else {
+    button.disabled = true;
+    button.classList.remove('btn-enabled');
+    button.style.cursor = 'not-allowed';
+    button.style.background = '#e5e7eb';
+    button.style.color = '#9ca3af';
+    
+    // Hide calendar if shown
+    const calendarContainer = document.getElementById('calendar-container');
+    if (calendarContainer.style.display === 'block') {
+      calendarContainer.style.display = 'none';
+    }
+  }
+}
+
+function loadBookingCalendar() {
+  const checkbox = document.getElementById('gdpr-consent-booking');
+  
+  if (!checkbox.checked) {
+    alert('Bitte stimmen Sie der Datenverarbeitung zu, um den Kalender zu laden.');
+    return;
+  }
+  
+  // Hide consent section
+  const consentSection = document.getElementById('gdpr-consent-section');
+  consentSection.style.display = 'none';
+  
+  // Show calendar container
+  const calendarContainer = document.getElementById('calendar-container');
+  calendarContainer.style.display = 'block';
+  
+  // Smooth scroll to calendar
+  calendarContainer.scrollIntoView({ 
+    behavior: 'smooth', 
+    block: 'start' 
+  });
+  
+  // Here you would load the actual GoHighLevel calendar
+  // Replace the placeholder with your GHL calendar embed
+  loadActualCalendar();
+}
+
+function loadActualCalendar() {
+  // This function should load your actual GoHighLevel calendar
+  // Replace this with your GHL calendar embed code
+  
+  const placeholder = document.getElementById('calendar-placeholder');
+  
+  // Example: Replace with actual GHL calendar iframe
+  const calendarHTML = `
+    <div style="
+      background: white;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    ">
+      <div style="text-align: center; color: #64748b;">
+        <div style="
+          width: 3rem;
+          height: 3rem;
+          background: linear-gradient(135deg, #e2aa5a 0%, #ea580c 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1rem;
+          animation: pulse 2s infinite;
+        ">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </div>
+        <p style="font-weight: 600; margin-bottom: 0.5rem; color: #1e293b;">Kalender wird geladen...</p>
+        <p style="font-size: 0.875rem;">Hier wird Ihr GoHighLevel Kalender angezeigt</p>
+      </div>
+    </div>
+  `;
+  
+  // In production, replace this with:
+  // const calendarHTML = '<iframe src="https://api.leadconnectorhq.com/widget/bookings/YOUR_CALENDAR_ID" width="100%" height="600" frameborder="0"></iframe>';
+  
+  placeholder.innerHTML = calendarHTML;
+}
+
+// Page Load Initialization
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize button state
+  toggleBookingCalendar();
+  
+  // Add smooth scrolling for anchor links
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+});
+
+// Pulse animation for loading state
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+`;
+document.head.appendChild(style);
+</script>
+
+<!-- 
+===============================================
+GHL CALENDAR INTEGRATION NOTES:
+===============================================
+
+1. CALENDAR SETUP IN GOHIGHLEVEL:
+   - Erstellen Sie einen Kalender in GHL
+   - Konfigurieren Sie Verfügbarkeitszeiten
+   - Stellen Sie sicher, dass GDPR-Einstellungen aktiviert sind
+
+2. EMBED CODE ERSETZEN:
+   Ersetzen Sie den Inhalt von loadActualCalendar() mit:
+   
+   const calendarHTML = `
+     <iframe 
+       src="https://api.leadconnectorhq.com/widget/bookings/YOUR_CALENDAR_ID" 
+       width="100%" 
+       height="600" 
+       frameborder="0"
+       title="Termin buchen - Dr. Anja Haile"
+       loading="lazy">
+     </iframe>
+   `;
+
+3. CRM MAPPING:
+   - Terminbuchungen werden automatisch in GHL CRM erstellt
+   - Lead wird mit Tag "Website Booking" markiert
+   - Pipeline: "Website Leads" → Stage: "Booked Appointment"
+
+4. AUTOMATISIERUNG:
+   - Bestätigungs-E-Mail nach Buchung
+   - Erinnerungs-E-Mails vor Termin
+   - Follow-up-Sequenzen nach Termin
+
+5. DSGVO-COMPLIANCE:
+   - Einverständnis wird vor Kalender-Load eingeholt
+   - Datenschutzerklärung verlinkt
+   - Widerrufsmöglichkeit erwähnt
+
+===============================================
+-->
