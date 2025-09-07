@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Intro Section - Dr. Anja Haile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .services-intro-section {
+            padding: 5rem 1rem 3rem;
+            position: relative;
+            background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 30%, #fed7aa 100%);
+            overflow: hidden;
+        }
+        
+        .services-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .services-bg-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.2;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .services-bg-element:first-child {
+            top: 2.5rem;
+            left: 2.5rem;
+            width: 18rem;
+            height: 18rem;
+            background: #fbbf24;
+            animation-delay: 0s;
+        }
+        
+        .services-bg-element:last-child {
+            bottom: 2.5rem;
+            right: 2.5rem;
+            width: 24rem;
+            height: 24rem;
+            background: #fb923c;
+            animation-delay: -1s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: rgba(252, 211, 77, 0.8);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #b45309;
+            border: 1px solid rgba(252, 211, 77, 0.5);
+            margin-bottom: 2rem;
+        }
+        
+        .badge svg {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.5rem;
+            color: #f59e0b;
+        }
+        
+        .services-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 640px) {
+            .services-title {
+                font-size: 4rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .services-title {
+                font-size: 6rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #e2aa5a, #f97316, #e2aa5a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .services-description {
+            font-size: 1.25rem;
+            color: #475569;
+            line-height: 1.6;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <section class="services-intro-section">
+        <!-- Background Elements -->
+        <div class="services-bg">
+            <div class="services-bg-element"></div>
+            <div class="services-bg-element"></div>
+        </div>
+
+        <div class="container">
+            <!-- Badge -->
+            <div class="badge">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                </svg>
+                Professionelle Therapieleistungen
+            </div>
+
+            <h1 class="services-title">
+                Psychotherapie
+                <span class="gradient-text">Leistungen</span>
+            </h1>
+            
+            <p class="services-description">
+                Professionelle psychotherapeutische Unterstützung mit bewährten Methoden. 
+                Spezialisiert auf <strong style="color: #e2aa5a;">kognitive Verhaltenstherapie</strong> 
+                für nachhaltige Veränderungen in Ihrem Leben.
+            </p>
+        </div>
+    </section>
+</body>
+</html>
