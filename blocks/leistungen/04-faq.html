@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section - Dr. Anja Haile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .faq-section {
+            padding: 5rem 1rem;
+            position: relative;
+            background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 50%, #fed7aa 100%);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        @media (min-width: 1024px) {
+            .section-title {
+                font-size: 5rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .section-description {
+            font-size: 1.25rem;
+            color: #475569;
+            line-height: 1.75;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .faq-item {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(226, 170, 90, 0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(226, 170, 90, 0.1);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+            transition: all 0.3s ease;
+            touch-action: manipulation;
+        }
+        
+        .faq-question:hover {
+            color: #b45309;
+        }
+        
+        .faq-question:active {
+            transform: scale(0.98);
+        }
+        
+        .faq-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #e2aa5a;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+        
+        /* Touch optimizations for mobile */
+        @media (max-width: 1023px) {
+            .faq-question {
+                min-height: 44px;
+                touch-action: manipulation;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-description {
+                font-size: 1.125rem;
+            }
+            
+            .faq-question {
+                padding: 1.25rem;
+                font-size: 1rem;
+            }
+            
+            .faq-answer-content {
+                padding: 0 1.25rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="faq-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    Häufige 
+                    <span class="gradient-text">Fragen</span>
+                </h2>
+                <p class="section-description">
+                    Antworten auf die wichtigsten Fragen zu meiner therapeutischen Arbeit 
+                    und dem Ablauf einer Therapie.
+                </p>
+            </div>
+            
+            <!-- FAQ Accordion -->
+            <div class="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Wie läuft ein Erstgespräch ab?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Das Erstgespräch dient dem gegenseitigen Kennenlernen und dauert etwa 50 Minuten. 
+                            Wir besprechen Ihr Anliegen, Ihre Ziele und klären, ob eine therapeutische Zusammenarbeit 
+                            für Sie hilfreich sein kann. Dieses Gespräch ist unverbindlich und vertraulich.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Wie lange dauert eine Therapie?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Die Therapiedauer ist individuell verschieden und hängt von Ihrem Anliegen ab. 
+                            Eine Kurzzeittherapie umfasst 12-24 Sitzungen, eine Langzeittherapie kann 
+                            45-80 Sitzungen dauern. Wir besprechen regelmäßig den Therapiefortschritt.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Übernimmt die Krankenkasse die Kosten?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Als approbierte Psychotherapeutin mit Kassenzulassung können die Kosten 
+                            von Ihrer gesetzlichen oder privaten Krankenkasse übernommen werden. 
+                            Nach der Antragstellung erhalten Sie eine Rückmeldung über die Kostenübernahme.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Was ist kognitive Verhaltenstherapie?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Die kognitive Verhaltenstherapie (KVT) ist ein wissenschaftlich fundiertes Verfahren, 
+                            das sich auf die Verbindung zwischen Gedanken, Gefühlen und Verhalten konzentriert. 
+                            Ziel ist es, problematische Denkmuster zu erkennen und zu verändern.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Wie kann ich einen Termin vereinbaren?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Sie können über mein Online-Buchungssystem einen Termin vereinbaren oder 
+                            mich telefonisch kontaktieren. Ich melde mich schnellstmöglich bei Ihnen zurück, 
+                            um einen passenden Termin zu finden.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Unterliegen unsere Gespräche der Schweigepflicht?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Ja, alle Inhalte unserer therapeutischen Gespräche unterliegen der 
+                            absoluten Schweigepflicht. Als approbierte Psychotherapeutin bin ich 
+                            gesetzlich zur Verschwiegenheit verpflichtet.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

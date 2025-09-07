@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Process Section - Dr. Anja Haile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .process-section {
+            padding: 5rem 1rem;
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        @media (min-width: 1024px) {
+            .section-title {
+                font-size: 5rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .section-description {
+            font-size: 1.25rem;
+            color: #475569;
+            line-height: 1.75;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        
+        .process-steps {
+            display: grid;
+            gap: 2rem;
+            position: relative;
+        }
+        
+        @media (min-width: 1024px) {
+            .process-steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Connection line between steps */
+        @media (min-width: 1024px) {
+            .process-steps::before {
+                content: '';
+                position: absolute;
+                top: 3rem;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(90deg, transparent 0%, #e2aa5a 15%, #e2aa5a 85%, transparent 100%);
+                z-index: 1;
+            }
+        }
+        
+        .process-step {
+            position: relative;
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(226, 170, 90, 0.05);
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+        
+        .process-step:hover {
+            box-shadow: 0 25px 50px -12px rgba(226, 170, 90, 0.1);
+            transform: translateY(-8px);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1.125rem;
+            box-shadow: 0 4px 12px rgba(226, 170, 90, 0.3);
+        }
+        
+        .step-icon {
+            width: 4rem;
+            height: 4rem;
+            margin: 1.5rem auto 1.5rem;
+            border-radius: 1rem;
+            background: rgba(226, 170, 90, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .process-step:hover .step-icon {
+            transform: scale(1.1);
+        }
+        
+        .step-icon svg {
+            width: 2rem;
+            height: 2rem;
+            color: #e2aa5a;
+        }
+        
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .process-step:hover .step-title {
+            color: #b45309;
+        }
+        
+        .step-description {
+            color: #475569;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+        
+        .process-step:hover .step-description {
+            color: #1e293b;
+        }
+        
+        /* Touch optimizations for mobile */
+        @media (max-width: 1023px) {
+            .process-step {
+                touch-action: manipulation;
+            }
+            
+            .process-step:active {
+                transform: scale(0.98);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-description {
+                font-size: 1.125rem;
+            }
+            
+            .process-step {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="process-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    Mein therapeutischer 
+                    <span class="gradient-text">Ansatz</span>
+                </h2>
+                <p class="section-description">
+                    Evidenzbasierte Methoden kombiniert mit empathischer, 
+                    individueller Betreuung für nachhaltige Veränderungen.
+                </p>
+            </div>
+            
+            <!-- Process Steps -->
+            <div class="process-steps">
+                <!-- Step 1: Vertrauensvolle Atmosphäre -->
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Vertrauensvolle Atmosphäre</h3>
+                    <p class="step-description">
+                        Ein sicherer Raum für offene Gespräche und persönliche Entwicklung.
+                    </p>
+                </div>
+
+                <!-- Step 2: Lösungsorientiert -->
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Lösungsorientiert</h3>
+                    <p class="step-description">
+                        Fokus auf konkrete Strategien und nachhaltige Veränderungen.
+                    </p>
+                </div>
+
+                <!-- Step 3: Individuell angepasst -->
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Individuell angepasst</h3>
+                    <p class="step-description">
+                        Jede Therapie wird speziell auf Ihre Bedürfnisse zugeschnitten.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
