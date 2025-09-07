@@ -1,0 +1,42 @@
+{
+  "page": "global",
+  "title": "Global Components - Header & Footer",
+  "description": "Wiederverwendbare globale Komponenten für alle Seiten",
+  "sections": [
+    {
+      "id": "header",
+      "name": "Navigation Header",
+      "description": "Responsive Navigation mit Logo und Menü",
+      "file": "header.html",
+      "priority": "critical"
+    },
+    {
+      "id": "footer", 
+      "name": "Footer Section",
+      "description": "Footer mit Kontaktdaten und rechtlichen Links",
+      "file": "footer.html", 
+      "priority": "critical"
+    },
+    {
+      "id": "cookie-banner",
+      "name": "Cookie Consent Banner",
+      "description": "DSGVO-konformer Cookie-Banner",
+      "file": "cookie-banner.html",
+      "priority": "high"
+    },
+    {
+      "id": "emergency-contact",
+      "name": "Emergency Contact",
+      "description": "Notfall-Kontakt für Krisensituationen",
+      "file": "emergency-contact.html", 
+      "priority": "high"
+    }
+  ],
+  "meta": {
+    "created": "2025-01-07",
+    "ghl_compatible": true,
+    "mobile_optimized": true,
+    "gdpr_compliant": true,
+    "usage": "Include on all pages"
+  }
+}

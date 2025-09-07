@@ -1,0 +1,41 @@
+{
+  "page": "termin-buchen", 
+  "title": "Termin buchen - Online Terminvereinbarung",
+  "description": "Online-Terminbuchung und Kalender-Integration",
+  "sections": [
+    {
+      "id": "01-booking-hero",
+      "name": "Booking Hero",
+      "description": "Hero-Bereich für Terminbuchung",
+      "file": "01-booking-hero.html",
+      "priority": "high"
+    },
+    {
+      "id": "02-booking-system",
+      "name": "Booking System",
+      "description": "GHL-Kalender Integration für Terminbuchung",
+      "file": "02-booking-system.html",
+      "priority": "high"
+    },
+    {
+      "id": "03-appointment-info",
+      "name": "Appointment Information",
+      "description": "Informationen zum Ersttermin und Ablauf",
+      "file": "03-appointment-info.html",
+      "priority": "medium"
+    },
+    {
+      "id": "04-preparation-guide",
+      "name": "Preparation Guide", 
+      "description": "Vorbereitung auf den ersten Termin",
+      "file": "04-preparation-guide.html",
+      "priority": "medium"
+    }
+  ],
+  "meta": {
+    "created": "2025-01-07",
+    "ghl_compatible": true,
+    "mobile_optimized": true,
+    "gdpr_compliant": true
+  }
+}

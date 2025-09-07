@@ -1,0 +1,41 @@
+{
+  "page": "impressum",
+  "title": "Impressum - Rechtliche Informationen",
+  "description": "Impressum und rechtliche Angaben nach deutschem Recht",
+  "sections": [
+    {
+      "id": "01-legal-header",
+      "name": "Legal Header",
+      "description": "Header für rechtliche Seiten",
+      "file": "01-legal-header.html",
+      "priority": "high"
+    },
+    {
+      "id": "02-impressum-content",
+      "name": "Impressum Content",
+      "description": "Vollständiges Impressum nach TMG",
+      "file": "02-impressum-content.html", 
+      "priority": "high"
+    },
+    {
+      "id": "03-professional-info",
+      "name": "Professional Information",
+      "description": "Berufsrechtliche Angaben und Kammer-Informationen",
+      "file": "03-professional-info.html",
+      "priority": "high"
+    },
+    {
+      "id": "04-liability-disclaimer",
+      "name": "Liability Disclaimer",
+      "description": "Haftungsausschluss und Urheberrecht",
+      "file": "04-liability-disclaimer.html",
+      "priority": "medium"
+    }
+  ],
+  "meta": {
+    "created": "2025-01-07",
+    "ghl_compatible": true,
+    "mobile_optimized": true,
+    "gdpr_compliant": true
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "page": "kontakt",
+  "title": "Kontakt - Dr. Anja Haile",
+  "description": "Kontaktformular und Praxis-Informationen",
+  "sections": [
+    {
+      "id": "01-contact-hero",
+      "name": "Contact Hero",
+      "description": "Hero-Bereich für Kontakt-Seite",
+      "file": "01-contact-hero.html",
+      "priority": "high"
+    },
+    {
+      "id": "02-contact-form",
+      "name": "Contact Form",
+      "description": "DSGVO-konformes Kontaktformular mit GHL-Integration",
+      "file": "02-contact-form.html",
+      "priority": "high"
+    },
+    {
+      "id": "03-practice-info",
+      "name": "Practice Information",
+      "description": "Praxis-Adresse, Öffnungszeiten und Anfahrt",
+      "file": "03-practice-info.html",
+      "priority": "high"
+    },
+    {
+      "id": "04-map-location",
+      "name": "Map & Location",
+      "description": "Karte mit Praxis-Standort",
+      "file": "04-map-location.html",
+      "priority": "medium"
+    }
+  ],
+  "meta": {
+    "created": "2025-01-07",
+    "ghl_compatible": true,
+    "mobile_optimized": true,
+    "gdpr_compliant": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "page": "datenschutz",
+  "title": "Datenschutz - Privacy Policy",
+  "description": "DSGVO-konforme Datenschutzerklärung",
+  "sections": [
+    {
+      "id": "01-privacy-header",
+      "name": "Privacy Header",
+      "description": "Header für Datenschutz-Seite",
+      "file": "01-privacy-header.html",
+      "priority": "high"
+    },
+    {
+      "id": "02-data-collection",
+      "name": "Data Collection",
+      "description": "Informationen zur Datenerhebung und -verarbeitung",
+      "file": "02-data-collection.html",
+      "priority": "high"
+    },
+    {
+      "id": "03-patient-rights",
+      "name": "Patient Rights",
+      "description": "Patientenrechte nach DSGVO",
+      "file": "03-patient-rights.html",
+      "priority": "high"
+    },
+    {
+      "id": "04-cookies-tracking",
+      "name": "Cookies & Tracking",
+      "description": "Cookie-Richtlinien und Tracking-Informationen",
+      "file": "04-cookies-tracking.html",
+      "priority": "medium"
+    },
+    {
+      "id": "05-contact-dpo",
+      "name": "Contact Data Protection Officer",
+      "description": "Kontakt zum Datenschutzbeauftragten",
+      "file": "05-contact-dpo.html",
+      "priority": "medium"
+    }
+  ],
+  "meta": {
+    "created": "2025-01-07",
+    "ghl_compatible": true,
+    "mobile_optimized": true,
+    "gdpr_compliant": true
+  }
+}
