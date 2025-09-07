@@ -1,0 +1,197 @@
+{
+  "project": {
+    "name": "Dr. Anja Haile - GoHighLevel Content Blocks",
+    "description": "Vollständige, organisierte Content-Block-Struktur für GoHighLevel Integration",
+    "version": "1.0.0",
+    "created": "2025-01-07",
+    "client": "Dr. Anja Haile - Psychologische Psychotherapeutin München"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "name": "Startseite",
+      "path": "home/",
+      "sections_count": 4,
+      "priority": "critical",
+      "description": "Hero-Bereich, Services-Übersicht, Atmosphäre-Galerie, CTA-Sektion"
+    },
+    {
+      "id": "about", 
+      "name": "Über mich",
+      "path": "about/",
+      "sections_count": 4,
+      "priority": "high",
+      "description": "Profil, Qualifikationen, Zertifizierungen, Therapieansatz"
+    },
+    {
+      "id": "leistungen",
+      "name": "Leistungen",
+      "path": "leistungen/",
+      "sections_count": 5,
+      "priority": "high", 
+      "description": "Services-Hero, Kognitive Therapie, Einzeltherapie, Paartherapie, Preise"
+    },
+    {
+      "id": "portfolio",
+      "name": "Portfolio",
+      "path": "portfolio/",
+      "sections_count": 4,
+      "priority": "medium",
+      "description": "Portfolio-Hero, Erfolgsstatistiken, Fallstudien, Spezialisierungen"
+    },
+    {
+      "id": "testimonials",
+      "name": "Testimonials", 
+      "path": "testimonials/",
+      "sections_count": 4,
+      "priority": "medium",
+      "description": "Testimonials-Hero, Bewertungs-Grid, Rating-Zusammenfassung, Vertrauenssiegel"
+    },
+    {
+      "id": "kontakt",
+      "name": "Kontakt",
+      "path": "kontakt/",
+      "sections_count": 4, 
+      "priority": "high",
+      "description": "Kontakt-Hero, Kontaktformular, Praxis-Info, Karte"
+    },
+    {
+      "id": "termin-buchen",
+      "name": "Termin buchen",
+      "path": "termin-buchen/",
+      "sections_count": 4,
+      "priority": "critical",
+      "description": "Booking-Hero, Buchungssystem, Termin-Info, Vorbereitungsguide"
+    },
+    {
+      "id": "impressum",
+      "name": "Impressum",
+      "path": "impressum/",
+      "sections_count": 4,
+      "priority": "medium",
+      "description": "Legal-Header, Impressum-Inhalt, Berufsinfo, Haftungsausschluss"
+    },
+    {
+      "id": "datenschutz", 
+      "name": "Datenschutz",
+      "path": "datenschutz/",
+      "sections_count": 5,
+      "priority": "high",
+      "description": "Privacy-Header, Datenerhebung, Patientenrechte, Cookies, DPO-Kontakt"
+    }
+  ],
+  "global_components": [
+    {
+      "id": "header",
+      "name": "Navigation Header",
+      "file": "global/header.html",
+      "usage": "all_pages",
+      "priority": "critical",
+      "description": "Responsive Navigation mit Logo, Menü und CTA-Button"
+    },
+    {
+      "id": "footer",
+      "name": "Footer Section", 
+      "file": "global/footer.html",
+      "usage": "all_pages",
+      "priority": "critical",
+      "description": "Footer mit Kontaktdaten, Navigation und rechtlichen Links"
+    },
+    {
+      "id": "cookie-banner",
+      "name": "Cookie Consent Banner",
+      "file": "global/cookie-banner.html", 
+      "usage": "all_pages",
+      "priority": "high",
+      "description": "DSGVO-konformer Cookie-Banner"
+    },
+    {
+      "id": "emergency-contact",
+      "name": "Emergency Contact",
+      "file": "global/emergency-contact.html",
+      "usage": "therapy_pages",
+      "priority": "high", 
+      "description": "Notfall-Kontakt für Krisensituationen"
+    }
+  ],
+  "technical_specs": {
+    "html_version": "HTML5",
+    "css_method": "inline_styles",
+    "javascript": "vanilla_js",
+    "responsive": true,
+    "mobile_first": true,
+    "touch_optimized": true,
+    "accessibility": "WCAG_2.1_AA",
+    "gdpr_compliant": true,
+    "ghl_compatible": true
+  },
+  "design_system": {
+    "colors": {
+      "primary": "#e2aa5a",
+      "secondary": "#ea580c", 
+      "accent": "#f59e0b",
+      "background": "#fefdf8",
+      "text": "#1e293b",
+      "text_light": "#64748b",
+      "success": "#10b981",
+      "warning": "#fbbf24",
+      "error": "#ef4444"
+    },
+    "typography": {
+      "primary_font": "Inter",
+      "fallback_fonts": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      "font_weights": [400, 500, 600, 700]
+    },
+    "spacing": {
+      "unit": "rem",
+      "scale": [0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3, 4, 5, 6]
+    },
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px", 
+      "lg": "1024px",
+      "xl": "1280px"
+    }
+  },
+  "features": {
+    "mobile_responsive": true,
+    "touch_friendly": true,
+    "seo_optimized": true,
+    "performance_optimized": true,
+    "accessibility_compliant": true,
+    "gdpr_compliant": true,
+    "ghl_ready": true,
+    "lazy_loading": true,
+    "smooth_scrolling": true,
+    "hover_effects": true,
+    "loading_animations": true
+  },
+  "deployment": {
+    "target_platform": "GoHighLevel",
+    "integration_method": "custom_html_blocks",
+    "asset_hosting": "ghl_media_library",
+    "form_integration": "ghl_forms",
+    "calendar_integration": "ghl_calendar", 
+    "crm_integration": "ghl_crm"
+  },
+  "maintenance": {
+    "last_updated": "2025-01-07",
+    "update_frequency": "as_needed",
+    "version_control": "git",
+    "backup_strategy": "automatic",
+    "testing_required": true
+  },
+  "total_sections": {
+    "home": 4,
+    "about": 4, 
+    "leistungen": 5,
+    "portfolio": 4,
+    "testimonials": 4,
+    "kontakt": 4,
+    "termin_buchen": 4,
+    "impressum": 4,
+    "datenschutz": 5,
+    "global": 4,
+    "total": 42
+  }
+}
