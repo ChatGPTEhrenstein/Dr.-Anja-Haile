@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://integration-debug.preview.emergentagent.com'
+  const baseUrl = 'https://html-blocks.preview.emergentagent.com'
   
   return [
     {
