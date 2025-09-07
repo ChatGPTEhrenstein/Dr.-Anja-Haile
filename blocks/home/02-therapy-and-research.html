@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy & Research Section - Dr. Anja Haile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .therapy-section {
+            padding: 5rem 1rem;
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #b45309;
+            margin-bottom: 1.5rem;
+        }
+        
+        .badge svg {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.5rem;
+        }
+        
+        .section-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        @media (min-width: 1024px) {
+            .section-title {
+                font-size: 5rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .section-description {
+            font-size: 1.25rem;
+            color: #475569;
+            line-height: 1.75;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .service-card {
+            position: relative;
+            border-radius: 1.5rem;
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid transparent;
+            box-shadow: 0 10px 25px -5px rgba(226, 170, 90, 0.05);
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(226, 170, 90, 0.1);
+            transform: translateY(-8px);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .service-card:hover::before {
+            opacity: 0.1;
+        }
+        
+        .service-icon {
+            position: relative;
+            z-index: 10;
+            width: 5rem;
+            height: 5rem;
+            margin: 0 auto 1.5rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        
+        .service-icon svg {
+            width: 2rem;
+            height: 2rem;
+            color: white;
+        }
+        
+        .service-card:nth-child(1) .service-icon {
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+        }
+        
+        .service-card:nth-child(1) .service-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+            border-radius: 1rem;
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .service-card:nth-child(1):hover .service-icon::after {
+            opacity: 0.5;
+        }
+        
+        .service-card:nth-child(2) .service-icon {
+            background: linear-gradient(135deg, #ec4899, #f472b6);
+        }
+        
+        .service-card:nth-child(2) .service-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #ec4899, #f472b6);
+            border-radius: 1rem;
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .service-card:nth-child(2):hover .service-icon::after {
+            opacity: 0.5;
+        }
+        
+        .service-card:nth-child(3) .service-icon {
+            background: linear-gradient(135deg, #10b981, #14b8a6);
+        }
+        
+        .service-card:nth-child(3) .service-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #10b981, #14b8a6);
+            border-radius: 1rem;
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .service-card:nth-child(3):hover .service-icon::after {
+            opacity: 0.5;
+        }
+        
+        .service-title {
+            position: relative;
+            z-index: 10;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card:hover .service-title {
+            color: #b45309;
+        }
+        
+        .service-description {
+            position: relative;
+            z-index: 10;
+            color: #475569;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card:hover .service-description {
+            color: #1e293b;
+        }
+        
+        .service-arrow {
+            position: relative;
+            z-index: 10;
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #e2aa5a;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-arrow {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .cta-section {
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            box-shadow: 0 10px 25px -5px rgba(226, 170, 90, 0.25);
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #d97706, #ea580c);
+            box-shadow: 0 20px 35px -5px rgba(226, 170, 90, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+        
+        .btn svg {
+            margin-left: 0.5rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover svg {
+            transform: translateX(4px);
+        }
+        
+        /* Touch optimizations for mobile */
+        @media (max-width: 1023px) {
+            .btn {
+                min-height: 44px;
+                touch-action: manipulation;
+                padding: 0.875rem 1.5rem;
+            }
+            
+            .service-card {
+                touch-action: manipulation;
+            }
+            
+            .service-card:active {
+                transform: scale(0.98);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-description {
+                font-size: 1.125rem;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="therapy-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="badge">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Therapy & Research
+                </div>
+                <h2 class="section-title">
+                    Spezialisierte 
+                    <span class="gradient-text">Therapie</span>
+                </h2>
+                <p class="section-description">
+                    Evidenzbasierte Unterstützung für mentale und emotionale Veränderungen. 
+                    Überwinden Sie Selbstzweifel und führen Sie ein erfüllteres Leben.
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- Kognitive Verhaltenstherapie -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Kognitive Verhaltenstherapie</h3>
+                    <p class="service-description">
+                        Evidenzbasierte Methoden zur nachhaltigen Veränderung von Denkmustern und Verhaltensweisen.
+                    </p>
+                    <svg class="service-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+
+                <!-- Emotionale Transformation -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Emotionale Transformation</h3>
+                    <p class="service-description">
+                        Begleitung bei der Entwicklung emotionaler Stabilität und Selbstakzeptanz.
+                    </p>
+                    <svg class="service-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+
+                <!-- Individuelle Beratung -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Individuelle Beratung</h3>
+                    <p class="service-description">
+                        Maßgeschneiderte Therapieansätze für Ihre persönlichen Bedürfnisse und Ziele.
+                    </p>
+                    <svg class="service-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <a href="/services" class="btn">
+                    Alle Leistungen ansehen
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

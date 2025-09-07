@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmosphäre & Eindrücke Section - Dr. Anja Haile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .atmosphere-section {
+            padding: 5rem 1rem;
+            position: relative;
+            background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 50%, #fed7aa 100%);
+            overflow: hidden;
+        }
+        
+        .atmosphere-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .atmosphere-bg-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.1;
+        }
+        
+        .atmosphere-bg-element:first-child {
+            top: 5rem;
+            left: 25%;
+            width: 16rem;
+            height: 16rem;
+            background: #fbbf24;
+        }
+        
+        .atmosphere-bg-element:last-child {
+            bottom: 5rem;
+            right: 25%;
+            width: 20rem;
+            height: 20rem;
+            background: #fb923c;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        @media (min-width: 1024px) {
+            .section-title {
+                font-size: 5rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .section-description {
+            font-size: 1.25rem;
+            color: #475569;
+            line-height: 1.75;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 146, 60, 0.1));
+            cursor: pointer;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        
+        /* Desktop hover effects only */
+        @media (min-width: 1024px) {
+            .gallery-item:hover .gallery-image {
+                transform: scale(1.1);
+            }
+            
+            .gallery-item:hover .gallery-overlay {
+                opacity: 1;
+            }
+            
+            .gallery-item:hover .shine-effect {
+                transform: translateX(100%);
+            }
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+        
+        .gallery-content {
+            color: white;
+        }
+        
+        .gallery-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-accent {
+            width: 3rem;
+            height: 0.25rem;
+            background: #f59e0b;
+            border-radius: 0.125rem;
+        }
+        
+        .shine-effect {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 1s ease;
+        }
+        
+        .cta-section {
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            border: 2px solid #fcd34d;
+            color: #b45309;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            text-decoration: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #fef3c7;
+            border-color: #fbbf24;
+            transform: translateY(-2px);
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+        
+        .btn svg {
+            margin-left: 0.5rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover svg {
+            transform: translateX(4px);
+        }
+        
+        /* Touch optimizations for mobile */
+        @media (max-width: 1023px) {
+            .btn {
+                min-height: 44px;
+                touch-action: manipulation;
+                padding: 0.875rem 1.5rem;
+            }
+            
+            .gallery-item {
+                touch-action: manipulation;
+            }
+            
+            .gallery-item:active {
+                transform: scale(0.98);
+            }
+            
+            /* Mobile: Show overlay content by default */
+            .gallery-overlay {
+                opacity: 1;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-description {
+                font-size: 1.125rem;
+            }
+            
+            .gallery-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="atmosphere-section">
+        <!-- Background Elements -->
+        <div class="atmosphere-bg">
+            <div class="atmosphere-bg-element"></div>
+            <div class="atmosphere-bg-element"></div>
+        </div>
+
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    Atmosphäre & 
+                    <span class="gradient-text">Eindrücke</span>
+                </h2>
+                <p class="section-description">
+                    Lernen Sie mich und meine professionelle, warme Arbeitsatmosphäre kennen. 
+                    Ein Raum für Vertrauen, Wachstum und positive Veränderung.
+                </p>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Image 1 -->
+                <div class="gallery-item">
+                    <img 
+                        src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-050-4eck-scaled.jpg"
+                        alt="Dr. Anja Haile - Professionelle Therapie Atmosphäre"
+                        class="gallery-image"
+                    />
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Professionelle Atmosphäre</h3>
+                            <div class="gallery-accent"></div>
+                        </div>
+                    </div>
+                    <div class="shine-effect"></div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="gallery-item">
+                    <img 
+                        src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-070_4Eck-scaled.jpg"
+                        alt="Dr. Anja Haile - Einfühlsame Beratung"
+                        class="gallery-image"
+                    />
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Einfühlsame Beratung</h3>
+                            <div class="gallery-accent"></div>
+                        </div>
+                    </div>
+                    <div class="shine-effect"></div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-item">
+                    <img 
+                        src="https://anjahaile.de/wp-content/uploads/2024/12/241011-Anja-Haile-Isabel-Wallace-178-scaled.jpg"
+                        alt="Dr. Anja Haile - Vertrauensvolle Gespräche"
+                        class="gallery-image"
+                    />
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Vertrauensvolle Gespräche</h3>
+                            <div class="gallery-accent"></div>
+                        </div>
+                    </div>
+                    <div class="shine-effect"></div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <a href="/about" class="btn">
+                    Mehr über meine Arbeitsweise
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

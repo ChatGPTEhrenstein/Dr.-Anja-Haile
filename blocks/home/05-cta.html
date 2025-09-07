@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTA Section - Dr. Anja Haile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .cta-section {
+            padding: 5rem 1rem;
+            position: relative;
+            background: linear-gradient(135deg, #e2aa5a, #c2410c, #b45309);
+            overflow: hidden;
+        }
+        
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .cta-bg-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.05;
+        }
+        
+        .cta-bg-element:first-child {
+            top: 2.5rem;
+            left: 2.5rem;
+            width: 18rem;
+            height: 18rem;
+            background: white;
+        }
+        
+        .cta-bg-element:last-child {
+            bottom: 2.5rem;
+            right: 2.5rem;
+            width: 24rem;
+            height: 24rem;
+            background: white;
+        }
+        
+        .cta-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(255, 235, 59, 0.9);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .badge svg {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.5rem;
+        }
+        
+        .cta-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        @media (min-width: 1024px) {
+            .cta-title {
+                font-size: 6rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #fed7aa, white);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .cta-description {
+            font-size: 1.25rem;
+            color: rgba(255, 235, 59, 0.9);
+            line-height: 1.75;
+            max-width: 32rem;
+            margin: 0 auto 3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 640px) {
+            .cta-buttons {
+                flex-direction: row;
+            }
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #b45309;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary:hover {
+            background: #fef7ed;
+            box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary:active {
+            transform: scale(0.95);
+        }
+        
+        .btn-primary svg:first-child {
+            margin-right: 0.75rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-primary:hover svg:first-child {
+            transform: rotate(12deg);
+        }
+        
+        .btn-primary svg:last-child {
+            margin-left: 0.75rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-primary:hover svg:last-child {
+            transform: translateX(4px);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            color: rgba(255, 235, 59, 0.9);
+        }
+        
+        @media (min-width: 640px) {
+            .contact-info {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .contact-item svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+        
+        .contact-divider {
+            width: 1px;
+            height: 1.5rem;
+            background: rgba(255, 235, 59, 0.3);
+            display: none;
+        }
+        
+        @media (min-width: 640px) {
+            .contact-divider {
+                display: block;
+            }
+        }
+        
+        .trust-section {
+            display: grid;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        @media (min-width: 768px) {
+            .trust-section {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .trust-item {
+            text-align: center;
+        }
+        
+        .trust-icon {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .trust-icon svg {
+            width: 2rem;
+            height: 2rem;
+            color: white;
+        }
+        
+        .trust-title {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .trust-description {
+            color: rgba(255, 235, 59, 0.8);
+            font-size: 0.875rem;
+        }
+        
+        /* Touch optimizations for mobile */
+        @media (max-width: 1023px) {
+            .btn {
+                min-height: 44px;
+                touch-action: manipulation;
+                padding: 0.875rem 1.5rem;
+            }
+            
+            .btn:active {
+                transform: scale(0.95);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .cta-title {
+                font-size: 2.5rem;
+            }
+            
+            .cta-description {
+                font-size: 1.125rem;
+            }
+            
+            .trust-section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="cta-section">
+        <!-- Background Elements -->
+        <div class="cta-bg">
+            <div class="cta-bg-element"></div>
+            <div class="cta-bg-element"></div>
+        </div>
+        <div class="cta-pattern"></div>
+
+        <div class="container">
+            <!-- Badge -->
+            <div class="badge">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                Kostenlose Erstberatung verfügbar
+            </div>
+
+            <h2 class="cta-title">
+                Bereit für Ihre 
+                <span class="gradient-text">Transformation?</span>
+            </h2>
+            
+            <p class="cta-description">
+                Vereinbaren Sie ein unverbindliches Erstgespräch und beginnen Sie Ihren Weg zur Veränderung. 
+                Gemeinsam finden wir den besten Ansatz für Ihre persönliche Entwicklung.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="cta-buttons">
+                <a href="/booking" class="btn btn-primary">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    Jetzt Termin buchen
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <span>+49 (0) 89 123 456 789</span>
+                    </div>
+                    <div class="contact-divider"></div>
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>praxis@anjahaile.de</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="trust-section">
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">Zertifiziert & Erfahren</h3>
+                    <p class="trust-description">BDP-zertifiziert mit über 15 Jahren Berufserfahrung</p>
+                </div>
+                
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">Individuelle Betreuung</h3>
+                    <p class="trust-description">Maßgeschneiderte Therapieansätze für jeden Patienten</p>
+                </div>
+                
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">Zentral in München</h3>
+                    <p class="trust-description">Gut erreichbare Praxis in der Maximilianstraße</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
