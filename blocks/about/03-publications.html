@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications Section - Dr. Anja Haile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .publications-section {
+            padding: 5rem 1rem;
+            position: relative;
+            background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 50%, #fed7aa 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        @media (min-width: 1024px) {
+            .section-title {
+                font-size: 5rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .section-description {
+            font-size: 1.25rem;
+            color: #475569;
+            line-height: 1.75;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        
+        .publications-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .publication-card {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(226, 170, 90, 0.05);
+            border-left: 4px solid #e2aa5a;
+            transition: all 0.3s ease;
+        }
+        
+        .publication-card:hover {
+            box-shadow: 0 8px 25px rgba(226, 170, 90, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .publication-year {
+            display: inline-block;
+            background: #e2aa5a;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .publication-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .publication-authors {
+            font-size: 0.875rem;
+            color: #475569;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        .publication-journal {
+            font-size: 0.875rem;
+            color: #e2aa5a;
+            font-weight: 600;
+            font-style: italic;
+        }
+        
+        .thesis-card {
+            border-left-color: #f97316;
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+        }
+        
+        .thesis-card .publication-year {
+            background: #f97316;
+        }
+        
+        .special-highlight {
+            border-left-color: #10b981;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        }
+        
+        .special-highlight .publication-year {
+            background: #10b981;
+        }
+        
+        .research-focus {
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .research-focus-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .research-focus-text {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .research-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        
+        .keyword-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        /* Touch optimizations for mobile */
+        @media (max-width: 1023px) {
+            .publication-card {
+                touch-action: manipulation;
+            }
+            
+            .publication-card:active {
+                transform: scale(0.98);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-description {
+                font-size: 1.125rem;
+            }
+            
+            .publication-card {
+                padding: 1.25rem;
+            }
+            
+            .research-focus {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="publications-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    Wissenschaftliche 
+                    <span class="gradient-text">Publikationen</span>
+                </h2>
+                <p class="section-description">
+                    Meine Forschung zu Placebo-Effekten, Neuropsychologie und therapeutischen Interventionen 
+                    in renommierten internationalen Fachzeitschriften.
+                </p>
+            </div>
+            
+            <!-- Publications Grid -->
+            <div class="publications-grid">
+                <!-- 2023 Publications -->
+                <div class="publication-card special-highlight">
+                    <div class="publication-year">2023</div>
+                    <div class="publication-title">Placebo effects on nausea and motion sickness are resistant to experimentally-induced stress</div>
+                    <div class="publication-authors">Jacob C., Olliges E., <strong>Haile A.</strong>, Hoffmann V. Jacobi B., Steinkopf L., Lanz M., Wittmann M., Tschöp M.H., Meissner K.</div>
+                    <div class="publication-journal">Scientific Reports Nature</div>
+                </div>
+
+                <div class="publication-card special-highlight">
+                    <div class="publication-year">2022</div>
+                    <div class="publication-title">Central correlates of placebo effects in nausea differ between men and women</div>
+                    <div class="publication-authors"><strong>Haile A.</strong>, Watts M., Aichner S., Stahlberg F., Hoffmann V. Tschoep M., Meissner K.</div>
+                    <div class="publication-journal">Brain and Behavior</div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-year">2022</div>
+                    <div class="publication-title">Open-label placebo administration decreases pain in elderly patients with symptomatic knee osteoarthritis – a randomized controlled trial</div>
+                    <div class="publication-authors">Olliges E., Stroppe S., <strong>Haile A.</strong>, Reiß F., Malhis M., Funke S., Meissner K.</div>
+                    <div class="publication-journal">Frontiers in Psychiatry</div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-year">2020</div>
+                    <div class="publication-title">Molecular classification of the placebo effect in nausea</div>
+                    <div class="publication-authors">Meissner K., Lutter D., von Toerne Ch., <strong>Haile A.</strong>, et al.</div>
+                    <div class="publication-journal">PLOS One</div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-year">2019</div>
+                    <div class="publication-title">The role of tactile stimulation for expectation, perceived treatment assignment and the placebo effect in an experimental nausea paradigm</div>
+                    <div class="publication-authors">Aichner S., <strong>Haile A.</strong>, Hoffmann V., Olliges E., Tschoep M., Meissner K.</div>
+                    <div class="publication-journal">Frontiers in Neuroscience</div>
+                </div>
+
+                <!-- Thesis -->
+                <div class="publication-card thesis-card">
+                    <div class="publication-year">2018</div>
+                    <div class="publication-title">Neurophysiology of the placebo effect in nausea</div>
+                    <div class="publication-authors"><strong>Haile A.</strong></div>
+                    <div class="publication-journal">Dissertation, Ludwig-Maximilians-Universität München</div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-year">2017</div>
+                    <div class="publication-title">Acute stress impairs frontocingulate activity during error-monitoring in remitted depression</div>
+                    <div class="publication-authors">Whitton A.E., Van't Veer A., Kakani P., Dillon G.D., Ironside M.L., <strong>Haile A.</strong>, Pizzagalli D.A.</div>
+                    <div class="publication-journal">Psychoneuroendocrinology</div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-year">2016</div>
+                    <div class="publication-title">Blunted neuronal responses to reward in remitted major depression: A high-density event-related potential study</div>
+                    <div class="publication-authors">Whitton A.E, Kakani P., Foti D., Van't Veer A., <strong>Haile A.</strong>, Crowley D.J., Pizzagalli D.A.</div>
+                    <div class="publication-journal">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-year">2016</div>
+                    <div class="publication-title">Sex differences in psychophysiological correlates of the placebo response in nausea</div>
+                    <div class="publication-authors">Meissner K., Aichner S., Stalberg F., Hoffmann V., Tschoep M., <strong>Haile A.</strong></div>
+                    <div class="publication-journal">International Journal of Psychophysiology</div>
+                </div>
+
+                <!-- Early Thesis -->
+                <div class="publication-card thesis-card">
+                    <div class="publication-year">2011</div>
+                    <div class="publication-title">Episodic memory plasticity in adulthood: Gains and transfer effects of imagery training and its relation to visual creativity</div>
+                    <div class="publication-authors"><strong>Haile A.</strong>, Brehmer, Y., Shing YL.</div>
+                    <div class="publication-journal">Abschlussarbeit, Freie Universität Berlin</div>
+                </div>
+            </div>
+
+            <!-- Research Focus -->
+            <div class="research-focus">
+                <div class="research-focus-title">Forschungsschwerpunkte</div>
+                <div class="research-focus-text">
+                    Meine wissenschaftliche Arbeit konzentriert sich auf die neurobiologischen und psychologischen 
+                    Mechanismen des Placebo-Effekts, insbesondere bei Übelkeit und Schmerz, sowie auf 
+                    geschlechtsspezifische Unterschiede in der Placebo-Reaktion.
+                </div>
+                <div class="research-keywords">
+                    <div class="keyword-tag">Placebo-Effekt</div>
+                    <div class="keyword-tag">Neuropsychologie</div>
+                    <div class="keyword-tag">Geschlechtsunterschiede</div>
+                    <div class="keyword-tag">Mind-Body-Medizin</div>
+                    <div class="keyword-tag">Psychophysiologie</div>
+                    <div class="keyword-tag">Kognitive Verhaltenstherapie</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

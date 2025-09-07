@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research & Career Section - Dr. Anja Haile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .research-section {
+            padding: 5rem 1rem;
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        @media (min-width: 1024px) {
+            .section-title {
+                font-size: 5rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #e2aa5a, #f97316);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .section-description {
+            font-size: 1.25rem;
+            color: #475569;
+            line-height: 1.75;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        
+        .career-timeline {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+        
+        /* Timeline line */
+        .career-timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #e2aa5a, #f97316);
+        }
+        
+        @media (min-width: 768px) {
+            .career-timeline::before {
+                left: 2rem;
+            }
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-item {
+                padding-left: 5rem;
+            }
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #e2aa5a;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px rgba(226, 170, 90, 0.3);
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-dot {
+                left: 1.5rem;
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+        }
+        
+        .timeline-content {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(226, 170, 90, 0.05);
+            border: 1px solid rgba(226, 170, 90, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            box-shadow: 0 8px 25px rgba(226, 170, 90, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .timeline-year {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #e2aa5a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-position {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+        }
+        
+        .timeline-organization {
+            font-size: 1rem;
+            color: #475569;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .timeline-description {
+            font-size: 0.875rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        
+        .highlight-item {
+            border-left: 4px solid #e2aa5a;
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+        }
+        
+        .highlight-item .timeline-dot {
+            background: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
+        }
+        
+        .awards-section {
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        
+        .awards-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #b45309;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .awards-title svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        
+        .awards-text {
+            color: #92400e;
+            font-weight: 500;
+        }
+        
+        /* Touch optimizations for mobile */
+        @media (max-width: 1023px) {
+            .timeline-content {
+                touch-action: manipulation;
+            }
+            
+            .timeline-content:active {
+                transform: scale(0.98);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-description {
+                font-size: 1.125rem;
+            }
+            
+            .timeline-content {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="research-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    Research & 
+                    <span class="gradient-text">Therapy</span>
+                </h2>
+                <p class="section-description">
+                    Mein wissenschaftlicher und therapeutischer Werdegang - von der Grundlagenforschung 
+                    zur praktischen Anwendung in der Psychotherapie.
+                </p>
+            </div>
+            
+            <!-- Career Timeline -->
+            <div class="career-timeline">
+                <!-- Current Position -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content highlight-item">
+                        <div class="timeline-year">seit 2022</div>
+                        <div class="timeline-position">Dozentin am Lehrstuhl für Medizinische Psychologie</div>
+                        <div class="timeline-organization">LMU München</div>
+                        <div class="timeline-description">Lehre und Forschung im Bereich Placebo-Effekte und psychologische Interventionen</div>
+                    </div>
+                </div>
+
+                <!-- Psychotherapist -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content highlight-item">
+                        <div class="timeline-year">seit 2018</div>
+                        <div class="timeline-position">Psychologische Psychotherapeutin (unter Supervision)</div>
+                        <div class="timeline-organization">Deutsche Gesellschaft für Verhaltenstherapie e.V. München</div>
+                        <div class="timeline-description">Therapeutische Praxis mit Fokus auf kognitive Verhaltenstherapie</div>
+                    </div>
+                </div>
+
+                <!-- Clinical Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2017-2018</div>
+                        <div class="timeline-position">Psychologin i.A.</div>
+                        <div class="timeline-organization">kbo Isar-Amper-Klinikum für Psychiatrie und Psychotherapie</div>
+                        <div class="timeline-description">Akutpsychiatrie - praktische Erfahrung in der stationären Behandlung</div>
+                    </div>
+                </div>
+
+                <!-- Research Position LMU -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2014-2016</div>
+                        <div class="timeline-position">Wissenschaftliche Mitarbeiterin</div>
+                        <div class="timeline-organization">Institut für Medizinische Psychologie, LMU München</div>
+                        <div class="timeline-description">Forschung zu Placebo-Effekten und psychophysiologischen Korrelaten</div>
+                    </div>
+                </div>
+
+                <!-- Harvard Research -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2013</div>
+                        <div class="timeline-position">Forschungspraktikum</div>
+                        <div class="timeline-organization">Center for Depression, Anxiety & Stress Research, McLean Psychiatric Hospital, Harvard Medical School Affiliate, Belmont, MA</div>
+                        <div class="timeline-description">Internationale Forschungserfahrung in der Depressionsforschung</div>
+                    </div>
+                </div>
+
+                <!-- Max Planck Research -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2011-2013</div>
+                        <div class="timeline-position">Hilfswissenschaftlerin</div>
+                        <div class="timeline-organization">Max-Planck-Institut für Psychiatrie, München</div>
+                        <div class="timeline-description">Grundlagenforschung in der Psychiatrie und Neurobiologie</div>
+                    </div>
+                </div>
+
+                <!-- Cambridge Research -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2012</div>
+                        <div class="timeline-position">Forschungspraktikum</div>
+                        <div class="timeline-organization">Center of Child and Adolescent Psychiatry, University of Cambridge, UK</div>
+                        <div class="timeline-description">Spezialisierung auf Kinder- und Jugendpsychiatrie</div>
+                    </div>
+                </div>
+
+                <!-- Early Research -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2010-2011</div>
+                        <div class="timeline-position">Hilfswissenschaftlerin</div>
+                        <div class="timeline-organization">Max-Planck-Institut für Entwicklungspsychologie, Berlin</div>
+                        <div class="timeline-description">Forschung zu Gedächtnis und kognitiver Entwicklung</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Awards Section -->
+            <div class="awards-section">
+                <div class="awards-title">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                    </svg>
+                    Auszeichnungen
+                </div>
+                <p class="awards-text">
+                    Poster Preis der Jahrestagung Deutsche Gesellschaft für Medizinische Psychologie
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
