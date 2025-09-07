@@ -1,8 +1,3 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ArrowLeft, Brain, Heart, Users, Clock, Calendar, CheckCircle, Star, Award, Target, ArrowRight, Menu, Zap, Shield, Lightbulb } from 'lucide-react'
 import ClientServicesComponent from './ClientServicesComponent'
 
 // SEO metadata for services page
