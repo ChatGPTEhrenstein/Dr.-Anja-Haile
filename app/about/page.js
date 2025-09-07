@@ -1,11 +1,9 @@
-'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ArrowLeft, Award, Heart, Users, Calendar, CheckCircle, Star, Brain, Target, BookOpen, Clock, Shield, Menu } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { ArrowLeft, Award, Heart, Users, Calendar, CheckCircle, Star, Brain, Target, BookOne, Clock, Shield, Menu } from 'lucide-react'
+import ClientAboutComponent from './ClientAboutComponent'
 
 // SEO metadata for this page
 export const metadata = {
