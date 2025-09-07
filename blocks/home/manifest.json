@@ -1,0 +1,41 @@
+{
+  "page": "home",
+  "title": "Startseite - Dr. Anja Haile",
+  "description": "Hauptseite mit Hero-Bereich, Leistungsübersicht und Call-to-Action",
+  "sections": [
+    {
+      "id": "01-hero",
+      "name": "Hero Section",
+      "description": "Hauptbereich mit Überschrift, CTA-Buttons und Vertrauensindikatoren",
+      "file": "01-hero-section.html",
+      "priority": "high"
+    },
+    {
+      "id": "02-services-preview",
+      "name": "Services Preview", 
+      "description": "Übersicht der wichtigsten Therapie-Leistungen",
+      "file": "02-services-preview.html",
+      "priority": "high"
+    },
+    {
+      "id": "03-atmosphere-gallery",
+      "name": "Atmosphere Gallery",
+      "description": "Bildergalerie der Praxis-Atmosphäre", 
+      "file": "03-atmosphere-gallery.html",
+      "priority": "medium"
+    },
+    {
+      "id": "04-cta-section",
+      "name": "Call to Action",
+      "description": "Abschließender CTA-Bereich mit Kontaktdaten",
+      "file": "04-cta-section.html", 
+      "priority": "high"
+    }
+  ],
+  "meta": {
+    "created": "2025-01-07",
+    "ghl_compatible": true,
+    "mobile_optimized": true,
+    "gdpr_compliant": true
+  }
+}

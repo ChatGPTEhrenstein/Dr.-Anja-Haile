@@ -1,0 +1,41 @@
+{
+  "page": "about",
+  "title": "Über mich - Dr. Anja Haile", 
+  "description": "Profil, Qualifikationen und persönlicher Werdegang",
+  "sections": [
+    {
+      "id": "01-about-hero",
+      "name": "About Hero",
+      "description": "Hero-Bereich für Über mich Seite",
+      "file": "01-about-hero.html",
+      "priority": "high"
+    },
+    {
+      "id": "02-profile-section",
+      "name": "Profile & Qualifications",
+      "description": "Detailliertes Profil mit Qualifikationen und Erfahrung",
+      "file": "02-profile-section.html", 
+      "priority": "high"
+    },
+    {
+      "id": "03-credentials",
+      "name": "Credentials & Memberships",
+      "description": "Zertifizierungen und Mitgliedschaften",
+      "file": "03-credentials.html",
+      "priority": "medium"
+    },
+    {
+      "id": "04-approach",
+      "name": "Therapeutic Approach",
+      "description": "Therapeutischer Ansatz und Philosophie",
+      "file": "04-approach.html",
+      "priority": "medium"
+    }
+  ],
+  "meta": {
+    "created": "2025-01-07",
+    "ghl_compatible": true,
+    "mobile_optimized": true,
+    "gdpr_compliant": true
+  }
+}

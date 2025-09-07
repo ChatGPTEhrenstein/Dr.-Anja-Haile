@@ -1,0 +1,48 @@
+{
+  "page": "leistungen",
+  "title": "Leistungen - Psychotherapie Services",
+  "description": "Detaillierte Übersicht aller therapeutischen Leistungen",
+  "sections": [
+    {
+      "id": "01-services-hero",
+      "name": "Services Hero",
+      "description": "Hero-Bereich für Leistungsseite",
+      "file": "01-services-hero.html",
+      "priority": "high"
+    },
+    {
+      "id": "02-cognitive-therapy",
+      "name": "Kognitive Verhaltenstherapie", 
+      "description": "Detaillierte Beschreibung der kognitiven Verhaltenstherapie",
+      "file": "02-cognitive-therapy.html",
+      "priority": "high"
+    },
+    {
+      "id": "03-individual-therapy",
+      "name": "Einzeltherapie",
+      "description": "Informationen zur individuellen Therapie",
+      "file": "03-individual-therapy.html",
+      "priority": "high"
+    },
+    {
+      "id": "04-couple-therapy",
+      "name": "Paartherapie",
+      "description": "Details zur Paartherapie und Beziehungsberatung",
+      "file": "04-couple-therapy.html",
+      "priority": "medium"
+    },
+    {
+      "id": "05-pricing-info",
+      "name": "Pricing Information",
+      "description": "Kosten und Kassenleistungen",
+      "file": "05-pricing-info.html",
+      "priority": "medium"
+    }
+  ],
+  "meta": {
+    "created": "2025-01-07", 
+    "ghl_compatible": true,
+    "mobile_optimized": true,
+    "gdpr_compliant": true
+  }
+}

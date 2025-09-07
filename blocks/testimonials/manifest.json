@@ -1,0 +1,41 @@
+{
+  "page": "testimonials",
+  "title": "Testimonials - Patientenbewertungen",
+  "description": "Bewertungen und Erfahrungsberichte von Patienten",
+  "sections": [
+    {
+      "id": "01-testimonials-hero",
+      "name": "Testimonials Hero",
+      "description": "Hero-Bereich für Testimonials-Seite", 
+      "file": "01-testimonials-hero.html",
+      "priority": "high"
+    },
+    {
+      "id": "02-testimonials-grid",
+      "name": "Testimonials Grid",
+      "description": "Raster mit Patientenbewertungen",
+      "file": "02-testimonials-grid.html",
+      "priority": "high"
+    },
+    {
+      "id": "03-rating-summary",
+      "name": "Rating Summary",
+      "description": "Übersicht der Bewertungen und Durchschnittswerte",
+      "file": "03-rating-summary.html",
+      "priority": "medium"
+    },
+    {
+      "id": "04-trust-badges",
+      "name": "Trust Badges",
+      "description": "Vertrauenssiegel und Zertifizierungen",
+      "file": "04-trust-badges.html",
+      "priority": "medium"
+    }
+  ],
+  "meta": {
+    "created": "2025-01-07",
+    "ghl_compatible": true,
+    "mobile_optimized": true,
+    "gdpr_compliant": true
+  }
+}

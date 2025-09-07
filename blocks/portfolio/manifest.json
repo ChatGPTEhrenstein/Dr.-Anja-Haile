@@ -1,0 +1,41 @@
+{
+  "page": "portfolio",
+  "title": "Portfolio - Erfolge & Statistiken",
+  "description": "Erfolgsstatistiken und Behandlungserfahrungen",
+  "sections": [
+    {
+      "id": "01-portfolio-hero",
+      "name": "Portfolio Hero", 
+      "description": "Hero-Bereich für Portfolio-Seite",
+      "file": "01-portfolio-hero.html",
+      "priority": "high"
+    },
+    {
+      "id": "02-success-stats",
+      "name": "Success Statistics",
+      "description": "Erfolgsstatistiken und Behandlungszahlen",
+      "file": "02-success-stats.html",
+      "priority": "high"
+    },
+    {
+      "id": "03-case-studies",
+      "name": "Case Studies",
+      "description": "Anonymisierte Fallstudien (DSGVO-konform)",
+      "file": "03-case-studies.html",
+      "priority": "medium"
+    },
+    {
+      "id": "04-specializations",
+      "name": "Specializations",
+      "description": "Behandlungsschwerpunkte und Spezialisierungen",
+      "file": "04-specializations.html",
+      "priority": "medium"
+    }
+  ],
+  "meta": {
+    "created": "2025-01-07",
+    "ghl_compatible": true,
+    "mobile_optimized": true,
+    "gdpr_compliant": true
+  }
+}
