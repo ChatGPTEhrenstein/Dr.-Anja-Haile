@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ArrowLeft, Calendar, Clock, Shield, CheckCircle, Star, Phone, Mail, Menu } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, Shield, CheckCircle, Star, Phone, Mail, Menu, MapPin } from 'lucide-react'
 
 export default function ClientBookingComponent() {
   const [isScrolled, setIsScrolled] = useState(false)
