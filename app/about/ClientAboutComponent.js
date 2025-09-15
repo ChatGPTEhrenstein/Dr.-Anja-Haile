@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ArrowLeft, Award, Heart, Users, Calendar, CheckCircle, Star, Brain, Target, BookOpen, Clock, Shield, Menu } from 'lucide-react'
+import { ArrowLeft, Award, Heart, Users, Calendar, CheckCircle, Star, Brain, Target, BookOpen, Clock, Shield, Menu, MapPin, Phone, Mail } from 'lucide-react'
 
 export default function ClientAboutComponent() {
   const [isScrolled, setIsScrolled] = useState(false)
