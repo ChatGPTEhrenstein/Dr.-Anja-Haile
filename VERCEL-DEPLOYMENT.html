@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vercel Deployment - Dr. Anja Haile</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #000; border-bottom: 2px solid #000; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 30px; }
+        .highlight { background: #000; color: white; padding: 15px; border-radius: 8px; margin: 15px 0; }
+        .step { background: #f8f9fa; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #000; }
+        .code { background: #f1f3f4; padding: 12px; font-family: monospace; border-radius: 4px; }
+        .success { color: #22c55e; font-weight: bold; }
+        .url { color: #3b82f6; font-weight: bold; word-break: break-all; }
+        .warning { background: #fef3c7; padding: 15px; border-left: 4px solid #f59e0b; margin: 15px 0; }
+        .feature { display: flex; align-items: center; margin: 10px 0; }
+        .feature-icon { margin-right: 10px; font-size: 20px; }
+        .screenshot { background: #e5e5e5; padding: 20px; text-align: center; border-radius: 8px; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>▲ Vercel Deployment - Dr. Anja Haile Website</h1>
+        
+        <div class="highlight">
+            <strong>🎯 Ziel:</strong> Kostenlose, professionelle Website auf Vercel<br>
+            <strong>📦 Build-Datei:</strong> <code>dr-anja-haile-vercel.tar.gz</code> (605KB)<br>
+            <strong>🚀 Erwartete URL:</strong> <span class="url">https://dr-anja-haile-psychotherapie.vercel.app</span>
+        </div>
+
+        <h2>🌟 Vercel Subdomain-Features:</h2>
+        <div class="step">
+            <div class="feature">
+                <span class="feature-icon">🔗</span>
+                <div>
+                    <strong>Automatische URLs:</strong><br>
+                    • <span class="url">dr-anja-haile.vercel.app</span><br>
+                    • <span class="url">anja-haile-psychotherapie.vercel.app</span><br>
+                    • <span class="url">psychotherapie-muenchen.vercel.app</span>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🎨</span>
+                <div>
+                    <strong>Custom Domains (kostenlos):</strong><br>
+                    • <span class="url">www.anjahaile.de</span><br>
+                    • <span class="url">praxis.anjahaile.de</span><br>
+                    • <span class="url">termin.anjahaile.de</span>
+                </div>
+            </div>
+        </div>
+
+        <h2>📋 Schritt-für-Schritt Anleitung:</h2>
+
+        <div class="step">
+            <h3>Schritt 1: Vercel Account erstellen</h3>
+            <ol>
+                <li>Gehen Sie zu <a href="https://vercel.com" target="_blank"><strong>vercel.com</strong></a></li>
+                <li>Klicken Sie auf <strong>"Sign Up"</strong></li>
+                <li>Wählen Sie <strong>"Continue with GitHub"</strong> oder <strong>"Continue with Google"</strong></li>
+                <li>Kostenloses Hobby-Konto auswählen</li>
+            </ol>
+            <div class="success">✅ Account kostenlos - keine Kreditkarte erforderlich!</div>
+        </div>
+
+        <div class="step">
+            <h3>Schritt 2: Projekt erstellen</h3>
+            <ol>
+                <li>Nach dem Login: Klicken Sie auf <strong>"New Project"</strong></li>
+                <li>Wählen Sie <strong>"Browse All Templates"</strong></li>
+                <li>Oder direkt: <strong>"Deploy"</strong> Button</li>
+            </ol>
+            <div class="screenshot">📸 Dashboard → New Project → Import bestehende Datei</div>
+        </div>
+
+        <div class="step">
+            <h3>Schritt 3: Dateien hochladen</h3>
+            <p><strong>Option A - Drag & Drop (Empfohlen):</strong></p>
+            <ol>
+                <li>Die Datei <code>dr-anja-haile-vercel.tar.gz</code> herunterladen</li>
+                <li>Datei entpacken (zip/tar extrahieren)</li>
+                <li>Alle Dateien auswählen und per Drag & Drop auf Vercel ziehen</li>
+            </ol>
+            
+            <p><strong>Option B - GitHub Repository:</strong></p>
+            <ol>
+                <li>GitHub Repository erstellen</li>
+                <li>Dateien hochladen</li>
+                <li>Vercel mit GitHub verbinden</li>
+                <li>Repository importieren</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>Schritt 4: Deployment konfigurieren</h3>
+            <div class="code">
+Project Name: dr-anja-haile-psychotherapie
+Framework Preset: Other (Static)
+Root Directory: ./
+Build Command: (leer lassen)
+Output Directory: (leer lassen)
+Install Command: (leer lassen)
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Schritt 5: Deploy!</h3>
+            <ol>
+                <li>Klicken Sie auf <strong>"Deploy"</strong></li>
+                <li>Warten Sie 30-60 Sekunden</li>
+                <li>🎉 Ihre URL wird angezeigt!</li>
+            </ol>
+            <div class="success">⚡ Deployment-Zeit: 30-60 Sekunden</div>
+        </div>
+
+        <h2>🎨 Custom Domain hinzufügen (optional):</h2>
+        <div class="step">
+            <ol>
+                <li>Im Vercel Dashboard: <strong>Settings → Domains</strong></li>
+                <li>Neue Domain eingeben: <code>anjahaile.de</code></li>
+                <li>DNS-Einstellungen bei Ihrem Domain-Provider ändern:</li>
+            </ol>
+            <div class="code">
+A Record: @ → 76.76.19.61
+CNAME: www → dr-anja-haile-psychotherapie.vercel.app
+            </div>
+            <div class="success">🌐 SSL-Zertifikat wird automatisch erstellt!</div>
+        </div>
+
+        <h2>📊 Was Sie bekommen:</h2>
+        <div class="step">
+            <div class="feature">
+                <span class="feature-icon">⚡</span>
+                <strong>Blitzschnell:</strong> Global CDN, unter 1s Ladezeit
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔒</span>
+                <strong>HTTPS:</strong> Automatisches SSL-Zertifikat
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🌍</span>
+                <strong>Global:</strong> Server in Deutschland, USA, Asien
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📱</span>
+                <strong>Mobile:</strong> Optimiert für alle Geräte
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📈</span>
+                <strong>Analytics:</strong> Kostenlose Website-Statistiken
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔄</span>
+                <strong>Updates:</strong> Einfache Re-Deployments
+            </div>
+        </div>
+
+        <div class="warning">
+            <strong>💡 Tipp:</strong> Nach dem Deployment können Sie den Namen ändern:<br>
+            <strong>Settings → General → Project Name</strong><br>
+            Dadurch ändert sich auch die URL!
+        </div>
+
+        <h2>🎯 Mögliche URLs nach dem Deployment:</h2>
+        <div class="step">
+            <strong>Automatisch generiert:</strong><br>
+            • <span class="url">https://dr-anja-haile-psychotherapie.vercel.app</span><br>
+            • <span class="url">https://dr-anja-haile-psychotherapie-git-main-[username].vercel.app</span><br><br>
+            
+            <strong>Anpassbar zu:</strong><br>
+            • <span class="url">https://dr-anja-haile.vercel.app</span><br>
+            • <span class="url">https://anjahaile.vercel.app</span><br>
+            • <span class="url">https://psychotherapie-muenchen.vercel.app</span>
+        </div>
+
+        <div class="highlight">
+            <strong>🎉 Nach dem Deployment haben Sie:</strong><br>
+            ✅ Kostenlose, professionelle Website<br>
+            ✅ 24/7 online, kein Auto-Sleep<br>
+            ✅ Schnelle, globale URLs<br>
+            ✅ SSL-Verschlüsselung<br>
+            ✅ Mobile-optimiert<br>
+            ✅ SEO-freundlich
+        </div>
+
+        <h2>📞 Falls Sie Hilfe brauchen:</h2>
+        <div class="step">
+            1. Vercel Dokumentation: <a href="https://vercel.com/docs" target="_blank">vercel.com/docs</a><br>
+            2. Vercel Support: Kostenloser Community Support<br>
+            3. Deployment funktioniert nicht? Dateien nochmal prüfen
+        </div>
+
+        <div class="success">
+            🚀 <strong>Bereit für den Launch!</strong> Ihre Dr. Anja Haile Website wird professionell und schnell auf Vercel laufen.
+        </div>
+    </div>
+</body>
+</html>
