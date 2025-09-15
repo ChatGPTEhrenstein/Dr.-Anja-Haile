@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { ArrowLeft, Star, Quote, Calendar, Shield, Heart, Brain, Users, CheckCircle, Menu } from 'lucide-react'
+import { ArrowLeft, Star, Quote, Calendar, Shield, Heart, Brain, Users, CheckCircle, Menu, Mail, Phone, MapPin } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function TestimonialsPage() {
