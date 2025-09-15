@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://link-werkzeug.preview.emergentagent.com'
+  const baseUrl = 'https://therapy-haile-site.preview.emergentagent.com'
   
   return [
     {
