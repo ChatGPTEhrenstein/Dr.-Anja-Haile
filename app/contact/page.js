@@ -367,6 +367,116 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      {/* Enhanced Footer */}
+      <footer className="bg-slate-900 text-white py-16 px-4 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-600/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto relative">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            {/* Enhanced Brand Section */}
+            <div className="md:col-span-2">
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="relative">
+                  <Image 
+                    src="/images/bdp-logo.png" 
+                    alt="BDP Logo" 
+                    width={60} 
+                    height={60}
+                    className="w-15 h-15 drop-shadow-sm"
+                  />
+                  <div className="absolute inset-0 bg-amber-500/20 rounded-full blur-lg"></div>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Dr. Anja Haile</h3>
+                  <p className="text-amber-300 font-medium">Psychologische Psychotherapeutin</p>
+                </div>
+              </div>
+              <p className="text-slate-300 leading-relaxed mb-8 max-w-md">
+                Professionelle psychologische Betreuung in München. Spezialisiert auf kognitive Verhaltenstherapie 
+                für nachhaltige mentale und emotionale Veränderungen.
+              </p>
+              
+              {/* Contact Info */}
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <MapPin className="w-5 h-5 text-amber-400" />
+                  <span className="text-slate-300">Maximilianstraße 1, 80539 München</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-amber-400" />
+                  <span className="text-slate-300">+49 (0) 89 123 456 789</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-amber-400" />
+                  <span className="text-slate-300">praxis@anjahaile.de</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation Links */}
+            <div>
+              <h4 className="font-bold text-white mb-6 text-lg">Navigation</h4>
+              <div className="space-y-3">
+                {[
+                  { href: '/about', label: 'Über mich' },
+                  { href: '/services', label: 'Leistungen' },
+                  { href: '/portfolio', label: 'Portfolio' },
+                  { href: '/testimonials', label: 'Testimonials' }
+                ].map((link) => (
+                  <Link 
+                    key={link.href}
+                    href={link.href} 
+                    className="block text-slate-300 hover:text-amber-400 transition-colors duration-200 hover:translate-x-1 transform"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Actions */}
+            <div>
+              <h4 className="font-bold text-white mb-6 text-lg">Services</h4>
+              <div className="space-y-4">
+                <Link href="/contact" className="block">
+                  <div className="p-4 bg-slate-800/50 rounded-lg border border-slate-700/50 hover:border-amber-500/50 transition-all duration-200 group">
+                    <h5 className="font-semibold text-white group-hover:text-amber-400 transition-colors">Kontakt</h5>
+                    <p className="text-sm text-slate-400">Nachricht senden</p>
+                  </div>
+                </Link>
+                <Link href="/booking" className="block">
+                  <div className="p-4 bg-gradient-to-r from-amber-600/20 to-orange-600/20 rounded-lg border border-amber-500/30 hover:border-amber-400/50 transition-all duration-200 group">
+                    <h5 className="font-semibold text-white group-hover:text-amber-300 transition-colors">Termin buchen</h5>
+                    <p className="text-sm text-amber-300">Online verfügbar</p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="border-t border-slate-700/50 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="flex space-x-6">
+                <Link href="/impressum" className="text-slate-400 hover:text-amber-400 transition-colors text-sm">
+                  Impressum
+                </Link>
+                <Link href="/datenschutz" className="text-slate-400 hover:text-amber-400 transition-colors text-sm">
+                  Datenschutz
+                </Link>
+              </div>
+              <p className="text-slate-400 text-sm">
+                © 2025 Dr. Anja Haile. Alle Rechte vorbehalten.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
