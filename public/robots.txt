@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Wichtige Seiten für Suchmaschinen hervorheben
-Sitemap: https://therapy-haile-site.preview.emergentagent.com/sitemap.xml
+Sitemap: https://einheitlich-seiten.preview.emergentagent.com/sitemap.xml
 
 # Spezielle Anweisungen für Suchmaschinen
 Crawl-delay: 1

@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    url: 'https://therapy-haile-site.preview.emergentagent.com',
+    url: 'https://einheitlich-seiten.preview.emergentagent.com',
     title: 'Dr. Anja Haile - Psychologische Psychotherapeutin München',
     description: 'Erfahrene Psychologische Psychotherapeutin in München. Kognitive Verhaltenstherapie bei Depressionen, Angststörungen & Burnout. Jetzt Termin buchen.',
     siteName: 'Dr. Anja Haile - Psychotherapie München',
@@ -78,7 +78,7 @@ export const metadata = {
 
   // Canonical URL
   alternates: {
-    canonical: 'https://therapy-haile-site.preview.emergentagent.com',
+    canonical: 'https://einheitlich-seiten.preview.emergentagent.com',
   },
 }
 
@@ -86,11 +86,11 @@ export const metadata = {
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'MedicalBusiness',
-  '@id': 'https://therapy-haile-site.preview.emergentagent.com',
+  '@id': 'https://einheitlich-seiten.preview.emergentagent.com',
   name: 'Dr. Anja Haile - Psychologische Psychotherapeutin',
   alternateName: 'Praxis Dr. Anja Haile',
   description: 'Erfahrene Psychologische Psychotherapeutin in München. Spezialisiert auf kognitive Verhaltenstherapie bei Depressionen, Angststörungen und Burnout.',
-  url: 'https://therapy-haile-site.preview.emergentagent.com',
+  url: 'https://einheitlich-seiten.preview.emergentagent.com',
   telephone: '+49 89 123 456 789',
   email: 'praxis@anjahaile.de',
   
