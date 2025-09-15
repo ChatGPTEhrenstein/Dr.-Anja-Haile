@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Anja Haile - Kostenlose Deployment Anleitung</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #e2aa5a; border-bottom: 2px solid #e2aa5a; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 30px; }
+        .highlight { background: #fff3cd; padding: 15px; border-left: 4px solid #e2aa5a; margin: 15px 0; }
+        .step { background: #f8f9fa; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .code { background: #f1f3f4; padding: 10px; font-family: monospace; border-radius: 4px; }
+        .success { color: #28a745; font-weight: bold; }
+        .url { color: #007bff; font-weight: bold; word-break: break-all; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Dr. Anja Haile Website - Kostenloses Deployment</h1>
+        
+        <div class="highlight">
+            <strong>✅ Status:</strong> Ihre Website wurde erfolgreich für Static Hosting vorbereitet!<br>
+            <strong>📦 Build-Datei:</strong> <code>dr-anja-haile-static.tar.gz</code> (610KB)<br>
+            <strong>🎯 Ziel:</strong> Permanente URL ohne Auto-Sleep
+        </div>
+
+        <h2>📋 Verfügbare kostenlose Optionen:</h2>
+
+        <div class="step">
+            <h3>🔥 Option 1: Netlify (Empfohlen)</h3>
+            <p><strong>Vorteile:</strong> Einfach, schnell, professionelle URLs</p>
+            <p><strong>Schritte:</strong></p>
+            <ol>
+                <li>Gehen Sie zu <a href="https://netlify.com" target="_blank">netlify.com</a></li>
+                <li>Kostenlosen Account erstellen</li>
+                <li>ZIP-Datei hochladen (Drag & Drop)</li>
+                <li>Automatische URL erhalten: <span class="url">https://dr-anja-haile.netlify.app</span></li>
+            </ol>
+            <div class="success">⏱️ Deployment-Zeit: 2-3 Minuten</div>
+        </div>
+
+        <div class="step">
+            <h3>⚡ Option 2: Vercel</h3>
+            <p><strong>Vorteile:</strong> Optimiert für Next.js, schnell</p>
+            <p><strong>Schritte:</strong></p>
+            <ol>
+                <li>Gehen Sie zu <a href="https://vercel.com" target="_blank">vercel.com</a></li>
+                <li>GitHub/Google Account verbinden</li>
+                <li>Projekt importieren</li>
+                <li>URL erhalten: <span class="url">https://dr-anja-haile.vercel.app</span></li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>📂 Option 3: GitHub Pages</h3>
+            <p><strong>Vorteile:</strong> Völlig kostenlos, github.io Domain</p>
+            <p><strong>Schritte:</strong></p>
+            <ol>
+                <li>GitHub Repository erstellen</li>
+                <li>Inhalte aus ZIP hochladen</li>
+                <li>Pages aktivieren</li>
+                <li>URL: <span class="url">https://[username].github.io/dr-anja-haile</span></li>
+            </ol>
+        </div>
+
+        <h2>📁 Was befindet sich in der Build-Datei?</h2>
+        <div class="code">
+/out/
+├── index.html          # Startseite
+├── about/             # Über mich Seite  
+├── services/          # Leistungen
+├── contact/           # Kontakt
+├── booking/           # Terminbuchung
+├── portfolio/         # Portfolio
+├── testimonials/      # Testimonials
+├── impressum/         # Impressum
+├── datenschutz/       # Datenschutz
+├── _next/            # Next.js Assets
+├── images/           # Bilder
+└── manifest.json     # PWA Manifest
+        </div>
+
+        <h2>🔍 Lokaler Test verfügbar:</h2>
+        <div class="highlight">
+            <strong>Test-URL:</strong> <span class="url">http://localhost:8080</span><br>
+            Sie können die Website lokal testen, bevor Sie sie deployen.
+        </div>
+
+        <h2>✨ Features der statischen Version:</h2>
+        <ul>
+            <li>✅ Vollständig funktionsfähige Website</li>
+            <li>✅ Responsive Design für Mobile & Desktop</li>
+            <li>✅ SEO-optimiert mit Meta-Tags</li>
+            <li>✅ PWA-ready (Progressive Web App)</li>
+            <li>✅ Schnelle Ladezeiten</li>
+            <li>✅ Alle Seiten verfügbar</li>
+        </ul>
+
+        <div class="highlight">
+            <strong>⚠️ Hinweis:</strong> Das Kontaktformular funktioniert nicht in der statischen Version, 
+            da keine Backend-API verfügbar ist. Alle anderen Funktionen sind voll funktionsfähig.
+        </div>
+
+        <h2>🎯 Empfohlener nächster Schritt:</h2>
+        <div class="step">
+            <strong>1. Netlify verwenden (schnellste Option)</strong><br>
+            <strong>2. ZIP-Datei herunterladen:</strong> <code>dr-anja-haile-static.tar.gz</code><br>
+            <strong>3. Auf Netlify hochladen</strong><br>
+            <strong>4. Permanente URL erhalten!</strong><br>
+            <div class="success">🎉 Ihre Website ist dann 24/7 online ohne Auto-Sleep!</div>
+        </div>
+    </div>
+</body>
+</html>
