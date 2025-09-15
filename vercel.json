@@ -1,22 +1,32 @@
 {
   "version": 2,
   "name": "dr-anja-haile-psychotherapie",
-  "builds": [
+  "buildCommand": "next build",
+  "outputDirectory": "out",
+  "rewrites": [
     {
-      "src": "out/**/*",
-      "use": "@vercel/static"
+      "source": "/((?!_next|images|favicon\\.ico).*)",
+      "destination": "/$1.html"
     }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "/(.*)",
-      "dest": "/out/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/out/index.html"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
     }
   ],
-  "functions": {},
   "trailingSlash": true
 }
