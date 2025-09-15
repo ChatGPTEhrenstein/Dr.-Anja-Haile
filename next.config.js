@@ -1,12 +1,10 @@
 const nextConfig = {
-  output: 'standalone',
+  output: 'export',
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  experimental: {
-    // Remove if not using Server Components
-    serverComponentsExternalPackages: ['mongodb'],
-  },
+  distDir: 'out',
   webpack(config, { dev }) {
     if (dev) {
       // Reduce CPU/memory from file watching
