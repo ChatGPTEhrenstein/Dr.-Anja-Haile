@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "name": "dr-anja-haile",
+  "name": "dr-anja-haile-psychotherapie",
   "builds": [
     {
-      "src": "out/**",
+      "src": "out/**/*",
       "use": "@vercel/static"
     }
   ],
@@ -11,6 +11,12 @@
     {
       "src": "/(.*)",
       "dest": "/out/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/out/index.html"
     }
-  ]
+  ],
+  "functions": {},
+  "trailingSlash": true
 }
