@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ArrowLeft, TrendingUp, Users, Calendar, Award, CheckCircle, Star, Target, Brain, Heart, ArrowRight, Menu } from 'lucide-react'
+import { ArrowLeft, TrendingUp, Users, Calendar, Award, CheckCircle, Star, Target, Brain, Heart, ArrowRight, Menu, Mail, Phone, MapPin } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function PortfolioPage() {
