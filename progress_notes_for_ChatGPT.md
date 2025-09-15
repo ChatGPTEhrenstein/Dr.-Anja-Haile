@@ -52,6 +52,39 @@ cd /app/out && python3 -m http.server 8080
 ```
 
 #### 🔍 **3. DEBUG-SCHRITTE**
+---
+
+## 📧 **NACHRICHT FÜR NEUEN ACCOUNT:**
+
+"Hi! Ich arbeite an der Dr. Anja Haile Website und habe ein KRITISCHES Vercel Deployment-Problem, das sofort gelöst werden muss.
+
+**SITUATION:**
+- User wollte kostenloses Hosting ohne Auto-Sleep als Alternative zum Emergent Preview Link
+- Vercel Deployment ist teilweise fehlerhaft: https://dr-anja-haile-o5tsnz7hw-chatgptehrensteins-projects.vercel.app/
+- Website lädt lokal perfekt (Port 8080), aber Vercel URL 'geht nicht richtig'
+
+**DEINE AUFGABE (HÖCHSTE PRIORITÄT):**
+1. **Vercel Deployment reparieren** - Diagnose der exakten Fehlerursache
+2. **Alternative Deployment** falls Vercel nicht funktioniert (Netlify/GitHub Pages)
+3. **User eine funktionierende, permanente URL geben**
+
+**VERFÜGBARE RESSOURCEN:**
+- ✅ Funktionierende statische Website in `/app/out/`
+- ✅ Vercel-optimierte Dateien: `/app/dr-anja-haile-vercel.tar.gz`
+- ✅ Backup-Optionen: `/app/dr-anja-haile-static.tar.gz`
+- ✅ Detaillierte Anleitung: `/app/VERCEL-DEPLOYMENT.html`
+
+**WAHRSCHEINLICHE URSACHEN:**
+- Framework: Next.js statt 'Other' gewählt
+- Build Commands nicht leer gelassen
+- Routing-Probleme durch falsche vercel.json
+
+**USER ERWARTUNG:**
+Professionelle, schnelle URL die 24/7 läuft ohne Auto-Sleep. Das ist für eine Psychotherapie-Praxis-Website.
+
+**ERFOLG = User bekommt funktionierende URL wie: https://dr-anja-haile.vercel.app**
+
+Bitte priorisiere das Deployment-Problem über alles andere. Danke!"
 **Zu testende URLs:**
 - Hauptseite: https://dr-anja-haile-o5tsnz7hw-chatgptehrensteins-projects.vercel.app/
 - About: https://dr-anja-haile-o5tsnz7hw-chatgptehrensteins-projects.vercel.app/about/
