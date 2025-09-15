@@ -1,6 +1,6 @@
-# Progress Notes - HTML Block Refaktorierung
+# Progress Notes - Dr. Anja Haile Website Deployment
 
-## Datum: Januar 2025 - AKTUELLER STAND NACH ABOUT-ÜBERARBEITUNG
+## Datum: September 2025 - KRITISCHER DEPLOYMENT STATUS
 
 ## Was wurde refaktoriert:
 
