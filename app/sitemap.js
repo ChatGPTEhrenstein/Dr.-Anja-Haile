@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://einheitlich-seiten.preview.emergentagent.com'
+  const baseUrl = 'https://footer-fix-4.preview.emergentagent.com'
   
   return [
     {
